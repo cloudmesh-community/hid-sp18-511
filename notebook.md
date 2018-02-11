@@ -1,6 +1,7 @@
 #	Logistics
 *	Attended Class introduction online lecture given by professor - 01/14
 *	Created accounts for Github, FutureSystems & Chameleon - 01/24
+*   Swagger Homework Discussions - 02/11
 
 #	Assignments
 *	Worked & completed assignment - Assignment: bio and google docs - 01/18
@@ -8,6 +9,10 @@
 *	Worked & completed assignment - Assignment: Account Creation – 01/27
 *	Worked & completed assignment - Assignment: Account verification – 01/27
 *	Worked & completed assignment - Assignment: Cloud Class Survey – 01/28
+*	Worked & completed assignment - Assignment: New Technology List  - 01/29
+*	Worked & completed assignment - Assignment: Github Content Setup - 02/05
+*	Worked & completed assignment - Assignment: New Technology Abstract  - 02/05
+*	Worked & completed assignment - Assignmnet: Cloud and Big Data Rest services  - 02/05
 	
 #	Handbook
 ##	Communication Track
@@ -31,4 +36,4 @@
 *	Eve installation – 01/24
 *	MongoDB installation on Ubuntu – 01/24
 *	Develop REST services & validated – 01/25
-###	Exercise is pending
+###	Swagger - started reading - 02/11
