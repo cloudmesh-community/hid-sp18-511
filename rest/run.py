@@ -1,35 +1,35 @@
 from eve import Eve
-import platform
-import psutil
 from flask import jsonify
+from computer import Computer
+import psutil
 
 app = Eve()
+Computer = Computer()
 
 #Processor root information
-@app.route('/systeminfo')
+@app.route('/computer')
 def getProcessorRootInfo():
-    return jsonify("REST API for Processor information")
+    return jsonify("REST API for computer information")
 	
 #Processor information
-@app.route('/systeminfo/processor')
-def getProcessorInfo():
-    name = platform.processor()
-    return jsonify(name)
+@app.route('/computer/processor')
+def getProcessorInfo():    
+    return jsonify(Computer.name)
 
 #Disk information
-@app.route('/systeminfo/disk')
+@app.route('/computer/disk')
 def getDiskInfo():
-    return jsonify(psutil.disk_usage('/'))
+    return jsonify(Computer.disk_usage)	
     
 #Memory information
-@app.route('/systeminfo/memory')
+@app.route('/computer/memory')
 def getMemoryInfo():
-    return jsonify(psutil.virtual_memory())
+    return jsonify(Computer.virtual_memory)
     
 #CPU information
-@app.route('/systeminfo/cpu')
+@app.route('/computer/cpu')
 def getCPUInfo():
-    return jsonify(psutil.cpu_times())
+    return jsonify(Computer.cpu_times)
        
 if __name__ == '__main__':
 	app.run()
