@@ -5,24 +5,29 @@ from flask import jsonify
 
 app = Eve()
 
+#Processor root information
+@app.route('/systeminfo')
+def getProcessorRootInfo():
+    return jsonify("REST API for Processor information")
+	
 #Processor information
-@app.route('/processor')
+@app.route('/systeminfo/processor')
 def getProcessorInfo():
     name = platform.processor()
     return jsonify(name)
 
 #Disk information
-@app.route('/disk')
+@app.route('/systeminfo/disk')
 def getDiskInfo():
     return jsonify(psutil.disk_usage('/'))
     
 #Memory information
-@app.route('/memory')
+@app.route('/systeminfo/memory')
 def getMemoryInfo():
     return jsonify(psutil.virtual_memory())
     
 #CPU information
-@app.route('/cpu')
+@app.route('/systeminfo/cpu')
 def getCPUInfo():
     return jsonify(psutil.cpu_times())
        

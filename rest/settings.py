@@ -1,3 +1,3 @@
-DOMAIN = {'systeminfo': {}}
+DOMAIN = {}
 
-RESOURCE_METHODS= ['GET','POST']
+RESOURCE_METHODS= ['GET']
