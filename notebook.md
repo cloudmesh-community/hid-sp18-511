@@ -5,8 +5,8 @@
 
 #	Assignments completed
 *	Assignment 7.2.1(Bio Post): Bio Post on Piazza - 01/18/2018
-*       Assignment 7.2.1(Bio Post): Bio Post in Google doc - 01/18/2018
-*       Assignment 7.2.2(IU Google Services): IU Google Services - N/A
+* Assignment 7.2.1(Bio Post): Bio Post in Google doc - 01/18/2018
+* Assignment 7.2.2(IU Google Services): IU Google Services - N/A
 *       Assignment 7.2.3(Big Data Collaboration): Big data and collaboration - 01/18/2018
 *       Assignment 7.2.4(New Technology List): Technology List - 01/29/2018
 *       Assignment 7.2.5(New Technology Abstract): Technology Abstract - 01/29/2018, review comments implemented on 02/25/2018
