@@ -3,17 +3,27 @@
 *	Created accounts for Github, FutureSystems & Chameleon - 01/24
 *   Swagger Homework Discussions - 02/11
 
-#	Assignments
-*	Worked & completed assignment - Assignment: bio and google docs - 01/18
-*	Worked & completed assignment - Assignment: Big Data Size - 01/18
-*	Worked & completed assignment - Assignment: Account Creation – 01/27
-*	Worked & completed assignment - Assignment: Account verification – 01/27
-*	Worked & completed assignment - Assignment: Cloud Class Survey – 01/28
-*	Worked & completed assignment - Assignment: New Technology List  - 01/29
-*	Worked & completed assignment - Assignment: Github Content Setup - 02/05
-*	Worked & completed assignment - Assignment: New Technology Abstract  - 02/05
-*	Worked & completed assignment - Assignmnet: Cloud and Big Data Rest services  - 02/05
-	
+#	Assignments completed
+*	Assignment 7.2.1(Bio Post): Bio Post on Piazza - 01/18/2018
+*       Assignment 7.2.1(Bio Post): Bio Post in Google doc - 01/18/2018
+*       Assignment 7.2.2(IU Google Services): IU Google Services - N/A
+*       Assignment 7.2.3(Big Data Collaboration): Big data and collaboration - 01/18/2018
+*       Assignment 7.2.4(New Technology List): Technology List - 01/29/2018
+*       Assignment 7.2.5(New Technology Abstract): Technology Abstract - 01/29/2018, review comments implemented on 02/25/2018
+*       Assignment 7.2.5(New Technology Abstract): Technology Abstract upload to GitHub - 02/17/2018, review comments implemented on 02/25/2018
+*       Assignment 7.2.6(Cloud Accounts): AccountCreation: github.com - 01/27/2018
+*       Assignment 7.2.6(Cloud Accounts): Account Creation: chameleoncloud.org - 01/27/2018
+*       Assignment 7.2.6(Cloud Accounts): Account Creation: futuresystems.org - 01/27/2018
+*       Assignment 7.2.6(Cloud Accounts): Account Creation: Fill the document - 01/27/2018
+*       Assignment 7.2.7(Entry Survey): Cloud Class Survey -  - 01/28/2018
+*       Assignment 7.2.8(Account Setup): Github Setup - 02/05/2018
+*       Assignment 7.2.9(REST): Read the Sections Overview of Rest (Section 35 and Eve 35.3) - 02/12/2018
+*       Assignment 7.2.9(REST): Develop an Eve REST Service - 02/12/2018
+*       Assignment 7.2.9(REST): Assignment catchup - 02/12/2018
+*       Assignment 7.2.10(Swagger): This is for residential students - N/A
+
+#	Assignments in progress
+
 #	Handbook
 ##	Communication Track
 *	Markdown – 01/25
