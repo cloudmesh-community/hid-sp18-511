@@ -9,8 +9,8 @@
 * Assignment 7.2.2(IU Google Services): IU Google Services - N/A
 * Assignment 7.2.3(Big Data Collaboration): Big data and collaboration - 01/18/2018
 * Assignment 7.2.4(New Technology List): Technology List - 01/29/2018
-* Assignment 7.2.5(New Technology Abstract): Technology Abstract - 01/29/2018, review comments implemented on 02/25/2018
-* Assignment 7.2.5(New Technology Abstract): Technology Abstract upload to GitHub - 02/17/2018, review comments implemented on 02/25/2018
+* Assignment 7.2.5(New Technology Abstract): Technology Abstract - 01/29/2018. Review comments implemented on 02/25/2018. Updated contents of Google Doc on 02/25/2018
+* Assignment 7.2.5(New Technology Abstract): Technology Abstract upload to GitHub - 02/17/2018. Review comments implemented on 02/25/2018. Updated contents of tex files on 02/25/2018
 * Assignment 7.2.6(Cloud Accounts): AccountCreation: github.com - 01/27/2018
 * Assignment 7.2.6(Cloud Accounts): Account Creation: chameleoncloud.org - 01/27/2018
 * Assignment 7.2.6(Cloud Accounts): Account Creation: futuresystems.org - 01/27/2018
@@ -26,24 +26,25 @@
 
 #	Handbook
 ##	Communication Track
-*	Markdown – 01/25
-*	Hands on in Dillinger.io – 01/25
+*	Markdown – 01/25/2018
+*	Hands on in Dillinger.io – 01/25/2018
+* Introduction to LATEx - 02/25/2018
 ##	Programming Track
 ###	Development environment
 ####	VirtualBox (18, 18.1, 18.2 & 18.3)
-*	VirualBox installation - 01/23
-*	Installation of ubuntu desktop on computer with guest additions - exercise 18.1 - 01/23
-*	Understanding of how to copy & paste between Host & Guest OS - exercise 18.2 - 01/23
-*	Dev setup – Exercise 18.3 - 01/23
+*	VirualBox installation - 01/23/2018
+*	Installation of ubuntu desktop on computer with guest additions - exercise 18.1 - 01/23/2018
+*	Understanding of how to copy & paste between Host & Guest OS - exercise 18.2 - 01/23/2018
+*	Dev setup – Exercise 18.3 - 01/23/2018
 
 ##	Cloud
-###	Overview of REST (33.2) – 01/24
+###	Overview of REST (33.2) – 01/24/2018
 ###	Pyenv installation & configuration 
-*	Install pyenv on Ubuntu  - 01/24
-*	Install Different Python Versions – 01/24
-*	Set up the Shell – 01/24
+*	Install pyenv on Ubuntu  - 01/24/2018
+*	Install Different Python Versions – 01/24/2018
+*	Set up the Shell – 01/24/2018
 ###	Eve (33.1)
-*	Eve installation – 01/24
-*	MongoDB installation on Ubuntu – 01/24
-*	Develop REST services & validated – 01/25
-###	Swagger - started reading - 02/11
+*	Eve installation – 01/24/2018
+*	MongoDB installation on Ubuntu – 01/24/2018
+*	Develop REST services & validated – 01/25/2018
+###	Swagger - started reading - 02/11/2018
