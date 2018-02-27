@@ -36,7 +36,8 @@
 *	Installation of ubuntu desktop on computer with guest additions - exercise 18.1 - 01/23/2018
 *	Understanding of how to copy & paste between Host & Guest OS - exercise 18.2 - 01/23/2018
 *	Dev setup – Exercise 18.3 - 01/23/2018
-
+####	Docker
+*	Docker installation - 02/26/2018
 ##	Cloud
 ###	Overview of REST (33.2) – 01/24/2018
 ###	Pyenv installation & configuration 
