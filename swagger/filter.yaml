@@ -26,3 +26,10 @@ paths:
       responses: 
         "200":
           description: "Filtered Data"
+      parameters:
+        - in: query
+          name: criteria
+          required: true
+          schema:
+            type: string
+          description: The filter criteria. Supporrted critea are positive, negative, odd and even
