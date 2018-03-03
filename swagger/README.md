@@ -2,14 +2,14 @@
 
 ## Purpose :
 
-This REST Service allow user to filter the provided data based on the given critera.
-Allowable criterias are filter positive data and filter negative data.
+This REST Service allow user to filter the provided numbers based on the given critera.
+Allowable criterias are filter positive numbers and filter negative numbers.
 Project can be further enhanced easily based on the customer requirement.
 The REST service should conform to Swagger/OpenAPI 2.0 specification. 
 
 ## Execution steps for your machine :
 * git clone the project
-* go to the flaskConnexion directory using `cd`
+* go to the flaskConnexion directory using
 * Run the following commands one by one:
   * pip install -r requirements.txt
   * python setup.py install
