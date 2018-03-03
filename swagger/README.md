@@ -16,7 +16,7 @@ The REST service should conform to Swagger/OpenAPI 2.0 specification.
   * python -m swagger_server
 * You should see a message like this:
   ``` 
-  Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+  Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
   ```
 
 ## Examples :
