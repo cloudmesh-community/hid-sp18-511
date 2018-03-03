@@ -2,10 +2,10 @@ swagger: "2.0"
 info: 
   version: "0.0.1"
   title: "filter"
-  description: "A simple service to filter data as an example of using swagger-2.0 specification and codegen"
+  description: "A simple service to filter data"
   termsOfService: "http://swagger.io/terms/"
   contact: 
-    name: "Cloudmesh REST Service Example"
+    name: "Sandeep Khandelwal"
   license: 
     name: "Apache"
 host: "localhost:8080"
@@ -19,7 +19,7 @@ produces:
 paths: 
   /filter:
     get: 
-      description: "Returns filtered data from the hosting server"
+      description: "Returns filtered data based on criteria"
       operationId: filter
       produces: 
         - "application/json"
@@ -28,8 +28,7 @@ paths:
           description: "Filtered Data"
       parameters:
         - in: query
-          name: criteria
-          required: true
-          schema:
-            type: string
-          description: The filter criteria. Supporrted critea are positive, negative, odd and even
+          name: "criteria"
+          required: "true"
+          type: "string"
+          description: "The filter criteria"
