@@ -3,10 +3,10 @@ YAML_FILE=filter.yaml
 DEST_DIR=server/
 
 clean:
-	rm -r $(DEST_DIR)
-
+	if [ -d $(DEST_DIR) ]; then rm -r $(DEST_DIR); fi
+        
 service: 
-        mkdir -p $(DEST_DIR)
+	mkdir -p $(DEST_DIR)
 	$(SWAGGER_CODEGEN) generate -i $(YAML_FILE) -l python-flask -o $(DEST_DIR) -D supportPython3=true
 	cp default_controller.py $(DEST_DIR)/swagger_server/controllers
 	cp filter_util.py $(DEST_DIR)/swagger_server
@@ -22,6 +22,6 @@ stop:
 test:
 	echo "Regression test start"
 	curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=pos
-        curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=neg
-        curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=test           
+	curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=neg
+	curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=test
 	echo "Regression test complete"
