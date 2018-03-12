@@ -9,17 +9,28 @@ The REST service should conform to Swagger/OpenAPI 2.0 specification.
 
 ## Execution steps for your machine :
 * git clone the project
-* go to the flaskConnexion directory using
-* Run the following commands one by one:
-  * pip install -r requirements.txt
-  * python setup.py install
-  * python -m swagger_server
-* You should see a message like this:
-  ``` 
-  Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-  ```
+* Run the service on the host machine 
+     * make clean
+     * make service
+     * make start 
+     * You should see a message like this:
+     ``` 
+     Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+     ``` 
+ * Stop the service on the host machine
+     * make stop     
+ * Test the service on the host machine
+     * make test
+ * cleaup directories on the host machine
+     * make clean
+ * Run the service on container
+     * make container
+     * You should see a message like this:
+     ``` 
+     Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+     ```
 
-## Examples :
+## Test Examples :
 ```
 curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=pos
 [
