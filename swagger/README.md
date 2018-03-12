@@ -16,8 +16,9 @@ The REST service should conform to Swagger/OpenAPI 2.0 specification.
      * You should see a message like this:
      ``` 
      Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
-     ``` * Stop the service on the host machine
- * make stop     
+     ``` 
+ * Stop the service on the host machine
+     * make stop     
  * Test the service on the host machine
      * make test
  * cleaup directories on the host machine
