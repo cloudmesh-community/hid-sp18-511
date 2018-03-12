@@ -25,8 +25,8 @@ ENV HOME  /
 ENV PYENV_ROOT /.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
-RUN pyenv install 2.7.14
-RUN pyenv global 2.7.14
+RUN pyenv install 3.6.2
+RUN pyenv global 3.6.2
 RUN python -m ensurepip
 
 RUN git clone https://github.com/cloudmesh-community/hid-sp18-511.git
