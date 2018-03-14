@@ -9,7 +9,7 @@ info:
   license: 
     name: "Apache"
 host: "localhost:8080"
-basePath: "/api"
+basePath: "/cloudmesh/filter"
 schemes: 
   - "http"
 consumes: 
@@ -17,10 +17,10 @@ consumes:
 produces: 
   - "application/json"
 paths: 
-  /filter:
+  /regex:
     get: 
-      description: "Returns filtered data based on criteria"
-      operationId: filter
+      description: "Returns filtered data based on regular expression criteria"
+      operationId: filter_regex
       produces: 
         - "application/json"
       responses: 

@@ -19,11 +19,9 @@ stop:
 	ps -ef | grep swagger | grep -v "grep"| awk '{print $$2}' | xargs kill -9
 
 test:
-	echo "Regression test start"
-	curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=pos
-	curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=neg
-	curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=test
-	echo "Regression test complete"
+	curl -H "Content-Type: application/json" -X GET -d '{"elements":"ab abc abcde"}' http://localhost:8080/cloudmesh/filter/regex?criteria=ab
+	curl -H "Content-Type: application/json" -X GET -d '{"elements":"ab abc abcde"}' http://localhost:8080/cloudmesh/filter/regex?criteria=ab.
+	curl -H "Content-Type: application/json" -X GET -d '{"elements":"ab abc abcde"}' http://localhost:8080/cloudmesh/filter/regex?criteria=ab*
 
 container:
 	sudo docker build --no-cache -t cloudmesh-filter .
