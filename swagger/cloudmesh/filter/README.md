@@ -2,8 +2,7 @@
 
 ## Purpose :
 
-This REST Service allow user to filter the provided numbers based on the given critera.
-Allowable criterias are filter positive numbers and filter negative numbers.
+This REST Service allow user to filter the data based on the given regular expression critera.
 Project can be further enhanced easily based on the customer requirement.
 The REST service should conform to Swagger/OpenAPI 2.0 specification. 
 
@@ -32,25 +31,27 @@ The REST service should conform to Swagger/OpenAPI 2.0 specification.
 
 ## Test Examples :
 ```
-curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=pos
+curl -H "Content-Type: application/json" -X GET -d '{"elements":"ab abc abcde"}' http://localhost:8080/cloudmesh/filter/regex?criteria=ab
 [
-  1,
-  2,
-  3,
-  4
+  "ab",
+  "abc",
+  "abcde"
 ]
 ```
 
 ```
-curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=neg
+curl -H "Content-Type: application/json" -X GET -d '{"elements":"ab abc abcde"}' http://localhost:8080/cloudmesh/filter/regex?criteria=ab.
 [
-  -5
+  "abc",
+  "abcde"
 ]
 ```
 
-* When you do not allowed criteria then REST service will return error message
 ```
-curl -H "Content-Type: application/json" -X GET -d '{"numbers":"1 2 3 4 -5"}' http://localhost:8080/api/filter?criteria=test
-"provided criteria is not supported"
+curl -H "Content-Type: application/json" -X GET -d '{"elements":"ab abc abcde"}' http://localhost:8080/cloudmesh/filter/regex?criteria=ab*
+[
+  "ab",
+  "abc",
+  "abcde"
+]
 ```
-
