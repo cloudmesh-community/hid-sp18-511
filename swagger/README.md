@@ -2,7 +2,7 @@
 
 ## Purpose :
 
-This REST Service allow user to filter the provided numbers based on the given regular expression critera.
+This REST Service allow user to filter the data based on the given regular expression critera.
 Project can be further enhanced easily based on the customer requirement.
 The REST service should conform to Swagger/OpenAPI 2.0 specification. 
 
