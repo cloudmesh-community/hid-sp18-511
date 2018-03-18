@@ -23,7 +23,7 @@
 * Assignment 7.2.10(Swagger): This is for residential students - N/A
 
 #	Assignments in progress
-
+* Assignment: Technology Paper - worked on 03/17 and sent to professor for review
 #	Handbook
 ##	Communication Track
 *	Markdown – 01/25/2018
