@@ -15,16 +15,16 @@
 
 \begin{abstract}
 	
-In today's world data has different format (structured data,
+In today's world data comes in different format (structured data,
 semi-structured and unstructured data), high volume (data size is upto
 hundreds of terabytes) and high velocity (amount of data getting
-generated per second is too huge). Also, There is massive amount of
-on-premise and cloud-based data.  Every organization has a necessity
+generated per second is too huge). Also, with the growing demand of cloud there is massive amount of
+on-premise as well as cloud-based data.  Every organization has a necessity
 to integrate such kind of data between on-premise and cloud-based
 systems for synchronization, replication or building warehouse for
-analysis and reporting purpose. Informatica Intelligent Cloud Services
+analysis and reporting purpose. Organization need to understand the data and get inside about the data for the business decision. Informatica Intelligent Cloud Services
 (IICS)~\cite{hid-sp18-511-iics} provide complete suite of integration
-for such kind of diverse and unique requirement.
+for such kind of diverse and unique requirement. Customers can use the features of Informatica Intelligent Cloud Services (IICS)~\cite{hid-sp18-511-iics} to fulfill the data related need.
 
 \end{abstract}
 
@@ -36,7 +36,7 @@ for such kind of diverse and unique requirement.
 
 \section{Introduction}
 
-Informatica Intelligent Cloud Services is built on micro service
+Informatica Intelligent Cloud Services (IICS)~\cite{hid-sp18-511-iics} is built on micro service
 architecture and provide capability of data integration between
 cloud-based and on-premise systems. Informatica Intelligent Clod
 Services IICS~\cite{hid-sp18-511-iics} provide integration capability
@@ -46,45 +46,55 @@ Cloud, Master Data Management Cloud, and Data Security Cloud.
 \section{Integration Cloud}
 
 Integration Cloud~\cite{hid-sp18-511-iics} product provide easy to use
-framework for developing data integration engine between on-premise
-and cloud-based systems. It has high performance data transformations
-to massage the data in desired format. It has push-down optimization
-capability to move the data processing logic to database itself
-instead of retrieving the data and performing the operations.It has
-connectivity with cloud based databases like Amazon
+framework and designer for developing data integration engine between on-premise
+and cloud-based systems. It has high performance data transformations including filter, router, expression etc. to massage the data in desired format. It has push-down optimization
+capability for fast performance to move the data processing logic to database itself
+instead of retrieving the data and performing the operations in Integration Cloud~\cite{hid-sp18-511-iics}. It provide the
+connectivity between cloud based databases like Amazon
 Redshift~\cite{hid-sp18-511-aws-redshift}, Microsoft Azure SQL Data
 Warehouse~\cite{hid-sp18-511-ms-azure-sql}, Google
 BigQuery~\cite{hid-sp18-511-google-bigquery}, and
-Snowflake~\cite{hid-sp18-511-snowflake}.
+Snowflake~\cite{hid-sp18-511-snowflake} and on-premise legacy databases.
 
-Integration Cloud has the capability integrate the cloud based system
-Salesforce~\cite{hid-sp18-511-salesforce} with on-premise systems in
-real time using RESTfuls APIs.
+\subsection{Changed Data Capture}
+
+Integration Cloud~\cite{hid-sp18-511-iics} has changed data capture functionality to capture only the changed data at source system and replicate to downstream systems. This way replication is fast and as only changed data gets processed instead of bulky process of moving the entire data from source to downstream systems.
+
+\subsection{Access Policy}
+
+Integration Cloud~\cite{hid-sp18-511-iics} has access policy to determine who can access what. Administrators can easily provide the permission to different project and folders based on the requirement to different users.
+
+\subsection{Amazon S3 integration}
+
+Integration Cloud~\cite{hid-sp18-511-iics} provide tool to move the data from flat files on-premise systems to cloud based Amazon file store (S3)~\cite{hid-sp18-511-aws-s3}. This is useful for the mass ingestion of the data.
+
+\subsection{Development framework}
+
+Integration Cloud~\cite{hid-sp18-511-iics} provide easy to use designer to develop the integration logic and monitor tool to check the progress of integration flow.
 
 \section{Data Quality and Governance Cloud}
 
 With the massive amount of data available in today's world it is very
-important that we have the clean and quality data. Information can be
+important that we have access to the clean and quality data. Information can be
 retrieved and analysis could be performed only if we have the good
 quality data with we could rely upon and trust. Data Quality and
 Governance Cloud~\cite{hid-sp18-511-iics} product provide tools to
-visualize the data quality issues present in the data and fix them. It
+visualize the data quality issues present in the data and fix them in automated way. It
 also provide tools to verify and correct the common data related
 issues like update the address of people and organization based on the
 available address database, update the email addresses based on the
-common email address rules etc.
+common email address rules, update the phone numbers based on the phone rules etc.
 
 \section{Master Data Management Cloud}
 Master Data Management Cloud~\cite{hid-sp18-511-iics} provide 360 view
-of customer data by consolidating the customer data from different
-systems
+of customer data by consolidating the customers data from different
+systems. This is very important for any organization to get the full view of the customer in a holistic way and make the decisions accordingly. Customer data is normally stored in different systems having different perspective. This kind of data which is stored at multiple places doesn't server any purpose unless it is integrated and analyzed.
 
 \section{Data Security Cloud}
-Testing is a need of validating the application. However, providing
-live data for testing is a risk and secure data could be
-compromised. There is a real need to provide the look like real data
-without compromising it. Data Security Cloud\cite{hid-sp18-511-iics}
-provide data tool to mask the data before sharing it with anyone which
+Testing is a real need for validating the application before it could be used for the real purpose. No one is ready to use any system until it's authenticity is proven. However, providing
+live data for testing is a risk and data could be
+compromised. Data breach might leas to lot of compliance issues and might risk the position of the organization and ultimately business loss. Hence, there is a real need to provide the look like real data without compromising it. Data Security Cloud\cite{hid-sp18-511-iics}
+provide tool to mask the data before sharing it with anyone which
 will convert the data without loosing the shape of the data
 
 In Figure~\ref{f:iics-products}\cite{hid-sp18-511-iics} see the
