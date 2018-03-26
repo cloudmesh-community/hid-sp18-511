@@ -17,7 +17,7 @@ Open https://aws.amazon.com/ and provide the credentials
 
 #### Step 2 - Select Lambda service from the dropdown
 
-![AWS Lambda Selection](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_selection.png)
+![AWS Lambda Selection](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_selection.png?raw=true)
 
 The following screen will appear once Lambda service is selected
 
