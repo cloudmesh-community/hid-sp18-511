@@ -111,11 +111,7 @@ We will use the `Edit code inline` option for this tutorial. Edit the code as pe
 
 ##### Runtime - Provide/Edit the programming language for the code that you are planning to provide for Lambda. For now keep it as Python 3.6.
 
-WHY HEADING HERE
-
 ##### Handler - This is the function name in your code which will be calles by AWS Lambda to start the execution. Leave it as lambda_function.lambda_handler
-
-WHY HEADING HERE
 
 #### Step 6 - Click on Save button to save the configuration of the function. The function is ready to be used
 
