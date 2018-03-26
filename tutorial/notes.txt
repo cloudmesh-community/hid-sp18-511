@@ -1,0 +1,11 @@
+AWS Labmda is serverless computing model
+- no servers to manage
+- scales with usage
+- never pay for idle
+- availability and fault tolerence build in. Multi az
+
+node.JS
+Python
+Hava
+C#
+Go
