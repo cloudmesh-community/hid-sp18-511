@@ -19,11 +19,11 @@ Open https://aws.amazon.com/ and provide the credentials
 
 ![AWS Lambda Selection](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_selection.png?raw=true)
 
-#### Step 3 - The following screen will appear once Lambda service is selected
+The following screen will appear once Lambda service is selected
 
 ![AWS Lambda Screen](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_screen.png?raw=true)
 
-#### Step 4 - Click on Create a function button. The following screen will appear to create the function 
+#### Step 3 - Click on Create a function button. The following screen will appear to create the function 
 
 ![AWS Lambda Type](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_type.png?raw=true)
 
@@ -35,7 +35,7 @@ There are three options to create the function
 
 We will use Author from scratch option to create the function for this tutorial. Select the Author from scratch option.
 
-#### Step 5 - Provide the following information for the function
+#### Step 4 - Provide the following information for the function
 
 ##### Name - Provide meaningful name for the function. Provide awsTutorialFunction as function name for this tutorial
 
@@ -86,7 +86,7 @@ Select Simple Microservice permissions from the list. This will be sufficient to
 ![AWS Lambda Function Policy Select](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_policy_select.png?raw=true)	
 
 
-#### Step 6 - Click on Create function button. The following screen will appear
+#### Step 5 - Click on Create function button. The following screen will appear
 
 ![AWS Lambda Function Def](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_definition.png?raw=true)	
 
@@ -107,7 +107,7 @@ We will use Edit code inline option for this tutorial. Edit the code as per the 
 ##### Runtime - Provide/Edit the programming language for the code that you are planning to provide for Lambda. For now keep it as Python 3.6.
 ##### Handler - This is the function name in your code which will be calles by AWS Lambda to start the execution. Leave it as lambda_function.lambda_handler
 
-#### Step 7 - Click on Save button to save the configuration of the function. The function is ready to be used
+#### Step 6 - Click on Save button to save the configuration of the function. The function is ready to be used
 
 ![AWS Lambda Function Save](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_save.png?raw=true)	
 
