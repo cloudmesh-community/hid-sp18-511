@@ -66,6 +66,7 @@ We will use Python programming language for this tutorial to create the function
 
 Following options are available to create the role
 
+* Create an existing role - Use existing role
 * Create new role from template(s) - AWS Lambda will create the role with permission from the selected policy templates
 * Create a custom role - User can create the role with customized permissions
 
