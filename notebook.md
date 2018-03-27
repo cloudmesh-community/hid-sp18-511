@@ -1,11 +1,11 @@
 #	Logistics
 *	Attended Class introduction online lecture given by professor - 01/14
- *	Attended Class introduction online lecture given by professor - 01/14
+   *	Attended Class introduction online lecture given by professor - 01/14
 *	Created accounts for Github, FutureSystems & Chameleon - 01/24
 *   Swagger Homework Discussions - 02/11
 
 * Bullet list
-    * Nested bullet
+   * Nested bullet
 
 #	Assignments completed
 *	Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
