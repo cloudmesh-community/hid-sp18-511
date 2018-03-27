@@ -4,6 +4,9 @@
 *	Created accounts for Github, FutureSystems & Chameleon - 01/24
 *   Swagger Homework Discussions - 02/11
 
+* Bullet list
+    * Nested bullet
+
 #	Assignments completed
 *	Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
 * Assignment 7.14(Bio Post): Bio Post in Google doc - 01/18/2018
