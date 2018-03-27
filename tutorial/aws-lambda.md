@@ -5,8 +5,7 @@ hid-sp18-511
 AWS Lambda is a serverless computing model. It has the following features as compared to traditional computing model:
 
 * There are no servers to manage: There is no server to manage in terms of patching, upgrade etc. 
-  AWS will take care of all these things and customer need not to worry about it
-  * Test
+  AWS will take care of all these things and customer need not to worry about it  
 * It Scales up and down on demand: The capacity gets increased or decreased automatically on demand
 * Pay what is used: A customer will pay only for the time when the function was called. 
   A customer will not be charged when it is idle
@@ -53,14 +52,14 @@ We will use the `Author from scratch` option to create the function for this tut
 
 Following runtime environment are available
 
- *	C# (.NET Core 1.0)
- * 	C# (.NET Core 2.0)
- * 	Go 1.x
- * 	Java 8
- * 	Node.js 4.3 
- * 	Node.js 6.10
- * 	Python 2.7
- * 	Python 3.6
+  *	C# (.NET Core 1.0)
+  * 	C# (.NET Core 2.0)
+  * 	Go 1.x
+  * 	Java 8
+  * 	Node.js 4.3 
+  * 	Node.js 6.10
+  * 	Python 2.7
+  * 	Python 3.6
 
 We will use Python for the programming language of this tutorial to create the function.  Hence, select `Python 3.6 Runtime` environment.
 
@@ -72,9 +71,9 @@ We will use Python for the programming language of this tutorial to create the f
 
 The following options are available to create the role
 
- *	`Create an existing role`:  Use existing role
- *	`Create new role from template(s)`: AWS Lambda will create the role with permission from the selected policy templates
- *	`Create a custom role`: User can create the role with customized permissions
+  *	`Create an existing role`:  Use existing role
+  *	`Create new role from template(s)`: AWS Lambda will create the role with permission from the selected policy templates
+  *	`Create a custom role`: User can create the role with customized permissions
 
 We will use `Create new role from template(s)` option to create the role for this tutorial. 
 Please use the option from the dropdown list.
@@ -105,10 +104,9 @@ The following information has to be updated for this tutorial. Please go through
 ![AWS Lambda Function Options](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_option.png?raw=true)	
 
 *	`Code entry type`: Provide the options to provide the code. Following options are available 
-
- *	`Edit code inline`: Use this option to edit the code inline in the function page itself
- *	`Upload a .ZIP file`: Use this option if you would like to upload the code in zip format. Provide the zip file location and upload the file.
- *	`Upload a file from Amazon S3`: Use this option if you have the code in S3 bucket. Provide the bucket URL in the configuration.
+  *	`Edit code inline`: Use this option to edit the code inline in the function page itself
+  *	`Upload a .ZIP file`: Use this option if you would like to upload the code in zip format. Provide the zip file location and upload the file.
+  * `Upload a file from Amazon S3`: Use this option if you have the code in S3 bucket. Provide the bucket URL in the configuration.
 
 We will use the `Edit code inline` option for this tutorial. Edit the code as per the requirement.
 
