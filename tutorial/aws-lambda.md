@@ -4,12 +4,13 @@ hid-sp18-511
 
 AWS Lambda is a serverless computing model. It has the following features as compared to traditional computing model:
 
-*	There are no servers to manage: There is no server to manage in terms of patching, upgrade etc. 
+* There are no servers to manage: There is no server to manage in terms of patching, upgrade etc. 
   AWS will take care of all these things and customer need not to worry about it
-*	It Scales up and down on demand: The capacity gets increased or decreased automatically on demand
-*	Pay what is used: A customer will pay only for the time when the function was called. 
+ * Test
+* It Scales up and down on demand: The capacity gets increased or decreased automatically on demand
+* Pay what is used: A customer will pay only for the time when the function was called. 
   A customer will not be charged when it is idle
-*	Availability and fault tolerance is build in:  Availability and fault tolerance are build in and AWS takes care of 
+* Availability and fault tolerance is build in:  Availability and fault tolerance are build in and AWS takes care of 
   this as it leverages part of the AWS Global Infrastructure
 
 ## Steps to create Python function using AWS lambda
