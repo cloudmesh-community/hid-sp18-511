@@ -6,7 +6,7 @@ AWS Lambda is a serverless computing model. It has the following features as com
 
 * There are no servers to manage: There is no server to manage in terms of patching, upgrade etc. 
   AWS will take care of all these things and customer need not to worry about it
- * Test
+  * Test
 * It Scales up and down on demand: The capacity gets increased or decreased automatically on demand
 * Pay what is used: A customer will pay only for the time when the function was called. 
   A customer will not be charged when it is idle
