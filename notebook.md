@@ -1,12 +1,7 @@
 #	Logistics
 *	Attended Class introduction online lecture given by professor - 01/14
-   * Nested bullet
-   * Attended Class introduction online lecture given by professor - 01/14
 *	Created accounts for Github, FutureSystems & Chameleon - 01/24
-*   Swagger Homework Discussions - 02/11
-
-* Bullet list
-   * Nested bullet
+* Swagger Homework Discussions - 02/11
 
 #	Assignments completed
 *	Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
@@ -29,10 +24,11 @@
 * Assignment 7.31(Swagger): Cloud and Big Data Rest Service with Swagger - 03/05/2018
 * Assignment 7.32(Swagger): Cloud and Big Data Rest Service with Swagger - Part B- 03/10/2018
 * Assignment: 7.33(Technology Paper) - 03/20
+* Assignment: 7.34(Tutorial) - 03/26
 
 #	Assignments in progress
 * Assignment: 7.29(AI Cloud Service) - started working on this
-* Assignment: 7.34(Tutorial) - started working on this
+
 #	Handbook
 ##	Communication Track
 *	Markdown – 01/25/2018
