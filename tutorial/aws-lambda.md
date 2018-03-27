@@ -51,15 +51,14 @@ We will use the `Author from scratch` option to create the function for this tut
 ![AWS Lambda Function Runtime](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_runtime.png?raw=true)	
 
 Following runtime environment are available
-
   *	C# (.NET Core 1.0)
-  * 	C# (.NET Core 2.0)
-  * 	Go 1.x
-  * 	Java 8
-  * 	Node.js 4.3 
-  * 	Node.js 6.10
-  * 	Python 2.7
-  * 	Python 3.6
+  * C# (.NET Core 2.0)
+  * Go 1.x
+  * Java 8
+  * Node.js 4.3 
+  * Node.js 6.10
+  * Python 2.7
+  * Python 3.6
 
 We will use Python for the programming language of this tutorial to create the function.  Hence, select `Python 3.6 Runtime` environment.
 
