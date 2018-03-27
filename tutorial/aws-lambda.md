@@ -103,9 +103,9 @@ The following information has to be updated for this tutorial. Please go through
 ![AWS Lambda Function Options](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_option.png?raw=true)	
 
 *	`Code entry type`: Provide the options to provide the code. Following options are available
-  * `Edit code inline`: Use this option to edit the code inline in the function page itself
-  *	`Upload a .ZIP file`: Use this option if you would like to upload the code in zip format. Provide the zip file location and upload the file.
-  * `Upload a file from Amazon S3`: Use this option if you have the code in S3 bucket. Provide the bucket URL in the configuration.
+	* `Edit code inline`: Use this option to edit the code inline in the function page itself
+	* `Upload a .ZIP file`: Use this option if you would like to upload the code in zip format. Provide the zip file location and upload the file.
+	* `Upload a file from Amazon S3`: Use this option if you have the code in S3 bucket. Provide the bucket URL in the configuration.
 
 We will use the `Edit code inline` option for this tutorial. Edit the code as per the requirement.
 
