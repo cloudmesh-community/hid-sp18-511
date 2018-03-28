@@ -1,7 +1,8 @@
 #	Logistics
-*	Attended Class introduction online lecture given by professor - 01/14
-*	Created accounts for Github, FutureSystems & Chameleon - 01/24
-* Swagger Homework Discussions - 02/11
+*	Attended Class introduction online lecture given by professor - 01/14/2018
+*	Created accounts for Github, FutureSystems & Chameleon - 01/24/2018
+* Swagger Homework Discussions - 02/11/2018
+* Attended class for the project ideas - 03/27/2018
 
 #	Assignments completed
 *	Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
@@ -23,11 +24,13 @@
 * Assignment 7.30(Swagger): This is for residential students - N/A
 * Assignment 7.31(Swagger): Cloud and Big Data Rest Service with Swagger - 03/05/2018
 * Assignment 7.32(Swagger): Cloud and Big Data Rest Service with Swagger - Part B- 03/10/2018
-* Assignment: 7.33(Technology Paper) - 03/20
-* Assignment: 7.34(Tutorial) - 03/26
+* Assignment 7.32(Swagger): Cloud and Big Data Rest Service with Swagger - Part C- 03/10/2018
+* Assignment: 7.34(Technology Paper) - 03/20
+* Assignment: 7.35(Tutorial) - 03/26
 
 #	Assignments in progress
 * Assignment: 7.29(AI Cloud Service) - started working on this
+* Assignment: Project
 
 #	Handbook
 ##	Communication Track
