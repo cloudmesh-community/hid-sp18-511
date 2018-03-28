@@ -131,3 +131,8 @@ Click on the `Test` button to test the function created. The function will provi
 Click on the  `Actions->Delete` function button to delete the AWS Lambda function if not required.
 
 ![AWS Lambda Function Delete](https://github.com/cloudmesh-community/hid-sp18-511/blob/master/tutorial/images/aws_lambda_function_delete.png?raw=true)	
+
+
+## References
+
+https://aws.amazon.com/lambda/
