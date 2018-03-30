@@ -57,3 +57,5 @@
 *	MongoDB installation on Ubuntu – 01/24/2018
 *	Develop REST services & validated – 01/25/2018
 ###	Swagger - started reading - 02/11/2018
+###	Cloudmesh
+*	Installation and exercise on Cloumesh Shell command  - 03/29/2018
