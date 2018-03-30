@@ -3,6 +3,7 @@
 *	Created accounts for Github, FutureSystems & Chameleon - 01/24/2018
 * Swagger Homework Discussions - 02/11/2018
 * Attended class for the project ideas - 03/27/2018
+* Attended project meeting with professor - 03/30/2018
 
 #	Assignments completed
 *	Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
@@ -59,3 +60,5 @@
 ###	Swagger - started reading - 02/11/2018
 ###	Cloudmesh
 *	Installation and exercise on Cloumesh Shell command  - 03/29/2018
+###	Chameleon
+*	Documentation reading and exericse to create VMs on Chameleon  - 03/30/2018
