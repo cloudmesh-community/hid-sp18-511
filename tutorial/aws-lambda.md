@@ -135,4 +135,4 @@ Click on the  `Actions->Delete` function button to delete the AWS Lambda functio
 
 ## References
 
-https://aws.amazon.com/lambda/
+* <https://aws.amazon.com/lambda/>
