@@ -20,7 +20,6 @@
                   to_port: 443
                   cidr_ip: 0.0.0.0/0
             rules_egress:
-                - proto: all
-                  group_name: "{{ project_name }}_security_group"
+                - proto: all                  
                   cidr_ip: 0.0.0.0/0
         register: basic_firewall
