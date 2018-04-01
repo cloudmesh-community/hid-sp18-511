@@ -27,3 +27,17 @@
                   cidr_ip: 0.0.0.0/0
                   rule_desc: allow outbound to any port and machine
         register: basic_firewall
+        
+  tasks:
+    - name: Create an EC2 key
+        ec2_key:
+            name: "{{ project_name }}_key"
+        register: ec2_key
+        
+  tasks:
+    - name: Save private key
+        copy:
+        content: "{{ ec2_key.key.private_key }}" 
+        dest: "./aws-private.pem" 
+        mode: 0600
+        when: ec2_key.changed
