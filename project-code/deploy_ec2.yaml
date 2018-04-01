@@ -1,6 +1,6 @@
 - hosts: localhost
   vars_files:
-    - vars/main.yml
+    - config/config.yml
   tasks:    
     -   name: Create security group
         ec2_group:
