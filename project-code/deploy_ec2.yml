@@ -11,15 +11,19 @@
                   from_port: 22
                   to_port: 22
                   cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 22
                 - proto: tcp
                   from_port: 80
                   to_port: 80
                   cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 80
                 - proto: tcp
                   from_port: 443
                   to_port: 443
                   cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 443
             rules_egress:
                 - proto: all                  
                   cidr_ip: 0.0.0.0/0
+                  rule_desc: allow outbound to any port and machine
         register: basic_firewall
