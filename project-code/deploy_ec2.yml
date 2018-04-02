@@ -31,7 +31,7 @@
   tasks:
     - name: Create an EC2 key
         ec2_key:
-            name: "{{ project_name }}_key"
+                name: "{{ project_name }}_key"
         register: ec2_key
         
   tasks:
