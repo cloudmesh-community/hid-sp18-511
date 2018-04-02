@@ -37,7 +37,7 @@
   tasks:
     -   name: Save private key
         copy:
-        content: "{{ ec2_key.key.private_key }}" 
-        dest: "./aws-private.pem" 
-        mode: 0600
+            content: "{{ ec2_key.key.private_key }}"
+            dest: "./aws-private.pem"
+            mode: 0600
         when: ec2_key.changed
