@@ -29,13 +29,13 @@
         register: basic_firewall
         
   tasks:
-    - name: Create an EC2 key
+    -   name: Create an EC2 key
         ec2_key:
-                name: "{{ project_name }}_key"
+            name: "{{ project_name }}_key"
         register: ec2_key
         
   tasks:
-    - name: Save private key
+    -   name: Save private key
         copy:
         content: "{{ ec2_key.key.private_key }}" 
         dest: "./aws-private.pem" 
