@@ -31,7 +31,9 @@
 
 #	Assignments in progress
 * Assignment: 7.29(AI Cloud Service) - started working on this
-* Assignment: Project
+* Assignment: Project.
+ * worked on the proposal document, started coding (created Ansibles tasks for setting up the secuity group, setup public and private key, provisioning of EC2 instances - 04/03/2018
+
 
 #	Handbook
 ##	Communication Track
