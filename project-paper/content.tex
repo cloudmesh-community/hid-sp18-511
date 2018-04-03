@@ -19,7 +19,23 @@
 
 
 \begin{abstract}
-This project is about developing module for automated deployment of Apache Spark\cite{hid-sp18-511-www-spark} cluster on AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2} instances with a single click. This module will take care of different infrastructure related items like provisioning of EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2} instances, setting up the public/private keys for secure connection, inbound/outbound traffic rules on provisioned machines to allows connectivity on various ports. This module will also perform Apache Spark\cite{hid-sp18-511-www-spark} installation on the provisioned EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2} instances using master/worker model. One of the machine will work as master node and other machines will work as worker node. The script will expose various options for Spark cluster deployment, execution of commands on Spark cluster, shutting off the machines and termination of machine.
+
+This project is about developing module for automated deployment of
+Apache Spark\cite{hid-sp18-511-www-spark} cluster on AWS(Amazon Web
+Services)\cite{hid-sp18-511-www-aws} EC2(Elastic Compute
+Cloud)\cite{hid-sp18-511-www-ec2} instances with a single click. This
+module will take care of different infrastructure related items like
+provisioning of EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2}
+instances, setting up the public/private keys for secure connection,
+inbound/outbound traffic rules on provisioned machines to allows
+connectivity on various ports. This module will also perform Apache
+Spark\cite{hid-sp18-511-www-spark} installation on the provisioned
+EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2} instances using
+master/worker model. One of the machine will work as master node and
+other machines will work as worker node. The script will expose
+various options for Spark cluster deployment, execution of commands on
+Spark cluster, shutting off the machines and termination of machine.
+
 \end{abstract}
 
 \keywords{hid-sp18-511, AWS, EC2, Spark, Hadoop, Ansible}
@@ -29,15 +45,34 @@ This project is about developing module for automated deployment of Apache Spark
 
 \section{Introduction}
 
-AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} is cloud service provider that provide different type of services to customers. AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} provide services to customer in Infrastructure as a service, Platform as a service, Software as a service categories. EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2} is compute service provided by AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} for easy and fast provision of compute resources of different type based on the requirement. Apache Spark\cite{hid-sp18-511-www-spark} is open source project which use in-memory data for fast and optimized operation and use Apache  Hadoop\cite{hid-sp18-511-www-hadoop} as underlying framework. Ansible\cite{bibid} is an open source automation platform for configuration management and application deployment. Ansible\cite{hid-sp18-511-www-ansible} tool will be used in this project to deploy Apache Spark\cite{hid-sp18-511-www-spark} cluster on EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2} instances and perform various tasks on Apache Spark\cite{hid-sp18-511-www-spark}.
+AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} is cloud service
+provider that provide different type of services to
+customers. AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} provide
+services to customer in Infrastructure as a service, Platform as a
+service, Software as a service categories. EC2(Elastic Compute
+Cloud)\cite{hid-sp18-511-www-ec2} is compute service provided by
+AWS(Amazon Web Services)\cite{hid-sp18-511-www-aws} for easy and fast
+provision of compute resources of different type based on the
+requirement. Apache Spark\cite{hid-sp18-511-www-spark} is open source
+project which use in-memory data for fast and optimized operation and
+use Apache Hadoop\cite{hid-sp18-511-www-hadoop} as underlying
+framework. Ansible\cite{bibid} is an open source automation platform
+for configuration management and application
+deployment. Ansible\cite{hid-sp18-511-www-ansible} tool will be used
+in this project to deploy Apache Spark\cite{hid-sp18-511-www-spark}
+cluster on EC2(Elastic Compute Cloud)\cite{hid-sp18-511-www-ec2}
+instances and perform various tasks on Apache
+Spark\cite{hid-sp18-511-www-spark}.
 
 \section{Resources}
-This project will provide various option for deployment and configuration
+This project will provide various option for deployment and
+configuration
+
 \begin{itemize}
 	\item Deploy Spark Cluster
-	\item Shutdown Spark Cluster
-	\item Terminate Spark Cluster
-	\item Execute Command on Spark Cluster
+        \item Shutdown Spark Cluster
+        \item Terminate Spark Cluster
+        \item Execute Command on Spark Cluster
 \end{itemize}
 
 \begin{acks}
