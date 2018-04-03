@@ -35,9 +35,23 @@
         register: ec2_key
         
   tasks:
-    -   name: Save private key
+    -   name: Save private key to be used later
         copy:
-            content: "{{ ec2_key.key.private_key }}"
+            content: ec2_key.key.private_key
             dest: "./aws-private.pem"
             mode: 0600
-        when: "{{ ec2_key.changed }}"
+        when: ec2_key.changed
+        
+        
+  tasks:
+    -   name: Create an EC2 instance
+        ec2:
+            key_name: "{{ project_name }}_key"
+            region: "{{ region }}"
+            group_id: basic_firewall.group_id"
+            instance_type: "{{ instance_type }}"
+            image: "{{ ami }}"
+            wait: yes
+            exact_count: 1            
+            assign_public_ip: yes
+      register: ec2
