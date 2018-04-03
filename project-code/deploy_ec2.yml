@@ -29,22 +29,18 @@
                   rule_desc: allow outbound to any port and machine
         register: basic_firewall
         
-  tasks:
     -   name: Create an EC2 key
         ec2_key:
             name: "{{ project_name }}_key"
         register: ec2_key
         
-  tasks:
     -   name: Save private key to be used later
         copy:
             content: ec2_key.key.private_key
             dest: "./aws-private.pem"
             mode: 0600
         when: ec2_key.changed
-        
-        
-  tasks:
+                
     -   name: Create an EC2 instance
         ec2:
             key_name: "{{ project_name }}_key"            
@@ -52,6 +48,5 @@
             instance_type: "{{ instance_type }}"
             image: "{{ ami_image }}"
             wait: yes
-            count: 1            
-            assign_public_ip: yes
+            count: 1                        
         register: ec2
