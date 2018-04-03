@@ -46,8 +46,7 @@
   tasks:
     -   name: Create an EC2 instance
         ec2:
-            key_name: "{{ project_name }}_key"
-            region: "{{ region }}"
+            key_name: "{{ project_name }}_key"            
             group_id: basic_firewall.group_id"
             instance_type: "{{ instance_type }}"
             image: "{{ ami_image }}"
