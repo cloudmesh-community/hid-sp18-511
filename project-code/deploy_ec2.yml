@@ -48,7 +48,7 @@
     -   name: Create an EC2 instance
         ec2:
             key_name: "{{ project_name }}_key"            
-            group_id: basic_firewall.group_id
+            group: "{{ project_name }}_security_group"
             instance_type: "{{ instance_type }}"
             image: "{{ ami_image }}"
             wait: yes
