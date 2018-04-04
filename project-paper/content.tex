@@ -1,7 +1,7 @@
 % status: 0
 % chapter: TBD
 
-\title{Automated Spark cluster deployment on EC2}
+\title{Automated Spark Cluster Deployment on EC2}
 
 
 \author{Sandeep Khandelwal}
@@ -21,20 +21,20 @@
 \begin{abstract}
 
 This project is about developing a module for automated deployment of
-Apache Spark~\cite{hid-sp18-511-www-spark} cluster on AWS(Amazon Web
+Apache Spark~\cite{hid-sp18-511-www-spark} cluster on AWS (Amazon Web
 Services)~\cite{hid-sp18-511-www-aws} EC2(Elastic Compute
 Cloud)~\cite{hid-sp18-511-www-ec2} instances on a single click. This
 module will take care of different infrastructure related items like
-provisioning of EC2(Elastic Compute Cloud)~\cite{hid-sp18-511-www-ec2}
+provisioning of EC2~\cite{hid-sp18-511-www-ec2}
 instance, setting up the public/private key pair for secure connection,
 inbound/outbound traffic rules on provisioned machines to allow
 connectivity on various ports. This module will also perform Apache
 Spark~\cite{hid-sp18-511-www-spark} installation on the provisioned
-EC2(Elastic Compute Cloud)~\cite{hid-sp18-511-www-ec2} instances using
-master/worker model. One of the machine will work as master node and
+EC2~\cite{hid-sp18-511-www-ec2} instances using
+master/worker model. One of the machine will work as a master node and
 other machines will work as worker node. The script will expose
-various options for Spark cluster deployment, execution of commands on
-Spark cluster, shutting off the machines and termination of machine.
+various options for Apache Spark~\cite{hid-sp18-511-www-spark} cluster deployment, execution of commands on
+Apache Spark~\cite{hid-sp18-511-www-spark} cluster, shutting off the machines and termination of machines.
 
 \end{abstract}
 
@@ -45,14 +45,13 @@ Spark cluster, shutting off the machines and termination of machine.
 
 \section{Introduction}
 
-AWS(Amazon Web Services)~\cite{hid-sp18-511-www-aws} is cloud service
-provider that provide different type of on-demand services to
-customers. AWS(Amazon Web Services)~\cite{hid-sp18-511-www-aws} provide
-various services to customer in Infrastructure as a service, Platform as a
-service, Software as a service categories. EC2(Elastic Compute
-Cloud)~\cite{hid-sp18-511-www-ec2} is compute service provided by
-AWS(Amazon Web Services)~\cite{hid-sp18-511-www-aws} for easy and fast
-provision of compute resources of different type based on the
+AWS~\cite{hid-sp18-511-www-aws} is a cloud service
+provider that provides different types of on-demand services to the
+customers. AWS~\cite{hid-sp18-511-www-aws} provides
+various services to thw customers in Infrastructure as a Service, Platform as a
+Service and Software as a Service categories. EC2~\cite{hid-sp18-511-www-ec2} is a compute service provided by
+AWS~\cite{hid-sp18-511-www-aws} for easy and fast
+provisioning of compute resources of different type based on the
 requirement. Apache Spark~\cite{hid-sp18-511-www-spark} is an open source
 project which use in-memory data for fast and optimized operation and
 use Apache Hadoop~\cite{hid-sp18-511-www-hadoop} as underlying
@@ -60,13 +59,13 @@ framework. Ansible~\cite{hid-sp18-511-www-ansible} is an open source automation 
 for configuration management and application
 deployment. Ansible~\cite{hid-sp18-511-www-ansible} tool will be used
 in this project to deploy Apache Spark~\cite{hid-sp18-511-www-spark}
-cluster on EC2(Elastic Compute Cloud)~\cite{hid-sp18-511-www-ec2}
+cluster on EC2~\cite{hid-sp18-511-www-ec2}
 instances and perform various tasks on Apache
 Spark~\cite{hid-sp18-511-www-spark}.
 
 \section{Resources}
-This project will provide various option for deployment and
-configuration
+This project will provide various options for deployment and
+configuration.
 
 \begin{itemize}
 	\item Deploy Spark Cluster
