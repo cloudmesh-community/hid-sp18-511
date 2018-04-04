@@ -22,19 +22,21 @@
 
 This project is about developing a module for automated deployment of
 Apache Spark~\cite{hid-sp18-511-www-spark} cluster on AWS (Amazon Web
-Services)~\cite{hid-sp18-511-www-aws} EC2(Elastic Compute
+Services)~\cite{hid-sp18-511-www-aws} EC2 (Elastic Compute
 Cloud)~\cite{hid-sp18-511-www-ec2} instances on a single click. This
 module will take care of different infrastructure related items like
-provisioning of EC2~\cite{hid-sp18-511-www-ec2}
-instance, setting up the public/private key pair for secure connection,
-inbound/outbound traffic rules on provisioned machines to allow
-connectivity on various ports. This module will also perform Apache
+provisioning of EC2~\cite{hid-sp18-511-www-ec2} instance, setting up
+the public/private key pair for secure connection, inbound/outbound
+traffic rules on provisioned machines to allow connectivity on various
+ports. This module will also perform Apache
 Spark~\cite{hid-sp18-511-www-spark} installation on the provisioned
-EC2~\cite{hid-sp18-511-www-ec2} instances using
-master/worker model. One of the machine will work as a master node and
-other machines will work as worker node. The script will expose
-various options for Apache Spark~\cite{hid-sp18-511-www-spark} cluster deployment, execution of commands on
-Apache Spark~\cite{hid-sp18-511-www-spark} cluster, shutting off the machines and termination of machines.
+EC2~\cite{hid-sp18-511-www-ec2} instances using master/worker
+model. One of the machine will work as a master node and other
+machines will work as worker node. The script will expose various
+options for Apache Spark~\cite{hid-sp18-511-www-spark} cluster
+deployment, execution of commands on Apache
+Spark~\cite{hid-sp18-511-www-spark} cluster, shutting off the machines
+and termination of machines.
 
 \end{abstract}
 
@@ -45,33 +47,33 @@ Apache Spark~\cite{hid-sp18-511-www-spark} cluster, shutting off the machines an
 
 \section{Introduction}
 
-AWS~\cite{hid-sp18-511-www-aws} is a cloud service
-provider that provides different types of on-demand services to the
-customers. AWS~\cite{hid-sp18-511-www-aws} provides
-various services to thw customers in Infrastructure as a Service, Platform as a
-Service and Software as a Service categories. EC2~\cite{hid-sp18-511-www-ec2} is a compute service provided by
-AWS~\cite{hid-sp18-511-www-aws} for easy and fast
-provisioning of compute resources of different type based on the
-requirement. Apache Spark~\cite{hid-sp18-511-www-spark} is an open source
-project which use in-memory data for fast and optimized operation and
-use Apache Hadoop~\cite{hid-sp18-511-www-hadoop} as underlying
-framework. Ansible~\cite{hid-sp18-511-www-ansible} is an open source automation platform
-for configuration management and application
+AWS~\cite{hid-sp18-511-www-aws} is a cloud service provider that
+provides different types of on-demand services to the
+customers. AWS~\cite{hid-sp18-511-www-aws} provides various services
+to the customers in Infrastructure as a Service, Platform as a Service
+and Software as a Service categories. EC2~\cite{hid-sp18-511-www-ec2}
+is a compute service provided by AWS~\cite{hid-sp18-511-www-aws} for
+easy and fast provisioning of compute resources of different type
+based on the requirement. Apache Spark~\cite{hid-sp18-511-www-spark}
+is an open source project which use in-memory data for fast and
+optimized operation and use Apache
+Hadoop~\cite{hid-sp18-511-www-hadoop} as underlying
+framework. Ansible~\cite{hid-sp18-511-www-ansible} is an open source
+automation platform for configuration management and application
 deployment. Ansible~\cite{hid-sp18-511-www-ansible} tool will be used
 in this project to deploy Apache Spark~\cite{hid-sp18-511-www-spark}
-cluster on EC2~\cite{hid-sp18-511-www-ec2}
-instances and perform various tasks on Apache
-Spark~\cite{hid-sp18-511-www-spark}.
+cluster on EC2~\cite{hid-sp18-511-www-ec2} instances and perform
+various tasks on Apache Spark~\cite{hid-sp18-511-www-spark}.
 
 \section{Resources}
 This project will provide various options for deployment and
 configuration.
 
 \begin{itemize}
-	\item Deploy Spark Cluster
-        \item Shutdown Spark Cluster
-        \item Terminate Spark Cluster
-        \item Execute Command on Spark Cluster
+	\item Deploy Apache Spark Cluster
+        \item Shutdown Apache Spark Cluster
+        \item Terminate Apache Spark Cluster
+        \item Execute Command on Apache Spark Cluster
 \end{itemize}
 
 \begin{acks}
