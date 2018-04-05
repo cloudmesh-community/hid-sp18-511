@@ -14,8 +14,8 @@
 * Assignment 7.18(New Technology Abstract): Technology Abstract - 01/29/2018. Review comments implemented on 02/25/2018. Updated contents of Google Doc on 02/25/2018
 * Assignment 7.19(New Technology Abstract): Technology Abstract upload to GitHub - 02/17/2018. Review comments implemented on 02/25/2018. Updated contents of tex files on 02/25/2018
 * Assignment 7.20(Cloud Accounts): AccountCreation: github.com - 01/27/2018
-* Assignment 7.21(Cloud Accounts): Account Creation: chameleoncloud.org - 01/27/2018
-* Assignment 7.22(Cloud Accounts): Account Creation: futuresystems.org - 01/27/2018
+* Assignment 7.21(Cloud Accounts): Account Creation: futuresystems.org - 01/27/2018
+* Assignment 7.22(Cloud Accounts): Account Creation: chameleoncloud.org - 01/27/2018
 * Assignment 7.23(Cloud Accounts): Account Creation: Fill the document - 01/27/2018
 * Assignment 7.24(Entry Survey): Cloud Class Survey -  - 01/28/2018
 * Assignment 7.25(Account Setup): Github Setup - 02/05/2018
@@ -25,15 +25,15 @@
 * Assignment 7.30(Swagger): This is for residential students - N/A
 * Assignment 7.31(Swagger): Cloud and Big Data Rest Service with Swagger - 03/05/2018
 * Assignment 7.32(Swagger): Cloud and Big Data Rest Service with Swagger - Part B- 03/10/2018
-* Assignment 7.32(Swagger): Cloud and Big Data Rest Service with Swagger - Part C- 03/10/2018
+* Assignment 7.33(Swagger): Cloud and Big Data Rest Service with Swagger - Part C- 03/10/2018
 * Assignment: 7.34(Technology Paper) - 03/20
 * Assignment: 7.35(Tutorial) - 03/26
 
 #	Assignments in progress
 * Assignment: 7.29(AI Cloud Service) - started working on this
-* Assignment: Project.
-  * worked on the proposal document, started coding (created Ansibles tasks for setting up the secuity group, setup public and private key, provisioning of EC2 instances - 04/03/2018
-
+* Assignment: 7.36(Project)
+  * Worked on the proposal document, started coding (created Ansibles tasks for setting up the secuity group, setup public and private key, provisioning of EC2 instances - 04/03/2018
+  * Implemented review comments in the proposal document
 
 #	Handbook
 ##	Communication Track
