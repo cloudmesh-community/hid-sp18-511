@@ -55,8 +55,7 @@
     -   name: Add the newly created EC2 instance for Spark master to host group
         lineinfile: 
                 dest="{{ hostpath }}"
-                regexp="[sparkmaster]"
-                insertafter="[sparkmaster]" 
+                insertafter="\[sparkmaster\]" 
                 line="{{ item.public_ip }}"
                 state=present
         with_items: "{{ ec2.instances }}"
@@ -83,8 +82,7 @@
     -   name: Add the newly created EC2 instances for Spark worker to host group
         lineinfile: 
                 dest="{{ hostpath }}"
-                regexp="[sparkworker]"
-                insertafter="[sparkworker]"                
+                insertafter="\[sparkworker\]"                
                 line="{{ item.public_ip }}"
                 state=present
         with_items: "{{ ec2.instances }}"
