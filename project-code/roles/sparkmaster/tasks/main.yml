@@ -53,10 +53,8 @@
         become: true  
   
     -   name: Ensure self dns is present in /etc/hosts
-        lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ hostvars[item].ansible_default_ipv4.address }} {{item}}" state=present        
-        become: true
-        with_items:
-            - "{{ ansible_nodename }}"
+        lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ ansible_default_ipv4['address'] }} {{item}}" state=present        
+        become: true        
             
     -   name: Copy master systemd start scripts
         template:
