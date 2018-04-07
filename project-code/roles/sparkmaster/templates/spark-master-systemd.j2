@@ -6,9 +6,9 @@ After=network.target network-online.target
 [Service]
 Type=forking
 User=spark
-WorkingDirectory={{ spark.working_dir }}
-ExecStart={{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/sbin/start-master.sh 
-ExecStop={{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/sbin/stop-master.sh
+WorkingDirectory={{ spark_working_dir }}
+ExecStart={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/start-master.sh 
+ExecStop={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/stop-master.sh
 Restart=on-abort
 
 [Install]
