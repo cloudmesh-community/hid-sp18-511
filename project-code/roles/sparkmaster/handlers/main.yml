@@ -1,2 +1,11 @@
 ---
 # handlers file for sparkmaster
+
+- name: start spark-master
+  service: name=spark-master state=started enabled=yes daemon_reload=yes
+
+- name: stop spark-master
+  service: name=spark-master state=stopped enabled=no 
+
+- name: restart spark-master
+  service: name=spark-master state=restarted enabled=yes
