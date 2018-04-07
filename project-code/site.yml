@@ -1,5 +1,6 @@
 ---
-#Provision EC2 instances
+#Provision EC2 instances & install Spark
 
-    -   hosts: localhost
-        roles: provisionec2
+- hosts: localhost
+  roles: 
+    - provisionec2
