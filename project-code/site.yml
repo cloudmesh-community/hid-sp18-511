@@ -5,6 +5,6 @@
   roles: 
     - provisionec2
 
-- hosts: sparkmaster
+- hosts: tag_Name_sparkmaster
   roles: 
     - sparkmaster

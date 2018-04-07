@@ -73,7 +73,7 @@
             instance_type: "{{ instance_type }}"
             image: "{{ ami_image }}"
             instance_tags:
-                Name: sparworker
+                Name: sparkworker
             wait: yes
             count: 2                        
         register: ec2
