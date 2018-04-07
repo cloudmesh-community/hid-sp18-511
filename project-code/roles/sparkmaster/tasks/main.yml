@@ -37,7 +37,7 @@
         
     -   name: create systemd directory
         file:
-            path: "{{ systemd }}"
+            path: "{{ systemd_dir }}"
             state: directory
             owner: spark
             group: spark
