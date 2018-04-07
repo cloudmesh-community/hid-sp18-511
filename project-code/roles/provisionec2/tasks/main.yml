@@ -37,7 +37,7 @@
             content: "{{ ec2_key.key.private_key }}"
             dest: ./{{ project_name }}_{{ env }}_key-private.pem
             mode: 0600
-        when: "{{ ec2_key.changed }}"
+        when: ec2_key.changed
                 
     -   name: Create an EC2 instance for Spark master
         ec2:
