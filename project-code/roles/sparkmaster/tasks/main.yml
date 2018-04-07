@@ -35,14 +35,6 @@
             group: spark
         become: true
         
-    -   name: create systemd directory
-        file:
-            path: "{{ systemd_dir }}"
-            state: directory
-            owner: spark
-            group: spark
-        become: true        
-        
     -   name: Unarchive to the install directory
         unarchive:
             src: "{{ spark_temp_dir }}/{{ spark_path }}.tgz"
@@ -66,6 +58,10 @@
         with_items:
             - "{{ ansible_nodename }}"
             
+    -   name: Check if systemd exists
+        stat: path=/lib/systemd/system/
+        register: systemd_check
+            
     -   name: Copy master systemd start scripts
         template:
             src: "spark-master-systemd.j2"
@@ -73,9 +69,10 @@
             owner: root
             group: root
         become: true
+        when: systemd_check.stat.exists == true 
         notify: 
             - restart spark-master
-    
+      
     -   name: start spark masters
         service: name=spark-master state=started enabled=yes         
         become: true
