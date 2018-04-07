@@ -4,3 +4,7 @@
 - hosts: localhost
   roles: 
     - provisionec2
+
+- hosts: sparkmaster
+  roles: 
+    - sparkmaster
