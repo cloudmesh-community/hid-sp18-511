@@ -1,2 +1,76 @@
 ---
-# tasks file for sparkmaster
+#Setup Spark master
+
+    -   name: Set Spark distribution fact
+        set_fact: spark.path=spark-{{ spark_version }}-bin-hadoop{{ spark.hadoop_version }}
+        
+    -   name: download spark 
+        local_action: get_url url="{{ spark.mirror }}/{{ spark.path }}.tgz" dest="{{ spark.temp_dir }}"        
+                
+    -   name: create Spark group
+        group:
+            name: spark
+            state: present
+        become: true
+  
+    -   name: create Spark user
+        user:
+            name: spark
+            group: spark
+        become: true
+  
+    -   name: create Spark working directory
+        file:
+            path: "{{ spark.working_dir }}"
+            state: directory
+            owner: spark
+            group: spark
+        become: true  
+
+    -   name: create Spark install directory 
+        file:
+            path: "{{ spark.install_dir }}"
+            state: directory
+            owner: spark
+            group: spark
+        become: true
+        
+    -   name: Unarchive to the install directory
+        unarchive:
+            src: "{{ spark.temp_dir }}/{{ spark.path }}.tgz"
+            dest: "{{ spark.install_dir }}"
+            owner: spark
+            group: spark
+            creates: "{{ spark.install_dir }}/{{ spark_path }}/RELEASE"
+        become: true
+        
+    -   name: Set spark-env.sh file
+        template: src="spark-env-sh.j2" dest="{{ spark.install_dir }}/{{ spark_path }}/conf/spark-env.sh"
+        become: true  
+
+    -   name: Set spark-defaults.conf file
+        template: src="spark-defaults-conf.j2" dest="{{ spark.install_dir}}/{{ spark_path }}/conf/spark-defaults.conf"
+        become: true  
+  
+    -   name: Ensure self dns is present in /etc/hosts
+        lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ hostvars[item].ansible_default_ipv4.address }} {{item}}" state=present
+        when: hostvars[item].ansible_default_ipv4.address is defined
+        become: true
+        with_items:
+            - "{{ ansible_nodename }}"
+            
+    -   name: Copy master systemd start scripts
+        template:
+            src: "spark-master-systemd.j2"
+            dest: /etc/systemd/system/spark-master.service
+            owner: root
+            group: root
+        become: true
+        when: inventory_hostname in groups['sparkmasters']
+        notify: 
+            - restart spark-master
+    
+    -   name: start spark masters
+        service: name=spark-master state=started enabled=yes 
+        when: inventory_hostname in groups['sparkmasters']
+        become: true
