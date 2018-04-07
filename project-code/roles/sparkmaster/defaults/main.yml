@@ -1,7 +1,7 @@
 spark_version: 2.3.0
-spark.hadoop_version: 2.7
-spark.temp_dir: /tmp
-spark.working_dir: /var/lib/spark
-spark.install_dir: /opt/spark
-spark.mirror: http://apache.claz.org/spark/spark-2.3.0/
-spark.master_work_port: 7078
+spark_hadoop_version: 2.7
+spark_temp_dir: /tmp
+spark_working_dir: /var/lib/spark
+spark_install_dir: /opt/spark
+spark_mirror: http://apache.claz.org/spark/spark-2.3.0/
+spark_master_work_port: 7078

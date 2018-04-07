@@ -2,10 +2,10 @@
 #Setup Spark master
 
     -   name: Set Spark distribution fact
-        set_fact: spark.path=spark-{{ spark_version }}-bin-hadoop{{ spark.hadoop_version }}
+        set_fact: spark_path=spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}
         
     -   name: download spark 
-        local_action: get_url url="{{ spark.mirror }}/{{ spark.path }}.tgz" dest="{{ spark.temp_dir }}"        
+        local_action: get_url url="{{ spark_mirror }}/{{ spark_path }}.tgz" dest="{{ spark_temp_dir }}"        
                 
     -   name: create Spark group
         group:
@@ -21,7 +21,7 @@
   
     -   name: create Spark working directory
         file:
-            path: "{{ spark.working_dir }}"
+            path: "{{ spark_working_dir }}"
             state: directory
             owner: spark
             group: spark
@@ -29,7 +29,7 @@
 
     -   name: create Spark install directory 
         file:
-            path: "{{ spark.install_dir }}"
+            path: "{{ spark_install_dir }}"
             state: directory
             owner: spark
             group: spark
@@ -37,19 +37,19 @@
         
     -   name: Unarchive to the install directory
         unarchive:
-            src: "{{ spark.temp_dir }}/{{ spark.path }}.tgz"
-            dest: "{{ spark.install_dir }}"
+            src: "{{ spark_temp_dir }}/{{ spark_path }}.tgz"
+            dest: "{{ spark_install_dir }}"
             owner: spark
             group: spark
-            creates: "{{ spark.install_dir }}/{{ spark_path }}/RELEASE"
+            creates: "{{ spark_install_dir }}/{{ spark_path }}/RELEASE"
         become: true
         
     -   name: Set spark-env.sh file
-        template: src="spark-env-sh.j2" dest="{{ spark.install_dir }}/{{ spark_path }}/conf/spark-env.sh"
+        template: src="spark-env-sh.j2" dest="{{ spark_install_dir }}/{{ spark_path }}/conf/spark-env.sh"
         become: true  
 
     -   name: Set spark-defaults.conf file
-        template: src="spark-defaults-conf.j2" dest="{{ spark.install_dir}}/{{ spark_path }}/conf/spark-defaults.conf"
+        template: src="spark-defaults-conf.j2" dest="{{ spark_install_dir}}/{{ spark_path }}/conf/spark-defaults.conf"
         become: true  
   
     -   name: Ensure self dns is present in /etc/hosts
