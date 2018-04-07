@@ -1,0 +1,5 @@
+---
+#Provision EC2 instances
+
+    -   hosts: localhost
+        roles: provisionec2
