@@ -35,6 +35,14 @@
             group: spark
         become: true
         
+    -   name: create systemd directory
+        file:
+            path: "{{ systemd }}"
+            state: directory
+            owner: spark
+            group: spark
+        become: true        
+        
     -   name: Unarchive to the install directory
         unarchive:
             src: "{{ spark_temp_dir }}/{{ spark_path }}.tgz"
