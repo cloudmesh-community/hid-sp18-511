@@ -8,4 +8,4 @@
   service: name=spark-master state=stopped enabled=no 
 
 - name: restart spark-master
-  service: name=spark-master state=restarted enabled=yes
+  service: name=spark-master state=restarted enabled=yes daemon_reload=yes

@@ -58,10 +58,14 @@
         with_items:
             - "{{ ansible_nodename }}"
             
-    -   name: Check if systemd exists
-        stat: path=/lib/systemd/system/
-        register: systemd_check
-            
+    -   name: Create systemd directory
+        file:
+            path: /etc/systemd/system/
+            state: directory
+            owner: spark
+            group: spark
+        become: true  
+        
     -   name: Copy master systemd start scripts
         template:
             src: "spark-master-systemd.j2"
@@ -69,10 +73,9 @@
             owner: root
             group: root
         become: true
-        when: systemd_check.stat.exists == true 
         notify: 
             - restart spark-master
       
-    -   name: start spark masters
-        service: name=spark-master state=started enabled=yes         
+    -   name: Start spark master
+        service: name=spark-master state=started enabled=yes daemon_reload=yes
         become: true
