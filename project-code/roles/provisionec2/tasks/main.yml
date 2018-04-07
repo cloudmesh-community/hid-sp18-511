@@ -48,7 +48,7 @@
             instance_tags:
                 Name: sparkmaster
             wait: yes
-            count: 0                        
+            count: 1                        
         register: ec2
         
     -   name: Add the newly created EC2 instance for Spark master to host group
