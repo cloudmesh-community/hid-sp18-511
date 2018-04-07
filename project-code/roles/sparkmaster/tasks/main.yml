@@ -54,7 +54,7 @@
   
     -   name: Ensure self dns is present in /etc/hosts
         lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ hostvars[item].ansible_default_ipv4.address }} {{item}}" state=present
-        when: "{{ hostvars[item].ansible_default_ipv4.address }}" is defined
+        when: hostvars[item].ansible_default_ipv4.address is defined
         become: true
         with_items:
             - "{{ ansible_nodename }}"
@@ -66,11 +66,9 @@
             owner: root
             group: root
         become: true
-        when: inventory_hostname in groups['sparkmasters']
         notify: 
             - restart spark-master
     
     -   name: start spark masters
-        service: name=spark-master state=started enabled=yes 
-        when: inventory_hostname in groups['sparkmasters']
+        service: name=spark-master state=started enabled=yes         
         become: true
