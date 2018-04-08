@@ -11,4 +11,4 @@
     
 - hosts: sparkworker
   roles: 
-    - sparworker
+    - sparkworker
