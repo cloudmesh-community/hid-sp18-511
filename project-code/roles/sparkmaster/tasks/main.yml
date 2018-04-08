@@ -77,5 +77,5 @@
             - restart spark-master
       
     -   name: Start spark master
-        service: name=spark-master state=started enabled=yes daemon_reload=yes
+        systemd: name=spark-master state=started enabled=yes daemon_reload=yes
         become: true
