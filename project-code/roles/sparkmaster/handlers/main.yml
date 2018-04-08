@@ -3,9 +3,12 @@
 
 - name: start spark-master
   service: name=spark-master state=started enabled=yes daemon_reload=yes
+  become: true
 
 - name: stop spark-master
   service: name=spark-master state=stopped enabled=no 
+  become: true
 
 - name: restart spark-master
   service: name=spark-master state=restarted enabled=yes daemon_reload=yes
+  become: true
