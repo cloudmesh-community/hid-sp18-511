@@ -1,2 +1,97 @@
 ---
-# tasks file for sparkworker
+#Setup Spark worker
+
+    -   name: Set Spark distribution fact
+        set_fact: spark_path=spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}
+        
+    -   name: download spark 
+        local_action: get_url url="{{ spark_mirror }}/{{ spark_path }}.tgz" dest="{{ spark_temp_dir }}"        
+                
+    -   name: create Spark group
+        group:
+            name: spark
+            state: present
+        become: true
+  
+    -   name: create Spark user
+        user:
+            name: spark
+            group: spark
+        become: true
+  
+    -   name: create Spark working directory
+        file:
+            path: "{{ spark_working_dir }}"
+            state: directory
+            owner: spark
+            group: spark
+        become: true  
+
+    -   name: create Spark install directory 
+        file:
+            path: "{{ spark_install_dir }}"
+            state: directory
+            owner: spark
+            group: spark
+        become: true
+        
+    -   name: Unarchive to the install directory
+        unarchive:
+            src: "{{ spark_temp_dir }}/{{ spark_path }}.tgz"
+            dest: "{{ spark_install_dir }}"
+            owner: spark
+            group: spark
+            creates: "{{ spark_install_dir }}/{{ spark_path }}/RELEASE"
+        become: true
+        
+    -   name: Set spark-env.sh file
+        template: src="spark-env-sh.j2" dest="{{ spark_install_dir }}/{{ spark_path }}/conf/spark-env.sh"
+        become: true  
+
+    -   name: Set spark-defaults.conf file
+        template: src="spark-defaults-conf.j2" dest="{{ spark_install_dir}}/{{ spark_path }}/conf/spark-defaults.conf"
+        become: true  
+  
+    -   name: Ensure self dns is present in /etc/hosts
+        lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ ansible_default_ipv4['address'] }} {{item}}" state=present        
+        become: true
+        with_items:
+            - "{{ ansible_nodename }}"
+            
+    -   name: Create systemd directory
+        file:
+            path: /etc/systemd/system/
+            state: directory
+            owner: spark
+            group: spark
+        become: true  
+        
+    -   name: Add Oracle Java Repository
+        become: yes
+        apt_repository: repo='ppa:webupd8team/java'
+    
+    -   name: Accept Java 8 License
+        become: yes
+        debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+    -   name: Install Oracle Java 8
+        become: yes
+        apt: name={{item}} state=latest
+        with_items:
+            - oracle-java8-installer
+            - ca-certificates
+            - oracle-java8-set-default
+        
+    -   name: Copy worker systemd start scripts
+        template:
+            src: "spark-worker-systemd.j2"
+            dest: /etc/systemd/system/spark-worker.service
+            owner: root
+            group: root
+        become: true
+        notify: 
+            - restart spark-worker
+      
+    -   name: Start spark worker
+        service: name=spark-worker state=started enabled=yes daemon_reload=yes
+        become: true

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export JAVA_TOOL_OPTS=-Djava.net.preferIPv4Stack=true
+export SPARK_MASTER_HOST={{ ansible_default_ipv4['address'] }}
+export SPARK_LOCAL_IP={{ ansible_default_ipv4['address'] }}
+export SPARK_MASTER_PORT={{ spark_master_work_port }}

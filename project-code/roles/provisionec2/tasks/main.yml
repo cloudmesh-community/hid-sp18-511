@@ -86,7 +86,7 @@
             instance_tags:
                 Name: sparkworker
             wait: yes
-            count: 0                        
+            count: 1                        
         register: ec2
         
     -   name: Add the newly created EC2 instances for Spark worker to host group

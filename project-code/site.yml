@@ -8,3 +8,7 @@
 - hosts: sparkmaster
   roles: 
     - sparkmaster
+    
+- hosts: sparkworker
+  roles: 
+    - sparworker
