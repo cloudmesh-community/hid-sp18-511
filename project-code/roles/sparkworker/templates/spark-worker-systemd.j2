@@ -5,9 +5,9 @@ After=network.target network-online.target
 
 [Service]
 User=spark
-WorkingDirectory={{ spark.working_dir }}
-ExecStart={{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/sbin/start-slave.sh spark://{{ groups["spark-masters"] | join(":{0},".format(spark.master_work_port)) }}:{{ spark.master_work_port }}
-ExecStop={{ spark.install_dir }}/spark-{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}/sbin/stop-slave.sh
+WorkingDirectory={{ spark_working_dir }}
+ExecStart={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/start-slave.sh spark://{{ groups["spark-masters"] | join(":{0},".format(spark_master_work_port)) }}:{{ spark_master_work_port }}
+ExecStop={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/stop-slave.sh
 Restart=on-abort
 
 [Install]
