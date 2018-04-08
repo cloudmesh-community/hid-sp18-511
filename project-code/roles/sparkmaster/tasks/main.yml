@@ -66,11 +66,8 @@
             group: spark
         become: true
 
-    -   name: Check if apt-get is installed
-        command: dpkg-query -W apt-get
-        register: apt-get_check_deb
-        failed_when: {{ apt-get_check_deb.rc }} > 1
-        changed_when: {{ apt-get_check_deb.rc }} == 1
+    -   name: Get aptitude for upgrade
+        apt: pkg=aptitude state=present
         
     -   name: Install the package "systemd"
         apt:
