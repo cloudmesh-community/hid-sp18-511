@@ -64,7 +64,10 @@
             state: directory
             owner: spark
             group: spark
-        become: true  
+        become: true
+
+    -   name: Install apt-get package
+        action: {{ ansible_pkg_mgr }} name=apt-get state=present update_cache=yes        
         
     -   name: Install the package "systemd"
         apt:
