@@ -65,6 +65,10 @@
             owner: spark
             group: spark
         become: true  
+        
+    -   name: Add Oracle Java Repository
+        become: yes
+        apt_repository: repo='ppa:webupd8team/java
     
     -   name: Accept Java 8 License
         become: yes
