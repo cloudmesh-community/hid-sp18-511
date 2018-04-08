@@ -2,13 +2,13 @@
 # handlers file for sparkslave
 
 - name: start spark-worker
-  service: name=spark-slave state=started enabled=yes daemon_reload=yes
+  service: name=spark-worker state=started enabled=yes daemon_reload=yes
   become: true
 
 - name: stop spark-worker
-  service: name=spark-slave state=stopped enabled=no 
+  service: name=spark-worker state=stopped enabled=no 
   become: true
 
 - name: restart spark-worker
-  service: name=spark-slave state=restarted enabled=yes daemon_reload=yes
+  service: name=spark-worker state=restarted enabled=yes daemon_reload=yes
   become: true

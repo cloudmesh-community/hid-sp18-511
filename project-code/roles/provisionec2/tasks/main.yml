@@ -20,7 +20,22 @@
                   from_port: 8080
                   to_port: 8080
                   cidr_ip: 0.0.0.0/0
-                  rule_desc: allow all on port 8080
+                  rule_desc: allow all on port 8080 for master UI
+                - proto: tcp
+                  from_port: 8181
+                  to_port: 8181
+                  cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 8181 for worker UI
+                - proto: tcp
+                  from_port: 7077
+                  to_port: 7077
+                  cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 7077 for master node
+                - proto: tcp
+                  from_port: 7178
+                  to_port: 7178
+                  cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 7178 for worker node
                 - proto: tcp
                   from_port: 443
                   to_port: 443
