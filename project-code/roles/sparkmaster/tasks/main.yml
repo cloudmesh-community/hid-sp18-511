@@ -64,13 +64,10 @@
             state: directory
             owner: spark
             group: spark
-        become: true
-
-    -   name: Get aptitude for upgrade
-        apt: pkg=aptitude state=present
-        
+        become: true  
+       
     -   name: Install the package "systemd"
-        apt:
+        yum:
             name: systemd
             state: present
         
