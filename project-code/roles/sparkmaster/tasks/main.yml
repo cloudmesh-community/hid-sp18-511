@@ -66,9 +66,9 @@
             group: spark
         become: true  
         
-    -   name: Install the package "systemctl"
+    -   name: Install the package "systemd"
         apt:
-            name: systemctl
+            name: systemd
             state: present
         
     -   name: Copy master systemd start scripts
