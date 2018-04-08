@@ -65,11 +65,7 @@
             owner: spark
             group: spark
         become: true  
-       
-    -   name: Install the package "systemd"
-        yum:
-            name: systemd
-            state: present
+    
         
     -   name: Copy master systemd start scripts
         template:
@@ -82,5 +78,5 @@
             - restart spark-master
       
     -   name: Start spark master
-        systemd: name=spark-master state=started enabled=yes daemon_reload=yes
+        service: name=spark-master state=started enabled=yes daemon_reload=yes
         become: true
