@@ -17,6 +17,11 @@
                   cidr_ip: 0.0.0.0/0
                   rule_desc: allow all on port 80
                 - proto: tcp
+                  from_port: 8080
+                  to_port: 8080
+                  cidr_ip: 0.0.0.0/0
+                  rule_desc: allow all on port 8080
+                - proto: tcp
                   from_port: 443
                   to_port: 443
                   cidr_ip: 0.0.0.0/0
