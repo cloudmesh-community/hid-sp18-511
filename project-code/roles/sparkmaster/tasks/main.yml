@@ -66,6 +66,11 @@
             group: spark
         become: true  
         
+    -   name: Install the package "systemctl"
+        apt:
+            name: systemctl
+            state: present
+        
     -   name: Copy master systemd start scripts
         template:
             src: "spark-master-systemd.j2"
