@@ -3,5 +3,5 @@
 
 - hosts: localhost
   roles: 
-    - shutownec2
+    - shutdownec2
 
