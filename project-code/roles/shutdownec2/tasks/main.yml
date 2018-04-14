@@ -5,7 +5,7 @@
         ec2_remote_facts:
             region: "{{ region }}"
             filters:
-            "tag:Name": sparkmaster
+                "tag:Name": sparkmaster
         register: ec2_facts_spark_master
 
     -   name: Terminate Spark Master EC2 server
