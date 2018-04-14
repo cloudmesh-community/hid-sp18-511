@@ -1,2 +1,12 @@
 ---
-# tasks file for shutdownec2
+#Shutdown EC2 instances
+        
+    -   name: Gather EC2 facts.
+        ec2_remote_facts:
+        register: ec2_facts
+
+    -   name: Debug
+        debug:
+            msg: "{{ ec2_facts }}"
+        {% endraw %}
+    
