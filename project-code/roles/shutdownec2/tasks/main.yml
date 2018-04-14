@@ -1,12 +1,17 @@
 ---
 #Shutdown EC2 instances
         
-    -   name: Gather EC2 facts.
+    -   name: Gather Spark Master EC2 facts
         ec2_remote_facts:
             region: "{{ region }}"
-        register: ec2_facts
+            filters:
+            "tag:Name": sparkmaster
+        register: ec2_facts_spark_master
 
-    -   name: Debug
-        debug:
-            msg: "{{ ec2_facts }}"        
+    -   name: Terminate Spark Master EC2 server
+        ec2:
+            region: "{{ region }}"
+            instance_ids: "{{ item.id }}"
+            state: 'stopped'
+        with_items: "{{ ec2_facts_spark_master }}"      
     
