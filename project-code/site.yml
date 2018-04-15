@@ -4,15 +4,18 @@
 - hosts: localhost
   roles: 
     - { role: provisionec2, tags: ["provision"] }
+    gather_facts: False
 
 - hosts: sparkmaster
   roles: 
     - { role: sparkmaster, tags: ["provision"] }    
-    
+  gather_facts: False
+  
 - hosts: sparkworker
   roles: 
     - { role: sparkworker, tags: ["provision"] }
-
+  gather_facts: False
+  
 #Shutdown EC2 instances 
 
 - hosts: localhost
