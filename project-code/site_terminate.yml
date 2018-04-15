@@ -1,7 +1,0 @@
----
-#Terminate EC2 instances 
-
-- hosts: localhost
-  roles: 
-    - terminateec2
-

@@ -1,7 +1,0 @@
----
-#Shutdown EC2 instances 
-
-- hosts: localhost
-  roles: 
-    - shutdownec2
-
