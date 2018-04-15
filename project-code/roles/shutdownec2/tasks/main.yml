@@ -15,3 +15,17 @@
             state: 'stopped'
         with_items: "{{ ec2_facts_spark_master.instances }}"      
     
+    -   name: Gather Spark Worker EC2 facts
+        ec2_remote_facts:
+            region: "{{ region }}"
+            filters:
+                "tag:Name": sparkworker
+        register: ec2_facts_spark_worker
+
+    -   name: Terminate Spark Worker EC2 server
+        ec2:
+            region: "{{ region }}"
+            instance_ids: "{{ item.id }}"
+            state: 'stopped'
+        with_items: "{{ ec2_facts_spark_worker.instances }}"      
+    
