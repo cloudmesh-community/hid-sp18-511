@@ -13,6 +13,7 @@
             region: "{{ region }}"
             instance_ids: "{{ item.id }}"
             state: 'absent'
+            wait: yes
         with_items: "{{ ec2_facts_spark_master.instances }}"      
     
     -   name: Gather Spark Worker EC2 facts
@@ -27,5 +28,6 @@
             region: "{{ region }}"
             instance_ids: "{{ item.id }}"
             state: 'absent'
+            wait: yes
         with_items: "{{ ec2_facts_spark_worker.instances }}"      
     
