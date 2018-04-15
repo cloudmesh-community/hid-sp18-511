@@ -8,7 +8,7 @@
                 "tag:Name": sparkmaster
         register: ec2_facts_spark_master
 
-    -   name: Shudown Spark Master EC2 server
+    -   name: Shutdown Spark Master EC2 server
         ec2:
             region: "{{ region }}"
             instance_ids: "{{ item.id }}"
@@ -22,7 +22,7 @@
                 "tag:Name": sparkworker
         register: ec2_facts_spark_worker
 
-    -   name: Shudown Spark Worker EC2 server
+    -   name: Shutdown Spark Worker EC2 server
         ec2:
             region: "{{ region }}"
             instance_ids: "{{ item.id }}"
