@@ -86,8 +86,8 @@
         template:
             src: "spark-master-systemd.j2"
             dest: /etc/systemd/system/spark-master.service
-            owner: root
-            group: root
+            owner: spark
+            group: spark
         become: true        
       
     -   name: Start spark master
