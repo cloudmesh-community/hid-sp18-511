@@ -1,4 +1,4 @@
-project_name: ec2_spark_deploy
+project_name: ec2_spark
 region: us-west-2
 env: stg
 hostpath: inventory/hosts
