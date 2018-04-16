@@ -91,7 +91,5 @@
         become: true        
       
     -   name: Start spark worker
-        service: name=spark-worker state=started enabled=yes daemon_reload=yes
-            owner: root
-            group: root
+        service: name=spark-worker state=started enabled=yes daemon_reload=yes            
         become: true
