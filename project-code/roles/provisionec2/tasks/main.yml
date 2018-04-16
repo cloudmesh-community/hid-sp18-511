@@ -5,6 +5,7 @@
         ec2_group:
             name: "{{ project_name }}_{{ env }}_security_group"
             description: "{{ project_name }}_{{ env }} security group"
+            region: "{{ region }}"
             rules:
                 - proto: tcp
                   from_port: 22
@@ -47,8 +48,9 @@
                   rule_desc: allow outbound to any port and machine
         register: basic_firewall
         
-    -   name: Create an EC2 key
+    -   name: Create an EC2 key        
         ec2_key:
+            region: "{{ region }}"
             name: "{{ project_name }}_{{ env }}_key"
         register: ec2_key
         
@@ -62,6 +64,7 @@
     -   name: Create an EC2 instance for Spark master
         ec2:
             key_name: "{{ project_name }}_{{ env }}_key"
+            region: "{{ region }}"
             group: "{{ project_name }}_{{ env }}_security_group"
             instance_type: "{{ instance_type }}"
             image: "{{ ami_image }}"
@@ -95,6 +98,7 @@
     -   name: Create an EC2 instance for Spark worker
         ec2:
             key_name: "{{ project_name }}_{{ env }}_key"   
+            region: "{{ region }}"
             group: "{{ project_name }}_{{ env }}_security_group"
             instance_type: "{{ instance_type }}"
             image: "{{ ami_image }}"
