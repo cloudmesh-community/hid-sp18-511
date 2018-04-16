@@ -88,9 +88,7 @@
             dest: /etc/systemd/system/spark-master.service
             owner: root
             group: root
-        become: true
-        notify: 
-            - restart spark-master
+        become: true        
       
     -   name: Start spark master
         service: name=spark-master state=started enabled=yes daemon_reload=yes

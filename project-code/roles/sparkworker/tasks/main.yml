@@ -88,9 +88,7 @@
             dest: /etc/systemd/system/spark-worker.service
             owner: root
             group: root
-        become: true
-        notify: 
-            - restart spark-worker
+        become: true        
       
     -   name: Start spark worker
         service: name=spark-worker state=started enabled=yes daemon_reload=yes
