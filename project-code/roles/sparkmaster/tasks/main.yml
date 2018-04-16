@@ -86,10 +86,12 @@
         template:
             src: "spark-master-systemd.j2"
             dest: /etc/systemd/system/spark-master.service
-            owner: spark
-            group: spark
+            owner: root
+            group: root
         become: true        
       
     -   name: Start spark master
         service: name=spark-master state=started enabled=yes daemon_reload=yes
+        owner: root
+        group: root
         become: true
