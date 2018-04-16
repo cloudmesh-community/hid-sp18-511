@@ -92,6 +92,6 @@
       
     -   name: Start spark master
         service: name=spark-master state=started enabled=yes daemon_reload=yes
-        owner: root
-        group: root
+            owner: root
+            group: root
         become: true
