@@ -92,7 +92,7 @@
                 state=started
         with_items: "{{ ec2.instances }}"
         
-    -   name: Create two EC2 instances for Spark worker
+    -   name: Create an EC2 instance for Spark worker
         ec2:
             key_name: "{{ project_name }}_{{ env }}_key"   
             group: "{{ project_name }}_{{ env }}_security_group"
@@ -104,7 +104,7 @@
             count: 1                        
         register: ec2
         
-    -   name: Add the newly created EC2 instances for Spark worker to host group
+    -   name: Add the newly created EC2 instance for Spark worker to host group
         lineinfile: 
                 dest="{{ hostpath }}"
                 insertafter=\[sparkworker\]                
