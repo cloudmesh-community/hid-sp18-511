@@ -92,4 +92,4 @@
       
     -   name: Start spark master
         service: name=spark-master state=started enabled=yes daemon_reload=yes            
-        become: true
+        become_user: root
