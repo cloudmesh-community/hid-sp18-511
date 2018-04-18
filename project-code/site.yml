@@ -16,13 +16,6 @@
   roles: 
     - { role: sparkworker, tags: ["provision"] }
         
-  
-#Shutdown EC2 instances 
-
-- hosts: localhost
-  gather_facts: False
-  roles:     
-    - { role: shutdownec2, tags: ["shutdown"] }   
         
 #Terminate EC2 instances 
 

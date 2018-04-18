@@ -4,7 +4,7 @@ Wants=network.target network-online.target
 After=network.target network-online.target
 
 [Service]
-User=root
+User=spark
 WorkingDirectory={{ spark_working_dir }}
 ExecStart={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/start-slave.sh spark://{{ groups["sparkmaster"] | join(":{0},".format(spark_master_work_port)) }}
 ExecStop={{ spark_install_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/stop-slave.sh
