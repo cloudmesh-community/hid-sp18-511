@@ -23,7 +23,8 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data related
-tasks on Spark Cluster. This project also does the benchmarking of deployment, data processing and termination of the instances. 
+tasks on Spark Cluster. This project also does the benchmarking of
+deployment, data processing and termination of the instances.
 
 \end{abstract}
 
@@ -34,21 +35,22 @@ tasks on Spark Cluster. This project also does the benchmarking of deployment, d
 
 \section{Introduction}
 
-This module take care of different
-infrastructure related items like provisioning of EC2~\cite{hid-sp18-511-www-ec2} instances,
-setting up the public/private key pair for secure connection with EC2
-instance, inbound/outbound traffic rules on provisioned machines to
-allow connectivity on various ports. This module also perform
-Apache Spark installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2} instances using
-master/worker model. One of the machine will work as a master node and
-other machines will work as worker node. The script expose
-options for Apache Spark cluster deployment, execution of commands on
-Apache Spark cluster, and termination of machines. Benchmarking is done on measuring the deployment, data processing and termination of the instances.
+This module take care of different infrastructure related items like
+provisioning of EC2~\cite{hid-sp18-511-www-ec2} instances, setting up
+the public/private key pair for secure connection with EC2 instance,
+inbound/outbound traffic rules on provisioned machines to allow
+connectivity on various ports. This module also perform Apache Spark
+installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2}
+instances using master/worker model. One of the machine will work as a
+master node and other machines will work as worker node. The script
+expose options for Apache Spark cluster deployment, execution of
+commands on Apache Spark cluster, and termination of
+machines. Benchmarking is done on measuring the deployment, data
+processing and termination of the instances.
 
-Ansible~\cite{hid-sp18-511-www-ansible} automation tool
-is be used in this project to provision
-EC2~\cite{hid-sp18-511-www-ec2} instances, deploy Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster on
+Ansible~\cite{hid-sp18-511-www-ansible} automation tool is be used in
+this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances,
+deploy Apache Spark~\cite{hid-sp18-511-www-spark} cluster on
 EC2~\cite{hid-sp18-511-www-ec2} instances and perform various tasks on
 Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
 
@@ -67,7 +69,7 @@ AWS~\cite{hid-sp18-511-www-aws} is a secure cloud service provider
 that provide various on-demand services.
 AWS~\cite{hid-sp18-511-www-aws} provides service in Compute, Storage,
 Database, Migration, Networking and Content Delivery, Developer Tools
-and many more. 
+and many more.
 
 \paragraph{EC2}
 
@@ -77,18 +79,17 @@ demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
 terminated at run time based on the load of application. Adding or
 terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
-be done in few minutes. Two EC2 instances have been created in this project with following configuration 
+be done in few minutes. Two EC2 instances have been created in this
+project with following configuration
 
 \begin{table}[]
-	\centering
-	\caption{Resource Specification}
-	\label{t:resource-specification}
-	\begin{tabular}{|l|l|l|l|l|l|}
-		\hline
-		\textbf{Instance} & \textbf{Image}       				& \textbf{Size} & \textbf{RAM} & \textbf{VCPUs} & \textbf{Disk} \\ \hline
-		Node1             & Ubuntu Server 16.04(ami-4e79ed36)	& t2.micro      & 1GB          & 1              & 8GB          \\ \hline
-		Node2             & Ubuntu Server 16.04(ami-4e79ed36)	& t2.micro      & 1GB          & 1              & 8GB          \\ \hline
-	\end{tabular}
+	\centering \caption{Resource
+	Specification} \label{t:resource-specification} \begin{tabular}{|l|l|l|l|l|l|} \hline \textbf{Instance}
+	& \textbf{Image} & \textbf{Size} & \textbf{RAM}
+	& \textbf{VCPUs} & \textbf{Disk} \\ \hline Node1 & Ubuntu
+	Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 &
+	8GB \\ \hline Node2 & Ubuntu Server 16.04(ami-4e79ed36) &
+	t2.micro & 1GB & 1 & 8GB \\ \hline \end{tabular}
 \end{table}
 
 \paragraph{Security Group}
