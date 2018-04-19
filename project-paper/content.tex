@@ -23,16 +23,7 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data related
-tasks on Spark Cluster. This module will take care of different
-infrastructure related items like provisioning of EC2 instance,
-setting up the public/private key pair for secure connection with EC2
-instance, inbound/outbound traffic rules on provisioned machines to
-allow connectivity on various ports. This module will also perform
-Apache Spark installation on the provisioned EC2 instances using
-master/worker model. One of the machine will work as a master node and
-other machines will work as worker node. The script will expose
-options for Apache Spark cluster deployment, execution of commands on
-Apache Spark cluster, and termination of machines.
+tasks on Spark Cluster. This project also does the benchmarking of deployment, data processing and termination of the instances. 
 
 \end{abstract}
 
@@ -43,21 +34,19 @@ Apache Spark cluster, and termination of machines.
 
 \section{Introduction}
 
-AWS~\cite{hid-sp18-511-www-aws} is a cloud service provider that
-provides different types of on-demand services to the
-customers. AWS~\cite{hid-sp18-511-www-aws} provides various services
-to the customers in Infrastructure as a Service, Platform as a Service
-and Software as a Service categories. EC2~\cite{hid-sp18-511-www-ec2}
-is a compute service provided by AWS~\cite{hid-sp18-511-www-aws} for
-easy and fast provisioning of compute resources of different type
-based on the requirement. Apache Spark~\cite{hid-sp18-511-www-spark}
-is an open source project which use in-memory data for fast and
-optimized operation and use Apache
-Hadoop~\cite{hid-sp18-511-www-hadoop} as underlying
-framework. Ansible~\cite{hid-sp18-511-www-ansible} is an open source
-automation platform for configuration management and application
-deployment. Ansible~\cite{hid-sp18-511-www-ansible} automation tool
-will be used in this project to provision
+This module take care of different
+infrastructure related items like provisioning of EC2~\cite{hid-sp18-511-www-ec2} instances,
+setting up the public/private key pair for secure connection with EC2
+instance, inbound/outbound traffic rules on provisioned machines to
+allow connectivity on various ports. This module also perform
+Apache Spark installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2} instances using
+master/worker model. One of the machine will work as a master node and
+other machines will work as worker node. The script expose
+options for Apache Spark cluster deployment, execution of commands on
+Apache Spark cluster, and termination of machines. Benchmarking is done on measuring the deployment, data processing and termination of the instances.
+
+Ansible~\cite{hid-sp18-511-www-ansible} automation tool
+is be used in this project to provision
 EC2~\cite{hid-sp18-511-www-ec2} instances, deploy Apache
 Spark~\cite{hid-sp18-511-www-spark} cluster on
 EC2~\cite{hid-sp18-511-www-ec2} instances and perform various tasks on
@@ -66,13 +55,19 @@ Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
 \section{Technology Used}
 This section describes the technology used in the project.
 
+\begin{itemize}
+	\item[$\bullet$] AWS
+	\item[$\bullet$] Apache Spark
+	\item[$\bullet$] Ansible
+\end{itemize}
+
 \subsection{AWS}
 
 AWS~\cite{hid-sp18-511-www-aws} is a secure cloud service provider
 that provide various on-demand services.
 AWS~\cite{hid-sp18-511-www-aws} provides service in Compute, Storage,
 Database, Migration, Networking and Content Delivery, Developer Tools
-and many more.
+and many more. 
 
 \paragraph{EC2}
 
@@ -82,7 +77,19 @@ demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
 terminated at run time based on the load of application. Adding or
 terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
-be done in few minutes.
+be done in few minutes. Two EC2 instances have been created in this project with following configuration 
+
+\begin{table}[]
+	\centering
+	\caption{Resource Specification}
+	\label{t:resource-specification}
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		\textbf{Instance} & \textbf{Image}       				& \textbf{Size} & \textbf{RAM} & \textbf{VCPUs} & \textbf{Disk} \\ \hline
+		Node1             & Ubuntu Server 16.04(ami-4e79ed36)	& t2.micro      & 1GB          & 1              & 8GB          \\ \hline
+		Node2             & Ubuntu Server 16.04(ami-4e79ed36)	& t2.micro      & 1GB          & 1              & 8GB          \\ \hline
+	\end{tabular}
+\end{table}
 
 \paragraph{Security Group}
 
