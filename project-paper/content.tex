@@ -21,18 +21,18 @@
 \begin{abstract}
 
 This project is about developing a module for automated deployment of
-Apache Spark cluster on AWS (Amazon Web
-Services) EC2 (Elastic Compute
-Cloud) instances on a single click and perform various data related tasks on Spark. This
-module will take care of different infrastructure related items like
-provisioning of EC2 instance, setting up
-the public/private key pair for secure connection, inbound/outbound
+Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
+Cloud) instances on a single click and perform various data related
+tasks on Spark. This module will take care of different infrastructure
+related items like provisioning of EC2 instance, setting up the
+public/private key pair for secure connection, inbound/outbound
 traffic rules on provisioned machines to allow connectivity on various
-ports. This module will also perform Apache Spark installation on the provisioned
-EC2 instances using master/worker model. One of the machine will work as a
-master node and other machines will work as worker node. The script will expose 
-options for Apache Spark cluster deployment, execution of commands on Apache
-Spark cluster, and termination of machines.
+ports. This module will also perform Apache Spark installation on the
+provisioned EC2 instances using master/worker model. One of the
+machine will work as a master node and other machines will work as
+worker node. The script will expose options for Apache Spark cluster
+deployment, execution of commands on Apache Spark cluster, and
+termination of machines.
 
 \end{abstract}
 
@@ -66,30 +66,48 @@ This section describes the technology used in the project.
 
 \subsection{AWS}
 
-AWS~\cite{hid-sp18-511-www-aws} is a secure cloud service provider that provide various on-demand services. 
-AWS~\cite{hid-sp18-511-www-aws} provides service in Compute, Storage, Database, Migration, Networking and Content Delivery, Developer Tools and many more.
+AWS~\cite{hid-sp18-511-www-aws} is a secure cloud service provider
+that provide various on-demand services.
+AWS~\cite{hid-sp18-511-www-aws} provides service in Compute, Storage,
+Database, Migration, Networking and Content Delivery, Developer Tools
+and many more.
 
 \paragraph{EC2}
 
-EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and resizable compute service. EC2~\cite{hid-sp18-511-www-ec2} instances can be created on demand with different configuration of memory, CPU power and hard disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and terminated at run time based on the load of application. Adding or terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can be done in few minutes.
+EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and resizable compute
+service. EC2~\cite{hid-sp18-511-www-ec2} instances can be created on
+demand with different configuration of memory, CPU power and hard
+disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
+terminated at run time based on the load of application. Adding or
+terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
+be done in few minutes.
 
 \paragraph{Security Group}
 
-Security Group define the inbound and outbound allowed traffic for EC2~\cite{hid-sp18-511-www-ec2} instance.
-We can define the allowed incoming and outgoing traffic using Security Group and assign it to the instance.
-Security Group works as firewall and allow only permitted traffic on EC2~\cite{hid-sp18-511-www-ec2} instance.
+Security Group define the inbound and outbound allowed traffic for
+EC2~\cite{hid-sp18-511-www-ec2} instance.  We can define the allowed
+incoming and outgoing traffic using Security Group and assign it to
+the instance.  Security Group works as firewall and allow only
+permitted traffic on EC2~\cite{hid-sp18-511-www-ec2} instance.
 
 \paragraph{Key Pair}
 
-Key Pair is used to connect to the EC2~\cite{hid-sp18-511-www-ec2} instance. We need to create Key Pair and provide the private key to connect to the EC2~\cite{hid-sp18-511-www-ec2} instance.
+Key Pair is used to connect to the EC2~\cite{hid-sp18-511-www-ec2}
+instance. We need to create Key Pair and provide the private key to
+connect to the EC2~\cite{hid-sp18-511-www-ec2} instance.
 
 \subsection{Apache Spark}
 
-Apache Spark~\cite{hid-sp18-511-www-spark} is analytics engine for large scale data processing. Apache Spark~\cite{hid-sp18-511-www-spark} has high performance engine, very easy to use and provide option to plugin third party components.
+Apache Spark~\cite{hid-sp18-511-www-spark} is analytics engine for
+large scale data processing. Apache
+Spark~\cite{hid-sp18-511-www-spark} has high performance engine, very
+easy to use and provide option to plugin third party components.
 
 \subsection{Ansible}
 
-Ansible~\cite{hid-sp18-511-www-ansible} is open source software for the infrastructure automation, configuration management and application deployment.
+Ansible~\cite{hid-sp18-511-www-ansible} is open source software for
+the infrastructure automation, configuration management and
+application deployment.
 
 \section{Deploy Apache Spark Cluster}
 
@@ -107,10 +125,7 @@ Ansible~\cite{hid-sp18-511-www-ansible} is open source software for the infrastr
 \TODO{Add results in the table. Specify the duration taken in the deployment and termination of the instances}
 
 \begin{table}[hbt]
-	\centering
-	\caption{Results}\label{t:results-table}
-	\begin{tabular}{llll}
-	\end{tabular}
+	\centering \caption{Results}\label{t:results-table} \begin{tabular}{llll} \end{tabular}
 \end{table}
 
 
