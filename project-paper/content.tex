@@ -22,8 +22,8 @@
 
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
-Cloud) instances on a single click and perform various data related
-tasks on Spark Cluster. This project also does the benchmarking of
+Cloud) instances on a single click and perform various data processing related
+tasks on Spark Cluster. This project also does the benchmarking of duration of 
 deployment, data processing and termination of the instances.
 
 \end{abstract}
@@ -35,23 +35,23 @@ deployment, data processing and termination of the instances.
 
 \section{Introduction}
 
-This module take care of different infrastructure related items like
+This module does infrastructure related tasks of
 provisioning of EC2~\cite{hid-sp18-511-www-ec2} instances, setting up
 the public/private key pair for secure connection with EC2 instance,
 inbound/outbound traffic rules on provisioned machines to allow
 connectivity on various ports. This module also perform Apache Spark
 installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2}
 instances using master/worker model. One of the machine will work as a
-master node and other machines will work as worker node. The script
-expose options for Apache Spark cluster deployment, execution of
-commands on Apache Spark cluster, and termination of
-machines. Benchmarking is done on measuring the deployment, data
+master node and other machines will work as worker node. The module
+expose command line options for Apache Spark~\cite{hid-sp18-511-www-spark} cluster deployment, execution of
+commands on Apache Spark~\cite{hid-sp18-511-www-spark} cluster, and termination of
+machines. Benchmarking is done for measuring the deployment, data
 processing and termination of the instances.
 
 Ansible~\cite{hid-sp18-511-www-ansible} automation tool is be used in
 this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances,
 deploy Apache Spark~\cite{hid-sp18-511-www-spark} cluster on
-EC2~\cite{hid-sp18-511-www-ec2} instances and perform various tasks on
+EC2~\cite{hid-sp18-511-www-ec2} instances and perform various data processing related tasks on
 Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
 
 \section{Technology Used}
@@ -79,7 +79,7 @@ demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
 terminated at run time based on the load of application. Adding or
 terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
-be done in few minutes. Two EC2 instances have been created in this
+be done in few minutes. Two EC2 instances are created in this
 project with following configuration
 
 \begin{table}[]
@@ -92,6 +92,8 @@ project with following configuration
 	t2.micro & 1GB & 1 & 8GB \\ \hline \end{tabular}
 \end{table}
 
+One of the instance is used for master and another one for worker node.
+
 \paragraph{Security Group}
 
 Security Group define the inbound and outbound allowed traffic for
@@ -100,11 +102,22 @@ incoming and outgoing traffic using Security Group and assign it to
 the instance.  Security Group works as firewall and allow only
 permitted traffic on EC2~\cite{hid-sp18-511-www-ec2} instance.
 
+\verb|ec2_spark_stg_security_group| Security group is created with the following inbound and outbound ports open in this project and assigned to the EC2 instances created
+
+\begin{itemize}
+	\item Inbound - 80, 8080, 22, 7178, 8181, 7077, 443
+	\item Outbound - all
+	
+\end{itemize}
+
+
 \paragraph{Key Pair}
 
 Key Pair is used to connect to the EC2~\cite{hid-sp18-511-www-ec2}
 instance. We need to create Key Pair and provide the private key to
 connect to the EC2~\cite{hid-sp18-511-www-ec2} instance.
+
+\verb|ec2_spark_stg_key| Key pair is created in this project. The private key with the name \verb|ec2_spark_stg_key-private.pem| is created on the user machine and used for making the ssh connection to EC2~\cite{hid-sp18-511-www-ec2} instances.
 
 \subsection{Apache Spark}
 
