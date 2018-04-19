@@ -23,9 +23,9 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data related
-tasks on Spark. This module will take care of different infrastructure
+tasks on Spark Cluster. This module will take care of different infrastructure
 related items like provisioning of EC2 instance, setting up the
-public/private key pair for secure connection, inbound/outbound
+public/private key pair for secure connection with EC2 instance, inbound/outbound
 traffic rules on provisioned machines to allow connectivity on various
 ports. This module will also perform Apache Spark installation on the
 provisioned EC2 instances using master/worker model. One of the
@@ -56,10 +56,10 @@ optimized operation and use Apache
 Hadoop~\cite{hid-sp18-511-www-hadoop} as underlying
 framework. Ansible~\cite{hid-sp18-511-www-ansible} is an open source
 automation platform for configuration management and application
-deployment. Ansible~\cite{hid-sp18-511-www-ansible} tool will be used
-in this project to deploy Apache Spark~\cite{hid-sp18-511-www-spark}
+deployment. Ansible~\cite{hid-sp18-511-www-ansible} automation tool will be used
+in this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances, deploy Apache Spark~\cite{hid-sp18-511-www-spark}
 cluster on EC2~\cite{hid-sp18-511-www-ec2} instances and perform
-various tasks on Apache Spark~\cite{hid-sp18-511-www-spark}.
+various tasks on Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
 
 \section{Technology Used}
 This section describes the technology used in the project.
@@ -109,15 +109,38 @@ Ansible~\cite{hid-sp18-511-www-ansible} is open source software for
 the infrastructure automation, configuration management and
 application deployment.
 
-\section{Deploy Apache Spark Cluster}
+\section{Configuration options}
+
+\subsection{Setup}
+
+Create AWS account if not exist already and get the AWS ID and secret key.
+
+Setup the git repository and provide the AWS ID and secret key before executing any command.
+
+\begin{verbatim}
+export HID=hid-sp18-511
+mkdir -p ~/github/cloudmesh-community
+cd ~/github/cloudmesh-community
+git clone https://github.com/cloudmesh-community/hid-sample.git
+git clone https://github.com/cloudmesh-community/$HID.git
+\end{verbatim}
+
+We need to provide the values for AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY before executing any command. Enter the information on command line 
+
+\begin{verbatim}
+export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>'
+export AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
+\end{verbatim}
+
+\subsection{Deploy Apache Spark Cluster}
 
 \TODO{Provide command and screen shots about Apache Spark Cluster deployment}
 
-\section{Execute Command on Apache Spark Cluster}
+\subsection{Execute Command on Apache Spark Cluster}
 
 \TODO{Provide command and screen shots about Command execution on Apache Spark Cluster}
 
-\section{Terminate Apache Spark Cluster}
+\subsection{Terminate Apache Spark Cluster}
 
 \TODO{Provide command and screen shots about Apache Spark Cluster termination}
 
