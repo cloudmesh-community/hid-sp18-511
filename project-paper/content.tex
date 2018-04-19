@@ -116,14 +116,16 @@ application deployment.
 \subsection{Setup}
 
 \paragraph{Ansible}
-Download and install Ansible~\cite{hid-sp18-511-www-ansible} on the machine where the deployment commands will be executed.
+Download and install Ansible~\cite{hid-sp18-511-www-ansible} on the
+machine where the deployment commands will be executed.
 
 Ansible~\cite{hid-sp18-511-www-ansible} can be downloaded from 
 \url{https://www.ansible.com/resources/get-started}
 
 \paragraph{AWS key}
 
-Create AWS account if not exist already and get the AWS ID and secret key. These keys will be used in authentication with AWS.
+Create AWS account if not exist already and get the AWS ID and secret
+key. These keys will be used in authentication with AWS.
 
 We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
 and \verb|AWS_SECRET_ACCESS_KEY|. Enter the information on command line
@@ -147,13 +149,15 @@ git clone https://github.com/cloudmesh-community/$HID.git
 
 \paragraph{Configuration options}
 
-There are various configuration option that can be updated based on the requirement.
+There are various configuration option that can be updated based on
+the requirement.
 
 AWS related configuration options -
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all
-open main.yml file and update the following information as per the requirement
+open main.yml file and update the following information as per the
+requirement
 
 project_name: <specify the project name. Example - ec2_spark>
 region: <specify AWS region. Example - us-west-2>
@@ -165,7 +169,8 @@ EC2 related configuration options -
 \begin{verbatim}
 cd
 ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults
-open main.yml file and update the following information as per the requirement
+open main.yml file and update the following information as per the
+requirement
  
 ami_image: <EC2 AMI image type. Example ami-4e79ed36>
 instance_type: <Instance type. Example - t2.micro>
@@ -173,7 +178,8 @@ instance_type: <Instance type. Example - t2.micro>
 
 \subsection{Deploy Apache Spark Cluster}
 
-Execute the following command on the command line to Deploy the Apache Spark Cluster.
+Execute the following command on the command line to Deploy the Apache
+Spark Cluster.
 
 \begin{verbatim}
 
