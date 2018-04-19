@@ -23,16 +23,16 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data related
-tasks on Spark Cluster. This module will take care of different infrastructure
-related items like provisioning of EC2 instance, setting up the
-public/private key pair for secure connection with EC2 instance, inbound/outbound
-traffic rules on provisioned machines to allow connectivity on various
-ports. This module will also perform Apache Spark installation on the
-provisioned EC2 instances using master/worker model. One of the
-machine will work as a master node and other machines will work as
-worker node. The script will expose options for Apache Spark cluster
-deployment, execution of commands on Apache Spark cluster, and
-termination of machines.
+tasks on Spark Cluster. This module will take care of different
+infrastructure related items like provisioning of EC2 instance,
+setting up the public/private key pair for secure connection with EC2
+instance, inbound/outbound traffic rules on provisioned machines to
+allow connectivity on various ports. This module will also perform
+Apache Spark installation on the provisioned EC2 instances using
+master/worker model. One of the machine will work as a master node and
+other machines will work as worker node. The script will expose
+options for Apache Spark cluster deployment, execution of commands on
+Apache Spark cluster, and termination of machines.
 
 \end{abstract}
 
@@ -56,10 +56,12 @@ optimized operation and use Apache
 Hadoop~\cite{hid-sp18-511-www-hadoop} as underlying
 framework. Ansible~\cite{hid-sp18-511-www-ansible} is an open source
 automation platform for configuration management and application
-deployment. Ansible~\cite{hid-sp18-511-www-ansible} automation tool will be used
-in this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances, deploy Apache Spark~\cite{hid-sp18-511-www-spark}
-cluster on EC2~\cite{hid-sp18-511-www-ec2} instances and perform
-various tasks on Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
+deployment. Ansible~\cite{hid-sp18-511-www-ansible} automation tool
+will be used in this project to provision
+EC2~\cite{hid-sp18-511-www-ec2} instances, deploy Apache
+Spark~\cite{hid-sp18-511-www-spark} cluster on
+EC2~\cite{hid-sp18-511-www-ec2} instances and perform various tasks on
+Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
 
 \section{Technology Used}
 This section describes the technology used in the project.
@@ -115,7 +117,8 @@ application deployment.
 
 Create AWS account if not exist already and get the AWS ID and secret key.
 
-Setup the git repository and provide the AWS ID and secret key before executing any command.
+Setup the git repository and provide the AWS ID and secret key before
+executing any command.
 
 \begin{verbatim}
 export HID=hid-sp18-511
@@ -124,7 +127,9 @@ cd ~/github/cloudmesh-community
 git clone https://github.com/cloudmesh-community/$HID.git
 \end{verbatim}
 
-We need to provide the values for \verb|AWS_ACCESS_KEY_ID| and \verb|AWS_SECRET_ACCESS_KEY| before executing any command. Enter the information on command line 
+We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
+and \verb|AWS_SECRET_ACCESS_KEY| before executing any command. Enter
+the information on command line
 
 \begin{verbatim}
 export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>'
@@ -148,10 +153,11 @@ env: <deployment environment. Example - stg>
 EC2 related configuration options -
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults
-open main.yml file and update the following information
-ami_image: <EC2 AMI image type. Example - ami-4e79ed36>
-instance_type: <Instance type. Example - t2.micro>
+cd
+~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults
+open main.yml file and update the following information ami_image:
+<EC2 AMI image type. Example - ami-4e79ed36> instance_type: <Instance
+type. Example - t2.micro>
 \end{verbatim}
 
 \subsection{Deploy Apache Spark Cluster}
