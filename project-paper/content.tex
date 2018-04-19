@@ -167,7 +167,7 @@ cd
 ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults
 open main.yml file and update the following information as per the requirement
  
-ami_image: <EC2 AMI image type. Example - ami-4e79ed36>
+ami_image: <EC2 AMI image type. Example ami-4e79ed36>
 instance_type: <Instance type. Example - t2.micro>
 \end{verbatim}
 
@@ -176,7 +176,7 @@ instance_type: <Instance type. Example - t2.micro>
 Execute the following command on the command line to Deploy the Apache Spark Cluster.
 
 \begin{verbatim}
-ansible-playbook site.yml --tags "provision"
+ansible-playbook site.yml --tags \verb|"provision"|
 \end{verbatim}
 
 This command will be do the following things internally 
