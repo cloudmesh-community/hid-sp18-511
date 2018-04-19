@@ -115,10 +115,27 @@ application deployment.
 
 \subsection{Setup}
 
-Create AWS account if not exist already and get the AWS ID and secret key.
+\paragraph{Ansible}
+Download and install Ansible~\cite{hid-sp18-511-www-ansible} on the machine where the deployment commands will be executed.
 
-Setup the git repository and provide the AWS ID and secret key before
-executing any command.
+Ansible~\cite{hid-sp18-511-www-ansible} can be downloaded from 
+\url{https://www.ansible.com/resources/get-started}
+
+\paragraph{AWS key}
+
+Create AWS account if not exist already and get the AWS ID and secret key. These keys will be used in authentication with AWS.
+
+We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
+and \verb|AWS_SECRET_ACCESS_KEY|. Enter the information on command line
+
+\begin{verbatim}
+export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>'
+export AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
+\end{verbatim}
+
+\paragraph{Git repository}
+
+Setup the git repository.
 
 \begin{verbatim}
 export HID=hid-sp18-511
@@ -127,24 +144,16 @@ cd ~/github/cloudmesh-community
 git clone https://github.com/cloudmesh-community/$HID.git
 \end{verbatim}
 
-We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
-and \verb|AWS_SECRET_ACCESS_KEY| before executing any command. Enter
-the information on command line
 
-\begin{verbatim}
-export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>'
-export AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
-\end{verbatim}
+\paragraph{Configuration options}
 
-\subsection{Configuration options}
-
-There are various configuration that can be updated based on the requirement.
+There are various configuration option that can be updated based on the requirement.
 
 AWS related configuration options -
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all
-open main.yml file and update the following information
+open main.yml file and update the following information as per the requirement
 
 project_name: <specify the project name. Example - ec2_spark>
 region: <specify AWS region. Example - us-west-2>
@@ -156,7 +165,7 @@ EC2 related configuration options -
 \begin{verbatim}
 cd
 ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults
-open main.yml file and update the following information
+open main.yml file and update the following information as per the requirement
  
 ami_image: <EC2 AMI image type. Example - ami-4e79ed36>
 instance_type: <Instance type. Example - t2.micro>
@@ -164,7 +173,32 @@ instance_type: <Instance type. Example - t2.micro>
 
 \subsection{Deploy Apache Spark Cluster}
 
-\TODO{Provide command and screen shots about Apache Spark Cluster deployment}
+Execute the following command on the command line to Deploy the Apache Spark Cluster.
+
+\begin{verbatim}
+ansible-playbook site.yml --tags "provision"
+\end{verbatim}
+
+This command will be do the following things internally 
+
+\begin{itemize}
+	\item Create Security Group in AWS
+	\item Create Key Pair in AWS
+	\item Provision EC2 instance for Spark master
+	\item Provision EC2 instance for Spark worker
+	\item Create Spark user and group on Spark master
+	\item Setup Spark specific directories on Spark master
+	\item Download and unarchive Spark  on Spark master
+	\item Download and install Java  on Spark master
+	\item Setup Spark configuration files on Spark master
+	\item Spark master service on Spark master
+	\item Create Spark user and group on Spark worker
+	\item Setup Spark specific directories on Spark worker
+	\item Download and unarchive Spark  on Spark worker
+	\item Download and install Java  on Spark worker
+	\item Setup Spark configuration files on Spark worker
+	\item Spark master service on Spark worker	
+\end{itemize}
 
 \subsection{Execute Command on Apache Spark Cluster}
 
