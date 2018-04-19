@@ -109,7 +109,7 @@ Ansible~\cite{hid-sp18-511-www-ansible} is open source software for
 the infrastructure automation, configuration management and
 application deployment.
 
-\section{Configuration options}
+\section{Deployment}
 
 \subsection{Setup}
 
@@ -121,7 +121,6 @@ Setup the git repository and provide the AWS ID and secret key before executing 
 export HID=hid-sp18-511
 mkdir -p ~/github/cloudmesh-community
 cd ~/github/cloudmesh-community
-git clone https://github.com/cloudmesh-community/hid-sample.git
 git clone https://github.com/cloudmesh-community/$HID.git
 \end{verbatim}
 
@@ -130,6 +129,29 @@ We need to provide the values for \verb|AWS_ACCESS_KEY_ID| and \verb|AWS_SECRET_
 \begin{verbatim}
 export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>'
 export AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
+\end{verbatim}
+
+\subsection{Configuration options}
+
+There are various configuration that can be updated based on the requirement.
+
+AWS related configuration options -
+
+\begin{verbatim}
+cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all
+open main.yml file and update the following information
+project_name: <specify the project name. Example - ec2_spark>
+region: <specify AWS region. Example - us-west-2>
+env: <deployment environment. Example - stg>
+\end{verbatim}
+
+EC2 related configuration options -
+
+\begin{verbatim}
+cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults
+open main.yml file and update the following information
+ami_image: <EC2 AMI image type. Example - ami-4e79ed36>
+instance_type: <Instance type. Example - t2.micro>
 \end{verbatim}
 
 \subsection{Deploy Apache Spark Cluster}
