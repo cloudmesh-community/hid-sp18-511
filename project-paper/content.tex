@@ -118,14 +118,14 @@ application deployment.
 \paragraph{Ansible}
 Download and install Ansible~\cite{hid-sp18-511-www-ansible} on the machine where the deployment commands will be executed.
 
-Ansible~\cite{hid-sp18-511-www-ansible} can be downloaded from 
+\\Ansible~\cite{hid-sp18-511-www-ansible} can be downloaded from 
 \url{https://www.ansible.com/resources/get-started}
 
 \paragraph{AWS key}
 
 Create AWS account if not exist already and get the AWS ID and secret key. These keys will be used in authentication with AWS.
 
-We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
+\\We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
 and \verb|AWS_SECRET_ACCESS_KEY|. Enter the information on command line
 
 \begin{verbatim}
@@ -149,7 +149,7 @@ git clone https://github.com/cloudmesh-community/$HID.git
 
 There are various configuration option that can be updated based on the requirement.
 
-AWS related configuration options -
+\\AWS related configuration options -
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all
@@ -160,7 +160,7 @@ region: <specify AWS region. Example - us-west-2>
 env: <deployment environment. Example - stg>
 \end{verbatim}
 
-EC2 related configuration options -
+\\EC2 related configuration options -
 
 \begin{verbatim}
 cd
@@ -179,7 +179,7 @@ Execute the following command on the command line to Deploy the Apache Spark Clu
 
 \end{verbatim}
 
-This command will be do the following things internally 
+\\This command will be do the following things internally 
 
 \begin{itemize}
 	\item Create Security Group in AWS
