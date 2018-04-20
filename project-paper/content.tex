@@ -1,4 +1,4 @@
-% status: 0
+% status: 80
 % chapter: TBD
 
 \title{Automated Spark Cluster Deployment on EC2}
@@ -23,7 +23,7 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data processing related
-tasks on Spark Cluster. This project also does the benchmarking of duration of 
+tasks on Spark Cluster. This project also does the benchmarking of 
 deployment, data processing and termination of the instances.
 
 \end{abstract}
@@ -41,7 +41,7 @@ public/private key pair for secure connection with EC2 instance,
 inbound/outbound traffic rules on provisioned machines to allow
 connectivity on various ports. This module also perform Apache Spark
 installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2}
-instances using master/worker model. One of the machine will work as a
+instances using master/worker model and perform all required configuration. One of the machine will work as a
 master node and other machines will work as worker node. The module
 expose command line options for Apache
 Spark~\cite{hid-sp18-511-www-spark} cluster deployment, execution of
@@ -52,11 +52,11 @@ deployment, data processing and termination of the instances.
 Ansible~\cite{hid-sp18-511-www-ansible} automation tool is be used in
 this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances,
 deploy Apache Spark~\cite{hid-sp18-511-www-spark} cluster on
-EC2~\cite{hid-sp18-511-www-ec2} instances and perform various data
+EC2~\cite{hid-sp18-511-www-ec2} instance and perform various data
 processing related tasks on Apache Spark~\cite{hid-sp18-511-www-spark}
 cluster.
 
-\section{Technology Used}
+\section{Technologies Used}
 This section describes the technology used in the project.
 
 \begin{itemize}
@@ -65,15 +65,15 @@ This section describes the technology used in the project.
 	\item[$\bullet$] Ansible
 \end{itemize}
 
-\subsection{AWS}
+\section{AWS}
 
 AWS~\cite{hid-sp18-511-www-aws} is a secure cloud service provider
 that provide various on-demand services.
 AWS~\cite{hid-sp18-511-www-aws} provides service in Compute, Storage,
 Database, Migration, Networking and Content Delivery, Developer Tools
-and many more.
+and many more. These services are easy to setup and can be done in few minutes. All the services are on demand service and AWS~\cite{hid-sp18-511-www-aws} charge only for the duration service being used. This is very effective and suitable for both small and large customers.
 
-\paragraph{EC2}
+\subsection{EC2}
 
 EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and resizable compute
 service. EC2~\cite{hid-sp18-511-www-ec2} instances can be created on
@@ -81,8 +81,10 @@ demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
 terminated at run time based on the load of application. Adding or
 terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
-be done in few minutes. Two EC2 instances are created in this project
-with following configuration
+be done in few minutes. 
+
+Two EC2 instances are created in this project with following configuration. One 
+of the instance is used for master and another one for worker node.
 
 \begin{table}[]
 	\centering \caption{Resource
@@ -94,9 +96,8 @@ with following configuration
 	t2.micro & 1GB & 1 & 8GB \\ \hline \end{tabular}
 \end{table}
 
-One of the instance is used for master and another one for worker node.
 
-\paragraph{Security Group}
+\subsection{Security Group}
 
 Security Group define the inbound and outbound allowed traffic for
 EC2~\cite{hid-sp18-511-www-ec2} instance.  We can define the allowed
@@ -104,18 +105,18 @@ incoming and outgoing traffic using Security Group and assign it to
 the instance.  Security Group works as firewall and allow only
 permitted traffic on EC2~\cite{hid-sp18-511-www-ec2} instance.
 
-\verb|ec2_spark_stg_security_group| Security group is created with the following inbound and outbound ports open in this project and assigned to the EC2 instances created
+\verb|ec2_spark_stg_security_group| Security group is created with the following
+inbound and outbound ports open in this project and assigned to the EC2~\cite{hid-sp18-511-www-ec2} instances created
 
 \begin{itemize}
 	\item Inbound - 80, 8080, 22, 7178, 8181, 7077, 443
-        \item Outbound - all
+    \item Outbound - all
 	
 \end{itemize}
 
+\subsection{Key Pair}
 
-\paragraph{Key Pair}
-
-Key Pair is used to connect to the EC2~\cite{hid-sp18-511-www-ec2}
+Key Pair is used to connect to EC2~\cite{hid-sp18-511-www-ec2}
 instance. We need to create Key Pair and provide the private key to
 connect to the EC2~\cite{hid-sp18-511-www-ec2} instance.
 
@@ -124,18 +125,38 @@ The private key with the name \verb|ec2_spark_stg_key-private.pem| is
 created on the user machine and used for making the ssh connection to
 EC2~\cite{hid-sp18-511-www-ec2} instances.
 
-\subsection{Apache Spark}
+\section{Apache Spark}
 
 Apache Spark~\cite{hid-sp18-511-www-spark} is analytics engine for
 large scale data processing. Apache
 Spark~\cite{hid-sp18-511-www-spark} has high performance engine, very
 easy to use and provide option to plugin third party components.
 
-\subsection{Ansible}
+The following configuration is used in this project for Apache Spark
+
+\begin{itemize}
+	\item spark_version: 2.3.0
+	\item spark_hadoop_version: 2.7
+	\item spark_temp_dir: /tmp
+	\item spark_working_dir: /var/lib/spark
+	\item spark_install_dir: /opt/spark
+	\item spark_mirror: http://apache.claz.org/spark/spark-2.3.0/
+	\item spark_master_memory_mb: 1024
+	\item spark_master_work_port: 7077
+	\item spark_master_ui_port: 8080
+	\item spark_worker_memory_mb: 1024
+	\item spark_worker_work_port: 7178
+	\item spark_worker_ui_port: 8181
+\end{itemize}
+
+\section{Ansible}
 
 Ansible~\cite{hid-sp18-511-www-ansible} is open source software for
 the infrastructure automation, configuration management and
-application deployment.
+application deployment. Automation tasks are defined in Ansible Playbook using YAML language. For
+communication to hosts, Ansible~\cite{hid-sp18-511-www-ansible} uses OpenSSH.
+
+For this project Ansible~\cite{hid-sp18-511-www-ansible} is used to create and setup EC2~\cite{hid-sp18-511-www-ec2} instances, deploy Apache Spark~\cite{hid-sp18-511-www-spark} cluster on EC2~\cite{hid-sp18-511-www-ec2} instance and perform various data processing related tasks on Apache Spark~\cite{hid-sp18-511-www-spark} Cluster.
 
 \section{Deployment}
 
