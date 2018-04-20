@@ -1,4 +1,4 @@
-SWAGGER_CODEGEN=java -jar swagger-codegen-cli.jar
+SWAGGER_CODEGEN=java -jar swagger-codegen-cli-2.3.1.jar 
 YAML_FILE=filter.yaml
 DEST_DIR=server/
 
@@ -6,6 +6,7 @@ clean:
 	if [ -d $(DEST_DIR) ]; then rm -r $(DEST_DIR); fi
         
 service: 
+	sh download-swagger-codegen.sh
 	$(SWAGGER_CODEGEN) generate -i $(YAML_FILE) -l python-flask -o $(DEST_DIR) -D supportPython3=true
 	cp default_controller.py $(DEST_DIR)/swagger_server/controllers
 	cp filter_util.py $(DEST_DIR)/swagger_server
