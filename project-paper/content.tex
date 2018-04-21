@@ -95,7 +95,7 @@ service. EC2~\cite{hid-sp18-511-www-ec2} instances can be created on
 demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
 terminated at run time based on the load of application. Adding or
-terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
+terminating EC2~\cite{hid-sp18-511-www-ec2} instances is very easy and can
 be done in few minutes.
 
 Two EC2 instances are created in this project with following
@@ -103,13 +103,15 @@ configuration. One of the instance is used for master node and another one
 for worker node.
 
 \begin{table}[]
-	\centering \caption{Resource
-	Specification} \label{t:resource-specification} \begin{tabular}{|l|l|l|l|l|l|} \hline \textbf{Instance}
-	& \textbf{Image} & \textbf{Size} & \textbf{RAM}
-	& \textbf{VCPUs} & \textbf{Disk} \\ \hline Spark Master & Ubuntu
-	Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 &
-	8GB \\ \hline Spark Worker & Ubuntu Server 16.04(ami-4e79ed36) &
-	t2.micro & 1GB & 1 & 8GB \\ \hline \end{tabular}
+	\centering 
+	\caption{Resource Specification} 
+	\label{t:resource-specification}
+	\begin{tabular}{|l|l|l|l|l|l|} 
+	\hline \textbf{Instance} & \textbf{Image} & \textbf{Size} & \textbf{RAM} & \textbf{VCPUs} & \textbf{Disk} \\ 
+	\hline Spark Master & Ubuntu Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 & 8GB \\
+    \hline Spark Worker & Ubuntu Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 & 8GB \\ 
+    \hline 
+	\end{tabular}
 \end{table}
 
 \subsection{Security Group}
