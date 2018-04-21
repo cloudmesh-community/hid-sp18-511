@@ -62,21 +62,31 @@ cluster.
 This section describes the technology used in the project.
 
 \begin{itemize}
-	\item[$\bullet$] AWS \item[$\bullet$] Apache
-	Spark \item[$\bullet$] Ansible
+	\item[$\bullet$] AWS 
+	\item[$\bullet$] Apache Spark 
+	\item[$\bullet$] Ansible
 \end{itemize}
 
 \section{AWS}
 
 AWS~\cite{hid-sp18-511-www-aws} is a secure cloud service provider
 that provide various on-demand services.
-AWS~\cite{hid-sp18-511-www-aws} provides service in Compute, Storage,
+AWS~\cite{hid-sp18-511-www-aws} provides services in Compute, Storage,
 Database, Migration, Networking and Content Delivery, Developer Tools
-and many more. These services are easy to setup and can be done in few
+and many more. These services are easy to setup and can be configured in few
 minutes. All the services are on demand service and
-AWS~\cite{hid-sp18-511-www-aws} charge only for the duration service
+AWS~\cite{hid-sp18-511-www-aws} charge only for the duration service is
 being used. This is very effective and suitable for both small and
 large customers.
+
+The following configuration is used in this project:
+
+\begin{itemize}
+	\item \verb|project_name: ec2_spark|
+	\item \verb|region: us-west-2|
+	\item \verb|env: stg|
+\end{itemize}
+
 
 \subsection{EC2}
 
@@ -89,23 +99,22 @@ terminating EC2{hid-sp18-511-www-ec2} instances is very easy and can
 be done in few minutes.
 
 Two EC2 instances are created in this project with following
-configuration. One of the instance is used for master and another one
+configuration. One of the instance is used for master node and another one
 for worker node.
 
 \begin{table}[]
 	\centering \caption{Resource
 	Specification} \label{t:resource-specification} \begin{tabular}{|l|l|l|l|l|l|} \hline \textbf{Instance}
 	& \textbf{Image} & \textbf{Size} & \textbf{RAM}
-	& \textbf{VCPUs} & \textbf{Disk} \\ \hline Node1 & Ubuntu
+	& \textbf{VCPUs} & \textbf{Disk} \\ \hline Spark Master & Ubuntu
 	Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 &
-	8GB \\ \hline Node2 & Ubuntu Server 16.04(ami-4e79ed36) &
+	8GB \\ \hline Spark Worker & Ubuntu Server 16.04(ami-4e79ed36) &
 	t2.micro & 1GB & 1 & 8GB \\ \hline \end{tabular}
 \end{table}
 
-
 \subsection{Security Group}
 
-Security Group define the inbound and outbound allowed traffic for
+Security Group restrict the inbound and outbound traffic for
 EC2~\cite{hid-sp18-511-www-ec2} instance.  We can define the allowed
 incoming and outgoing traffic using Security Group and assign it to
 the instance.  Security Group works as firewall and allow only
@@ -116,20 +125,20 @@ following inbound and outbound ports open in this project and assigned to the
 EC2~\cite{hid-sp18-511-www-ec2} instances created
 
 \begin{itemize}
-    \item Inbound - 80, 8080, 22, 7178, 8181, 7077, 443
-    \item Outbound - all
+	\item \verb|Inbound: 80, 8080, 22, 7178, 8181, 7077, 443|
+	\item \verb|Outbound: all|
 	
 \end{itemize}
 
 \subsection{Key Pair}
 
-Key Pair is used to connect to EC2~\cite{hid-sp18-511-www-ec2}
+Key Pair is used to connect EC2~\cite{hid-sp18-511-www-ec2}
 instance. We need to create Key Pair and provide the private key to
-connect to the EC2~\cite{hid-sp18-511-www-ec2} instance.
+connect the EC2~\cite{hid-sp18-511-www-ec2} instance.
 
 \verb|ec2_spark_stg_key| Key pair is created in this project.
 The private key with the name \verb|ec2_spark_stg_key-private.pem| is
-created on the user machine and used for making the ssh connection to
+created and saved on the user machine and used for making the ssh connection to
 EC2~\cite{hid-sp18-511-www-ec2} instances.
 
 \section{Apache Spark}
@@ -169,7 +178,7 @@ create and setup EC2~\cite{hid-sp18-511-www-ec2} instances, deploy
 Apache Spark~\cite{hid-sp18-511-www-spark} cluster on
 EC2~\cite{hid-sp18-511-www-ec2} instance and perform various data
 processing related tasks on Apache Spark~\cite{hid-sp18-511-www-spark}
-Cluster.
+Cluster and terminate Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
 
 \section{Deployment}
 
@@ -177,7 +186,7 @@ Cluster.
 
 \paragraph{Ansible}
 Download and install Ansible~\cite{hid-sp18-511-www-ansible} on the
-machine where the deployment commands will be executed.
+machine where deployment commands will be executed.
 
 Ansible~\cite{hid-sp18-511-www-ansible} can be downloaded from
 \url{https://www.ansible.com/resources/get-started}
@@ -188,7 +197,7 @@ Create AWS account if not exist already and get the AWS ID and secret
 key. These keys will be used in authentication with AWS.
 
 We need to provide the values for \verb|AWS_ACCESS_KEY_ID|
-and \verb|AWS_SECRET_ACCESS_KEY|. Enter the information on command line
+and \verb|AWS_SECRET_ACCESS_KEY|. Enter the information on command line:
 
 \begin{verbatim}
 export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>'
@@ -197,7 +206,7 @@ export AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
 
 \paragraph{Git repository}
 
-Setup the git repository.
+Setup the git repository:
 
 \begin{verbatim}
 export HID=hid-sp18-511
@@ -212,19 +221,20 @@ git clone https://github.com/cloudmesh-community/$HID.git
 There are various configuration option that can be updated based on
 the requirement.
 
-AWS related configuration options -
+AWS related configuration options:
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all
+cd ~/github/cloudmesh-community/$HID.git/project-code/
+group_vars/all
 open main.yml file and update the following information as per the
 requirement
 
-project_name: <specify the project name. Example - ec2_spark>
-region: <specify AWS region. Example - us-west-2>
-env: <deployment environment. Example - stg>
+project_name: <specify the project name>
+region: <specify AWS region>
+env: <deployment environment>
 \end{verbatim}
 
-EC2 related configuration options -
+EC2 related configuration options:
 
 \begin{verbatim}
 cd
@@ -233,20 +243,58 @@ cd
 open main.yml file and update the following information as per the
 requirement
  
-ami_image: <EC2 AMI image type. Example ami-4e79ed36>
-instance_type: <Instance type. Example - t2.micro>
+ami_image: <EC2 AMI image type>
+instance_type: <Instance type>
+\end{verbatim}
+
+
+Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:
+
+\begin{verbatim}
+cd
+~/github/cloudmesh-community/$HID.git/project-code/roles
+/sparkmaster/defaults
+open main.yml file and update the following information as per the
+requirement
+
+spark_version: <Spark master version>
+spark_hadoop_version: <Hadoop version>
+spark_temp_dir: <Spark master temprary directory>
+spark_working_dir: <Spark master working directory>
+spark_install_dir: <Spark master installation directory>
+spark_mirror: <Spark master mirror URL>
+spark_master_memory_mb: <Spark master memory>
+spark_master_work_port: <Spark master work port>
+spark_master_ui_port: <Spark master UI port>
+
+cd
+~/github/cloudmesh-community/$HID.git/project-code/roles
+/sparkworker/defaults
+open main.yml file and update the following information as per the
+requirement
+
+spark_version: <Spark worker version>
+spark_hadoop_version: <Hadoop version>
+spark_temp_dir: <Spark worker temprary directory>
+spark_working_dir: <Spark worker working directory>
+spark_install_dir: <Spark master installation directory>
+spark_mirror: <Spark worker mirror URL>
+spark_master_work_port: <Spark master work port>
+spark_master_ui_port: <Spark worker UI port>
+spark_worker_work_port: <Spark worker work port>
+spark_worker_ui_port: <Spark worker UI port>
 \end{verbatim}
 
 \subsection{Deploy Apache Spark Cluster}
 
-Execute the following command on the command line to Deploy the Apache
-Spark Cluster.
+Execute the following command on the command line to deploy Apache
+Spark Cluster~\cite{hid-sp18-511-www-spark}.
 
 \begin{verbatim}
-
+ansible-playbook site.yml --tags "provision"
 \end{verbatim}
 
-This command will be do the following things internally 
+This command will perform following tasks:
 
 \begin{itemize}
 	\item Create Security Group in AWS
@@ -255,16 +303,16 @@ This command will be do the following things internally
 	\item Provision EC2 instance for Spark worker
 	\item Create Spark user and group on Spark master
 	\item Setup Spark specific directories on Spark master
-	\item Download and unarchive Spark  on Spark master
-	\item Download and install Java  on Spark master
+	\item Download and unarchive Spark on Spark master
+	\item Download and install Java on Spark master
 	\item Setup Spark configuration files on Spark master
-	\item Spark master service on Spark master
+	\item Start Spark master service on Spark master
 	\item Create Spark user and group on Spark worker
 	\item Setup Spark specific directories on Spark worker
 	\item Download and unarchive Spark  on Spark worker
 	\item Download and install Java  on Spark worker
 	\item Setup Spark configuration files on Spark worker
-	\item Spark master service on Spark worker	
+	\item Spark worker service and add to Spark master	
 \end{itemize}
 
 \TODO{Add screenshots and details. Also, setup for the worker}
@@ -275,7 +323,19 @@ Cluster}
 
 \subsection{Terminate Apache Spark Cluster}
 
-\TODO{Provide command and screen shots about Apache Spark Cluster termination}
+Execute the following command on the command line to terminate Apache
+Spark Cluster~\cite{hid-sp18-511-www-spark}.
+
+\begin{verbatim}
+ansible-playbook site.yml --tags "terminate"
+\end{verbatim}
+
+This command will perform following tasks:
+
+\begin{itemize}
+	\item Terminate Spark master node
+	\item Terminate Spark worker node
+\end{itemize}
 
 \section{Results}
 \TODO{Add results in the table. Specify the duration taken in the deployment
