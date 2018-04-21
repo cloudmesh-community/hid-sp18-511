@@ -245,94 +245,14 @@ git clone https://github.com/cloudmesh-community/$HID.git/project-code
 \end{verbatim}
 
 You should see the following directory structure:
-.
-├── a.jpg
-├── ansible.cfg
-├── group_vars
-│   └── all
-│       └── main.yml
-├── inventory
-│   └── hosts
-├── README.md
-├── roles
-│   ├── provisionec2
-│   │   ├── defaults
-│   │   │   └── main.yml
-│   │   ├── handlers
-│   │   │   └── main.yml
-│   │   ├── meta
-│   │   │   └── main.yml
-│   │   ├── README.md
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   ├── tests
-│   │   │   ├── inventory
-│   │   │   └── test.yml
-│   │   └── vars
-│   │       └── main.yml
-│   ├── sparkmaster
-│   │   ├── defaults
-│   │   │   └── main.yml
-│   │   ├── handlers
-│   │   │   └── main.yml
-│   │   ├── meta
-│   │   │   └── main.yml
-│   │   ├── README.md
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   ├── templates
-│   │   │   ├── spark-defaults-conf.j2
-│   │   │   ├── spark-env-sh.j2
-│   │   │   └── spark-master-systemd.j2
-│   │   ├── tests
-│   │   │   ├── inventory
-│   │   │   └── test.yml
-│   │   └── vars
-│   │       └── main.yml
-│   ├── sparkworker
-│   │   ├── defaults
-│   │   │   └── main.yml
-│   │   ├── handlers
-│   │   │   └── main.yml
-│   │   ├── meta
-│   │   │   └── main.yml
-│   │   ├── README.md
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   ├── templates
-│   │   │   ├── spark-defaults-conf.j2
-│   │   │   ├── spark-env-sh.j2
-│   │   │   └── spark-worker-systemd.j2
-│   │   ├── tests
-│   │   │   ├── inventory
-│   │   │   └── test.yml
-│   │   └── vars
-│   │       └── main.yml
-│   └── terminateec2
-│       ├── defaults
-│       │   └── main.yml
-│       ├── files
-│       ├── handlers
-│       │   └── main.yml
-│       ├── meta
-│       │   └── main.yml
-│       ├── README.md
-│       ├── tasks
-│       │   └── main.yml
-│       ├── templates
-│       ├── tests
-│       │   ├── inventory
-│       │   └── test.yml
-│       └── vars
-│           └── main.yml
-└── site.yml
+\TODO{picture of directory structure}
 
 \paragraph{Configuration options}
 
 There are various configuration option that can be updated based on
 the requirement.
 
-AWS related configuration options:
+\textbf{AWS related configuration options:}
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
@@ -348,7 +268,7 @@ region: <specify AWS region>
 env: <deployment environment>
 \end{verbatim}
 
-EC2 related configuration options:
+\textbf{EC2 related configuration options:}
 
 \begin{verbatim}
 cd
@@ -364,8 +284,7 @@ ami_image: <EC2 AMI image type>
 instance_type: <Instance type>
 \end{verbatim}
 
-
-Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:
+\textbf{Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:}
 
 \begin{verbatim}
 cd
