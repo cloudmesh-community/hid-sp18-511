@@ -167,7 +167,8 @@ The following configuration is used in this project for Apache Spark
 	\item \verb|spark_temp_dir: /tmp|
 	\item \verb|spark_working_dir: /var/lib/spark|
 	\item \verb|spark_install_dir: /opt/spark|
-	\item \verb|spark_mirror: http://apache.claz.org/spark/spark-2.3.0/|
+	\item \verb|spark_mirror: http://apache.claz.org/
+	spark/spark-2.3.0/|
 	\item \verb|spark_master_memory_mb: 1024|
 	\item \verb|spark_master_work_port: 7077|
 	\item \verb|spark_master_ui_port: 8080|
@@ -214,8 +215,8 @@ You should see the following output. Version number and directories
 could be different in your case.
 
 \begin{verbatim}
-ansible-playbook 2.5.0 version = 2.7.13 (default, Jan 24 2018,
-21:48:31) [GCC 5.4.0 20160609]
+ansible-playbook 2.5.0 version = 2.7.13
+(default, Jan 24 2018, 21:48:31) [GCC 5.4.0 20160609]
 \end{verbatim}
 
 \paragraph{AWS key}
@@ -252,21 +253,22 @@ export HID=hid-sp18-511
 mkdir -p ~/github/cloudmesh-community
 cd ~/github/cloudmesh-community 
 git clone
-https://github.com/cloudmesh-community/$HID.git/project-code
+https://github.com/cloudmesh-community/$HID.git
+/project-code
 \end{verbatim}
 
-You should see the following directory structure:
-\TODO{picture of directory structure}
+Validate code has been cloned into the directory.
 
 \paragraph{Configuration options}
 
 There are various configuration option that can be updated based on
 the requirement.
 
-\textbf{AWS related configuration options:}
+AWS related configuration options:
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all
+cd ~/github/cloudmesh-community/$HID.git/project-code/
+group_vars/all
 \end{verbatim}
 
 Open main.yml file and update the following information as per the
@@ -278,11 +280,11 @@ region: <specify AWS region>
 env: <deployment environment>
 \end{verbatim}
 
-\textbf{EC2 related configuration options:}
+EC2 related configuration options:
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/roles
-/provisionec2/defaults
+cd ~/github/cloudmesh-community/$HID.git/project-code/
+roles/provisionec2/defaults
 \end{verbatim}
 
 Open main.yml file and update the following information as per the
@@ -293,11 +295,11 @@ ami_image: <EC2 AMI image type>
 instance_type: <Instance type>
 \end{verbatim}
 
-\textbf{Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:}
+Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/roles
-/sparkmaster/defaults
+cd ~/github/cloudmesh-community/$HID.git/project-code/
+roles/sparkmaster/defaults
 \end{verbatim}
 
 Open main.yml file and update the following information as per the
@@ -316,8 +318,8 @@ spark_master_ui_port: <Spark master UI port>
 \end{verbatim}
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/roles
-/sparkworker/defaults
+cd ~/github/cloudmesh-community/$HID.git/project-code/
+roles/sparkworker/defaults
 \end{verbatim}
 
 Open main.yml file and update the following information as per the
@@ -343,7 +345,7 @@ Spark Cluster~\cite{hid-sp18-511-www-spark}.
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
-ansible-playbook site.yml --tags ``provision''
+ansible-playbook site.yml --tags ``provision``
 \end{verbatim}
 
 This command will perform following tasks:
@@ -369,7 +371,7 @@ This command will perform following tasks:
 
 \textbf{Security Group:}
 
-Figure~\ref{f:security-group} shows the security group created in the deployment.
+Figure~\ref{f:security-group} shows security group created in the deployment.
 
 \begin{figure}[!ht]
 	\centering\includegraphics[width=\columnwidth]{images/securitygroup.png}
@@ -378,7 +380,7 @@ Figure~\ref{f:security-group} shows the security group created in the deployment
 
 \textbf{Key Pair:}
 
-Figure~\ref{f:key-pair} shows the security group created in the deployment.
+Figure~\ref{f:key-pair} shows Key pair created in the deployment.
 
 \begin{figure}[!ht]
 	\centering\includegraphics[width=\columnwidth]{images/keypair.png}
@@ -387,17 +389,13 @@ Figure~\ref{f:key-pair} shows the security group created in the deployment.
 
 \textbf{EC2~\cite{hid-sp18-511-www-ec2} instances:}
 
-Figure~\ref{f:ec2-instance} shows the security group created in the deployment.
+Figure~\ref{f:ec2-instance} shows EC2 instances created in the deployment.
 
 \begin{figure}[!ht]
 	\centering\includegraphics[width=\columnwidth]{images/ec2instances.png}
-	\caption{Key pair}\label{f:ec2-instance}
+	\caption{EC2 instance}\label{f:ec2-instance}
 \end{figure}
 
-
-\begin{verbatim}
-\centering\includegraphics[width=\columnwidth]{images/ec2_instances.png}
-\end{verbatim}
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/inventory
@@ -422,12 +420,15 @@ Validate Spark Apache cluster up and running by typing the below url
 in browser
 
 \begin{verbatim}
-sudo start-slave.sh spark://18.236.169.83:7077
+http://18.236.169.83:8080
 \end{verbatim}
 
-\begin{verbatim}
-\centering\includegraphics[width=\columnwidth]{images/spark_cluster_url.png}
-\end{verbatim}
+Figure~\ref{f:spark-cluster-url} shows Apache Spark~\cite{hid-sp18-511-www-spark} cluster URL.
+
+\begin{figure}[!ht]
+	\centering\includegraphics[width=\columnwidth]{images/sparkclusterurl.png}
+	\caption{EC2 instance}\label{f:spark-cluster-url}
+\end{figure}
 
 \subsection{Terminate Apache Spark Cluster}
 
@@ -436,7 +437,7 @@ Spark Cluster~\cite{hid-sp18-511-www-spark}.
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
-ansible-playbook site.yml --tags ``terminate''
+ansible-playbook site.yml --tags ``terminate``
 \end{verbatim}
 
 This command will perform following tasks:
