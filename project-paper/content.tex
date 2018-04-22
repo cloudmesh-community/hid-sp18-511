@@ -24,9 +24,10 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data processing
-related tasks on Spark Cluster. This project also does the
+related tasks on Apache Spark Cluster. This project also does the
 benchmarking of deployment, data processing and termination of the
-instances.
+instances. This project provide option to terminate the Apache Spark 
+cluster once data processing task is completed.
 
 \end{abstract}
 
@@ -38,14 +39,16 @@ instances.
 \section{Introduction}
 
 This module does infrastructure related tasks of provisioning of
-EC2~\cite{hid-sp18-511-www-ec2} instances, setting up the
-public/private key pair for secure connection with EC2 instance,
+AWS~\cite{hid-sp18-511-www-aws} EC2~\cite{hid-sp18-511-www-ec2} instances, setting up the
+public/private key pair for secure connection with EC2~\cite{hid-sp18-511-www-ec2} instance and configure
 inbound/outbound traffic rules on provisioned machines to allow
-connectivity on various ports. This module also perform Apache Spark
+connectivity on various ports. This module also perform Apache Spark~\cite{hid-sp18-511-www-spark}
 installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2}
 instances using master/worker model and perform all required
 configuration. One of the machine will work as a master node and other
-machines will work as worker node. The module expose command line
+machines will work as worker node. 
+
+The module expose command line
 options for Apache Spark~\cite{hid-sp18-511-www-spark} cluster
 deployment, execution of commands on Apache
 Spark~\cite{hid-sp18-511-www-spark} cluster, and termination of
@@ -91,7 +94,7 @@ The following configuration is used in this project:
 
 \subsection{EC2}
 
-EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and resizable compute
+EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and re sizable compute
 service. EC2~\cite{hid-sp18-511-www-ec2} instances can be created on
 demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
@@ -99,18 +102,20 @@ terminated at run time based on the load of application. Adding or
 terminating EC2~\cite{hid-sp18-511-www-ec2} instances is very easy and can
 be done in few minutes.
 
-Two EC2 instances are created in this project with following
+Two EC2~\cite{hid-sp18-511-www-ec2} instances are created in this project with following
 configuration. One of the instance is used for master node and another one
 for worker node.
 
 \begin{table}[]
 	\centering 
-	\caption{Resource Specification} 
-	\label{t:resource-specification}
-	\begin{tabular}{llllll} 
+	\caption{Resource Specification} \label{t:resource-specification}
+	\begin{tabular}{|lllll} 
+	\toprule
+	\hline
 	\textbf{Instance} & \textbf{Image} & \textbf{Size} & \textbf{RAM} & \textbf{VCPUs} & \textbf{Disk} \\ 
 	Spark Master & Ubuntu Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 & 8GB \\
     Spark Worker & Ubuntu Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 & 8GB \\     
+    \hline
 	\end{tabular}
 \end{table}
 
@@ -148,7 +153,7 @@ EC2~\cite{hid-sp18-511-www-ec2} instances.
 Apache Spark~\cite{hid-sp18-511-www-spark} is analytics engine for
 large scale data processing. Apache
 Spark~\cite{hid-sp18-511-www-spark} has high performance engine, very
-easy to use and provide option to plugin third party components.
+easy to use and provide option to plug-in third party components.
 
 The following configuration is used in this project for Apache Spark
 
