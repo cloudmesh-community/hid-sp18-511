@@ -24,10 +24,10 @@
 This project is about developing a module for automated deployment of
 Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and perform various data processing
-related tasks on Apache Spark Cluster. This project also does the
+related tasks on Apache Spark Cluster. This project provide option to terminate the Apache Spark 
+cluster once data processing task is completed. This project also does the
 benchmarking of deployment, data processing and termination of the
-instances. This project provide option to terminate the Apache Spark 
-cluster once data processing task is completed.
+instances.
 
 \end{abstract}
 
@@ -46,14 +46,12 @@ connectivity on various ports. This module also perform Apache Spark~\cite{hid-s
 installation on the provisioned EC2~\cite{hid-sp18-511-www-ec2}
 instances using master/worker model and perform all required
 configuration. One of the machine will work as a master node and other
-machines will work as worker node. 
+machines will work as worker node. User can do various data processing related tasks once Apache Spark~\cite{hid-sp18-511-www-spark} cluster is setup. Apache Spark~\cite{hid-sp18-511-www-spark} cluster can be terminated once data processing related task complete.
 
 The module expose command line
 options for Apache Spark~\cite{hid-sp18-511-www-spark} cluster
-deployment, execution of commands on Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster, and termination of
-machines. Benchmarking is done for measuring the deployment, data
-processing and termination of the instances.
+deployment and termination of
+machines. User can connect to Apache Spark~\cite{hid-sp18-511-www-spark} cluster and perform various data related tasks. Benchmarking is done for measuring the deployment, data processing and termination of the instances.
 
 Ansible~\cite{hid-sp18-511-www-ansible} automation tool is be used in
 this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances,
@@ -106,7 +104,15 @@ Two EC2~\cite{hid-sp18-511-www-ec2} instances are created in this project with f
 configuration. One of the instance is used for master node and another one
 for worker node.
 
-
+\begin{table}[hbt]
+	\centering
+	\caption{Configuration}\label{t:ec2-configuration}
+	\begin{tabular}{ll} 
+		\textbf{Node} & \textbf{AMI} & \textbf{CPUs} & \textbf{RAM} & \textbf{Disk}\\ 
+		Apache Spark Master & 1 & 2 GB & 8GB\\
+		Apache Spark Worker & 1 & 2 GB & 8GB\\
+	\end{tabular}
+\end{table}
 
 \subsection{Security Group}
 
