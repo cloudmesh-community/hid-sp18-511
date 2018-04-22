@@ -392,7 +392,17 @@ ssh -i ec2_spark_stg_key-private.pem ubuntu@<Spark worker IP adddress>
 Once you connect to the Spark worker, execute the command:
 
 \begin{verbatim}
-start-slave.sh spark://18.236.169.83:7077
+sudo start-slave.sh spark://18.236.169.83:7077
+\end{verbatim}
+
+Validate Spark Apache cluster up and running by typing the below url in browser
+
+\begin{verbatim}
+sudo start-slave.sh spark://18.236.169.83:7077
+\end{verbatim}
+
+\begin{verbatim}
+\centering\includegraphics[width=\columnwidth]{images/spark_cluster_url.png}
 \end{verbatim}
 
 \subsection{Terminate Apache Spark Cluster}
@@ -412,12 +422,23 @@ This command will perform following tasks:
 	\item Terminate Spark worker node
 \end{itemize}
 
+Validate spark master and spark worker nodes have been terminated by login to AWS~\cite{hid-sp18-511-www-aws} console.
+
+\begin{verbatim}
+\TODO{Add picture of terminated instances}
+\end{verbatim}
+
 \section{Results}
-\TODO{Add results in the table. Specify the duration taken in the deployment
-and termination of the instances}
 
 \begin{table}[hbt]
-	\centering \caption{Results}\label{t:results-table} \begin{tabular}{llll} \end{tabular}
+	\centering
+	\caption{Results}
+	\label{t:results-table}
+	\begin{tabular}{ll} 
+		\textbf{Setup} & \textbf{Duration(in minutes)} \\ 
+		Apache Spark Cluste~\cite{hid-sp18-511-www-spark}r deployment & 21 mins \\
+		Apache Spark~\cite{hid-sp18-511-www-spark} Cluster termination & 1 mins \\
+	\end{tabular}
 \end{table}
 
 
