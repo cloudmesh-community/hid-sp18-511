@@ -14,6 +14,7 @@
 \email{skhande@iu.edu}
 
 
+
 % The default list of authors is too long for headers}
 \renewcommand{\shortauthors}{Sandeep}
 
@@ -360,6 +361,24 @@ This command will perform following tasks:
 	\item Spark worker service and add to Spark master	
 \end{itemize}
 
+\textbf{Security Group:}
+
+\begin{verbatim}
+\centering\includegraphics[width=\columnwidth]{images/security_group.png}
+\end{verbatim}
+
+\textbf{Key Pair:}
+
+\begin{verbatim}
+\centering\includegraphics[width=\columnwidth]{images/key_pair.png}
+\end{verbatim}
+
+\textbf{EC2~\cite{hid-sp18-511-www-ec2} instances:}
+
+\begin{verbatim}
+\centering\includegraphics[width=\columnwidth]{images/ec2_instances.png}
+\end{verbatim}
+
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/inventory
 \end{verbatim}
@@ -375,7 +394,7 @@ ssh -i ec2_spark_stg_key-private.pem ubuntu@<Spark worker IP adddress>
 Once you connect to the Spark worker, execute the command:
 
 \begin{verbatim}
-\TODO{Add command to add the Spark worker}
+start-slave.sh spark://18.236.169.83:7077
 \end{verbatim}
 
 \subsection{Terminate Apache Spark Cluster}
