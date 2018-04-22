@@ -111,7 +111,9 @@ Two EC2~\cite{hid-sp18-511-www-ec2} instances are created in this
 project with following configuration. One of the instance is used for
 master node and another one for worker node.
 
-\begin{table}[hbt]
+Table \ref{t:ec2-configuration} provides the EC2~\cite{hid-sp18-511-www-ec2} configuration details.
+
+\begin{table}[]
 	\centering
 	\caption{Configuration}\label{t:ec2-configuration}
 	\begin{tabular}{lllll} 
@@ -439,13 +441,15 @@ login to AWS~\cite{hid-sp18-511-www-aws} console.
 
 \section{Results}
 
-\begin{table}[hbt]
+Table \ref{t:results-table} provides the benchmark results.
+
+\begin{table}[]
 	\centering
 	\caption{Results}\label{t:results-table}
 	\begin{tabular}{ll} 
 		\textbf{Setup} & \textbf{Duration (in minutes)} \\ 
-		Apache Spark Cluste~\cite{hid-sp18-511-www-spark}r deployment & 21 mins \\
-		Apache Spark~\cite{hid-sp18-511-www-spark} Cluster termination & 1 mins \\
+		Apache Spark cluster deployment  & 21 mins \\
+		Apache Spark cluster termination & 1 min \\
 	\end{tabular}
 \end{table}
 
