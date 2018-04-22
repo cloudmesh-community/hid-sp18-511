@@ -111,16 +111,16 @@ Two EC2~\cite{hid-sp18-511-www-ec2} instances are created in this
 project with following configuration. One of the instance is used for
 master node and another one for worker node.
 
-Table~\ref{t:ec2-configuration} provides the EC2~\cite{hid-sp18-511-www-ec2} configuration details.
+Table~\ref{t:ec2-configuration} provides the
+EC2~\cite{hid-sp18-511-www-ec2} configuration details.
 
 \begin{table}[]
-	\centering
-	\caption{Configuration}\label{t:ec2-configuration}
-	\begin{tabular}{lllll} 
-		\textbf{Node} & \textbf{AMI} & \textbf{CPUs} & \textbf{RAM} & \textbf{Disk}\\ 
-		Apache Spark Master & ami-4e79ed361 & 1 & 2 GB & 8GB\\
-		Apache Spark Worker & ami-4e79ed361 & 1 & 2 GB & 8GB\\
-	\end{tabular}
+	\centering \caption{Configuration}\label{t:ec2-configuration}
+        \begin{tabular}{lllll} \textbf{Node}
+	& \textbf{AMI} & \textbf{CPUs} & \textbf{RAM}
+	& \textbf{Disk}\\ Apache Spark Master & ami-4e79ed361 & 1 & 2
+	GB & 8GB\\ Apache Spark Worker & ami-4e79ed361 & 1 & 2 GB &
+	8GB\\ \end{tabular}
 \end{table}
 
 \subsection{Security Group}
@@ -231,7 +231,8 @@ Provide the values for
 Enter the information on command line:
 
 \begin{verbatim}
-export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>' export
+export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>' 
+export
 AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
 \end{verbatim}
 
@@ -345,7 +346,7 @@ Spark Cluster~\cite{hid-sp18-511-www-spark}.
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
-ansible-playbook site.yml --tags ``provision``
+ansible-playbook site.yml --tags ''provision''
 \end{verbatim}
 
 This command will perform following tasks:
@@ -423,11 +424,12 @@ in browser
 http://18.236.169.83:8080
 \end{verbatim}
 
-Figure~\ref{f:spark-cluster-url} shows Apache Spark~\cite{hid-sp18-511-www-spark} cluster URL\@.
+Figure~\ref{f:spark-cluster-url} shows Apache
+Spark~\cite{hid-sp18-511-www-spark} cluster URL\@.
 
 \begin{figure}[!ht]
-	\centering\includegraphics[width=\columnwidth]{images/sparkclusterurl.png}
-	\caption{EC2 instance}\label{f:spark-cluster-url}
+\centering\includegraphics[width=\columnwidth]{images/sparkclusterurl.png}
+\caption{EC2 instance}\label{f:spark-cluster-url}
 \end{figure}
 
 \subsection{Terminate Apache Spark Cluster}
