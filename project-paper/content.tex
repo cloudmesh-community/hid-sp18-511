@@ -107,7 +107,7 @@ for worker node.
 	\centering 
 	\caption{Resource Specification} 
 	\label{t:resource-specification}
-	\begin{tabular}{|llllll} 
+	\begin{tabular}{llllll} 
 	\textbf{Instance} & \textbf{Image} & \textbf{Size} & \textbf{RAM} & \textbf{VCPUs} & \textbf{Disk} \\ 
 	Spark Master & Ubuntu Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 & 8GB \\
     Spark Worker & Ubuntu Server 16.04(ami-4e79ed36) & t2.micro & 1GB & 1 & 8GB \\     
@@ -172,8 +172,7 @@ The following configuration is used in this project for Apache Spark
 Ansible~\cite{hid-sp18-511-www-ansible} is open source software for
 the infrastructure automation, configuration management and
 application deployment. Automation tasks are defined in Ansible
-Playbook using YAML language. For communication to hosts,
-Ansible~\cite{hid-sp18-511-www-ansible} uses OpenSSH.
+Playbook using YAML language. For communication to hosts, Ansible~\cite{hid-sp18-511-www-ansible} uses OpenSSH.
 
 For this project Ansible~\cite{hid-sp18-511-www-ansible} is used to
 create and setup EC2~\cite{hid-sp18-511-www-ec2} instances, deploy
