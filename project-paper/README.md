@@ -1,4 +1,4 @@
-# Automated Spark Cluster Deployment on AWS EC2
+# Automated Spark Cluster Deployment on AWS EC2 using Ansible
 
 hid-sp18-511
 
@@ -15,8 +15,8 @@ hid-sp18-511
 	Validate AWS access key and secret access key have been setup correctly by typing echo command and check he displayed value
 	
 	```	
-	export AWS_ACCESS_KEY_ID='<Access Key>'
-    export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'
+	echo $AWS_ACCESS_KEY_ID
+    echo $AWS_SECRET_ACCESS_KEY
 	```
 
   * Make sure Ansible is installed on Unix machine where deployment automation script will be executed. Validate Ansible installation by typing the following command on Unix console
@@ -33,5 +33,18 @@ hid-sp18-511
 	cd ~/github/cloudmesh-community
 	git clone https://github.com/cloudmesh-community/$HID.git/project-code	
 	``` 
+	
+	* Update configuration as per the requirement
+		* AWS related configuration options 
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all`
+		
+		* EC2 related configuration options
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults`
+
+		* Apache Spark master related configuration options
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkmaster/defaults`
+
+		* Apache Spark worker related configuration options
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkworker/defaults`
 
 
