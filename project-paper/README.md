@@ -34,21 +34,22 @@ hid-sp18-511
 	git clone https://github.com/cloudmesh-community/$HID.git/project-code	
 	``` 
 	
-	* Update configuration as per the requirement
-		* AWS related configuration options
+  * Update configuration as per the requirement
+  
+	* AWS related configuration options
+		`
+		cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all`
 		
-			`cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all`
+	* EC2 related configuration options
 		
-		* EC2 related configuration options
-		
-			`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults`
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults`
 
-		* Apache Spark master related configuration options
+	* Apache Spark master related configuration options
 		
-			`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkmaster/defaults`
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkmaster/defaults`
 
-		* Apache Spark worker related configuration options
+	* Apache Spark worker related configuration options
 		
-			`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkworker/defaults`
+		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkworker/defaults`
 
 
