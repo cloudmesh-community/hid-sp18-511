@@ -11,9 +11,9 @@ hid-sp18-511
     `export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'`
 	
 	Validate AWS access key and secret access key by typing echo command and check he displayed value
-	`export AWS_ACCESS_KEY_ID='<Access Key>'`
+
 	`echo $AWS_ACCESS_KEY_ID`
-	`echo $AWS_SECRET_ACCESS_KEY`
+	`echo $AWS_SECRET_ACCESS_KEY`	
 
   * Make sure Ansible is installed on Unix machine where deployment automation script will be executed. Validate Ansible installation by typing the following command on Unix console
 	`$ ansible-playbook --version`
