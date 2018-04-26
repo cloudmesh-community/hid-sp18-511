@@ -82,4 +82,36 @@ hid-sp18-511
 	* Setup Spark configuration files on Spark worker
 	* Spark worker service and add to Spark master
 
+  * Add Apache Spark worker into cluster	
+  
+	* Open hosts file and find out the IP address in [sparkmaster] and [sparkworker] section.
+	
+	  ```
+	  cd ~/github/cloudmesh-community/$HID/project-code/inventory
+	  cat hosts
+	  ```
+
+	* Connect to the Spark worker node using ssh
+	  ```
+	  ssh -i ec2_spark_stg_key-private.pem ubuntu@[Spark worker IP address]
+
+	* Execute the following command on Spark worker machine 
+
+      ```sudo start-slave.sh spark://[Spark master IP address]```
+
+	
+  * Deployment Validation	
+	
+	Login to AWS console and validate following services/components have been created
+	
+	* Security group 
+	* Key pair 
+    * One AWS EC2 instance for Spark master
+    * One AWS EC2 instance for Spark worker
+	* Validate Spark Apache cluster up and running by typing the below url in browser
+	  `http://[EC2 master IP address]:8080`
+	
+
+
+
 
