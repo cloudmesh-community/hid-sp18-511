@@ -12,7 +12,7 @@ hid-sp18-511
 	export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'
 	```
 	
-	Validate AWS access key and secret access key by typing echo command and check he displayed value
+	Validate AWS access key and secret access key have been setup correctly by typing echo command and check he displayed value
 	
 	```	
 	export AWS_ACCESS_KEY_ID='<Access Key>'
@@ -23,17 +23,15 @@ hid-sp18-511
 	
 	`$ ansible-playbook --version`
 	
-	Download Ansible from the following link if not installed already 
-	'https://www.ansible.com/resources/get-started'
+	Download Ansible from the [download link](https://www.ansible.com/resources/get-started) if not installed already 
 	
   * Clone the source code from Github 
-	'export HID.git=hid-sp18-511'
-	'mkdir -p ~/github/cloudmesh-community'
-	'cd ~/github/cloudmesh-community'
-	'git clone https://github.com/cloudmesh-community/$HID.git//project-code'
-
-  * Open a terminal on your VM and create a directory 
-  
-    `mkdir -p ~/.cloudmesh/chameleon`
+	
+	```
+	export HID.git=hid-sp18-511
+	mkdir -p ~/github/cloudmesh-community
+	cd ~/github/cloudmesh-community
+	git clone https://github.com/cloudmesh-community/$HID.git/project-code	
+	``` 
 
 
