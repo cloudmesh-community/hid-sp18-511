@@ -37,19 +37,48 @@ hid-sp18-511
   * Update configuration as per the requirement
   
 	* AWS related configuration options
-		`
-		cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all`
+		
+	`cd ~/github/cloudmesh-community/$HID.git/project-code/group_vars/all`
 		
 	* EC2 related configuration options
 		
-		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults`
+	`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/provisionec2/defaults`
 
 	* Apache Spark master related configuration options
 		
-		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkmaster/defaults`
+	`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkmaster/defaults`
 
 	* Apache Spark worker related configuration options
 		
-		`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkworker/defaults`
+	`cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkworker/defaults`
+		
+## Deploy Apache Spark Cluster 
+
+	* Deployment 
+	
+	Execute the following command
+	````
+	cd ~/github/cloudmesh-community/$HID/project-code
+	ansible-playbook site.yml --tags "provision"
+	```
+
+	Deployment will perform following tasks
+	
+	 * Create Security Group in AWS
+	 * Create Key Pair in AWS
+	 * Provision EC2 instance for Spark master
+	* Provision EC2 instance for Spark worker
+	* Create Spark user and group on Spark master
+	* Setup Spark specific directories on Spark master
+	* Download and unarchive Spark on Spark master
+	* Download and install Java on Spark master
+	* Setup Spark configuration files on Spark master
+	* Start Spark master service on Spark master
+	* Create Spark user and group on Spark worker
+	* Setup Spark specific directories on Spark worker
+	* Download and unarchive Spark  on Spark worker
+	* Download and install Java  on Spark worker
+	* Setup Spark configuration files on Spark worker
+	* Spark worker service and add to Spark master
 
 
