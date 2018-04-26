@@ -92,9 +92,11 @@ hid-sp18-511
 	  ```
 
 	* Connect to the Spark worker node using ssh
+	
 	  `ssh -i ec2_spark_stg_key-private.pem ubuntu@[Spark worker IP address]`
 
 	* Execute the following command on Spark worker machine 
+	
       `sudo start-slave.sh spark://[Spark master IP address]`
 	
   * Deployment Validation	
@@ -107,6 +109,7 @@ hid-sp18-511
     * One AWS EC2 instance for Spark worker
 	
 	Validate Spark Apache cluster up and running by typing the below url in browser
+	
 	`http://[EC2 master IP address]:8080`
 	
 
