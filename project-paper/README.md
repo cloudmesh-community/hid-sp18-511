@@ -6,7 +6,6 @@ hid-sp18-511
 
   * Make sure you have AWS account created. Download the AWS access key and secret access key after account is created.
 	Setup the AWS access key and secret access key on Unix console
-	
 	`export AWS_ACCESS_KEY_ID='<Access Key>'`
 	`export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'`
 
@@ -26,4 +25,9 @@ hid-sp18-511
 	'mkdir -p ~/github/cloudmesh-community'
 	'cd ~/github/cloudmesh-community'
 	'git clone https://github.com/cloudmesh-community/$HID.git//project-code'
+
+  * Open a terminal on your VM and create a directory 
+  
+    `mkdir -p ~/.cloudmesh/chameleon`
+
 
