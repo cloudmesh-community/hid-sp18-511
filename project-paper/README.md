@@ -6,9 +6,9 @@ hid-sp18-511
 
   * Make sure you have AWS account created. Download the AWS access key and secret access key after account is created.
 	Setup the AWS access key and secret access key on Unix console
-	`export AWS_ACCESS_KEY_ID='<Access Key>'`
-	`export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'`
-
+    `export AWS_ACCESS_KEY_ID='<Access Key>'`
+    `export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'`
+	
 	Validate AWS access key and secret access key by typing echo command and check he displayed value
 	
 	`echo $AWS_ACCESS_KEY_ID`
