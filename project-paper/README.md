@@ -1,60 +1,77 @@
-Report format
-=============
+# Automated Spark Cluster Deployment on AWS EC2
 
-This directory contains a template that will be used for writing
-reports. It is important that you do not modify the template so all
-students have the same format template.
+hid-sp18-511
 
-To make it simple we split the content and the format into two
-different files.
+## Prerequisites 
 
-The content is in 
+### Make sure you have AWS account created. Download the AWS access key and secret access key after account is created.
 
-    content.tex 
+### Setup the AWS access key and secret access key on Unix console
+	export AWS_ACCESS_KEY_ID='<Access Key>'
+	export AWS_SECRET_ACCESS_KEY='<Secret Access Key>'
+
+Validate AWS access key and secret access key by typing echo command and check he displayed value
+	echo $AWS_ACCESS_KEY_ID
+	echo $AWS_SECRET_ACCESS_KEY
+
+### Make sure Ansible is installed on Unix machine where deployment automation script will be executed. Validate Ansible installation by typing the following command on Unix console
+	$ ansible-playbook --version
+	
+Download Ansible from ![Download Ansible](https://www.ansible.com/resources/get-started) is not installed already.
+
+### Clone the source code from Github 
+	export HID.git=hid-sp18-511 
+	mkdir -p ~/github/cloudmesh-community
+	cd ~/github/cloudmesh-community 
+	git clone https://github.com/cloudmesh-community/$HID.git//project-code
+
+You will not need to pull the hid-sample directory on a weekly
+schedule with
+
+    git pull
+
+to see new additions and improvements, as expected from any open
+source project.  Now clone your own repository either with ssh or
+https. SSH naturally requires you to have uploaded your public key to
+github. Let us use for now https.
+
+Let us assume your hid is hid-sp18-999. You need to clone your own
+repo as follows
+
+    cd ~/github/cloudmesh-community
+    git clone https://github.com/cloudmesh-community/hid-sp18-999.git
+    cp -r hid-sample/technology hid-sp18-999
     
-which you may edit, The template is in
+Warning: Please make sure there is no / after the technology directory
+name.
+  
+Next you need to go into that directory and correct them with your
+information. Make sure to not checkin the sample files from
+hid-sample, but modify them. If we find sample files from hid-sample
+in your github repository we will deduct points.
 
-    report.tex
+After you have modified your files you want to make a test compile with
 
-which you are not allowed to edit.
-
-Make sure you run 
-
-    make check
-    
-which provides a convenient way to check your latex code. Naturally you 
-need to have the full version of LaTeX whcih includes chktex which 
-make check calls.
-
-Compiling the report
---------------------
-
-We included a simple Makefile in the directory and if you have LaTeX
-properly installed you can use it from commandline to create the
-report.pdf:
-
+    cd ~/github/cloudmesh-community/hid-sp18-999/technology
     make
-
-Please remember that you MUST NOT commit the report.pdf file to the
-repository. If we detect this we will remove it and do not review
-your paper. This is to avoid that students submit papers that actually
-do not compile in LaTeX. Make sure you paper always compiles.
-
-This will also generate a simple check on some common issues. The 
-log file is located in 
-
-    report.log
     
-After the compilation is over.
+You will see that in dest a pdf file is created that you can look at
 
-    
-Adding your own packages
-------------------------
+You will need in all five abstracts in the technology folder.   Each file name should have the following format:
 
-If you need to add additional usepackages, you need to ask for
-approval first. You may not modify the color of hyperlinks or place
-the figures in the text. But otherwise there will most likely be no
-conflicts. To avoid any issue, check it first and ask for final
-approval.
+    abstract-<technology>.tex
+
+as well as the bibliography file
+
+    hid-sp18-999.bib
+
+Make sure all references are changed to include your hid prefix as a
+label. For more information see the text in abstract-xms.tex
+
+Before you commit, delete the following files that are should be in your directory:
+
+    hid-sample.bib
+    abstract-xms.tex
+
 
 
