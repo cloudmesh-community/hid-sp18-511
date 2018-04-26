@@ -1,8 +1,15 @@
-# Automated Spark Cluster Deployment on AWS EC2 using Ansible
+# Automated Apache Spark Cluster Deployment on AWS EC2 using Ansible
 
 hid-sp18-511
 
-This project is a about Automated Spark Cluster Deployment on AWS EC2 using Ansible deployment and configuration tool.
+This project is a about Automated Apache Spark Cluster Deployment on AWS EC2 using Ansible deployment and configuration tool.
+
+This project following functionalists to the user 
+
+  * Automated Apache Spark Cluster deployment on EC2 instances on a single click
+  * User can perform various data processing tasks on Apache Spark cluster after the deployment and configuration
+  * Automated decommission of Apache Spark Cluster on a single click once data processing task completed
+  
 
 Please make sure following prerequisites are fulfilled before running the project.
 
