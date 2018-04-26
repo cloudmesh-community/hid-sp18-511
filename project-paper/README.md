@@ -52,11 +52,12 @@ hid-sp18-511
 		
 	  `cd ~/github/cloudmesh-community/$HID.git/project-code/roles/sparkworker/defaults`
 		
-## Deploy Apache Spark Cluster 
+## Deploy Apache Spark Cluster on AWS EC2
 
-	* Deployment 
-	
+  * Deployment
+ 	
 	Execute the following command
+	
 	````
 	cd ~/github/cloudmesh-community/$HID/project-code
 	ansible-playbook site.yml --tags "provision"
@@ -64,9 +65,9 @@ hid-sp18-511
 
 	Deployment will perform following tasks
 	
-	 * Create Security Group in AWS
-	 * Create Key Pair in AWS
-	 * Provision EC2 instance for Spark master
+	* Create Security Group in AWS
+	* Create Key Pair in AWS
+	* Provision EC2 instance for Spark master
 	* Provision EC2 instance for Spark worker
 	* Create Spark user and group on Spark master
 	* Setup Spark specific directories on Spark master
