@@ -58,7 +58,7 @@ hid-sp18-511
  	
 	Execute the following command
 	
-	````
+	```
 	cd ~/github/cloudmesh-community/$HID/project-code
 	ansible-playbook site.yml --tags "provision"
 	```
