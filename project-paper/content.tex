@@ -1,7 +1,7 @@
 % status: 100
 % chapter: TBD
 
-\title{Automated Apache Spark Cluster deployment on AWS EC2 using Ansible}
+\title{Automated Apache Spark Cluster Deployment on AWS EC2 using Ansible}
 
 
 \author{Sandeep Khandelwal}
@@ -22,10 +22,10 @@
 \begin{abstract}
 
 This project is about developing a module for automated deployment of
-Apache Spark cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
-Cloud) instances on a single click and perform various data processing
-related tasks on Apache Spark Cluster. This project provide option to
-terminate the Apache Spark cluster once data processing task is
+Apache Spark Cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
+Cloud) instances on a single click and performs various data processing
+related tasks on Apache Spark Cluster. This project provides option to
+terminate the Apache Spark Cluster once data processing task is
 completed. This project also does the benchmarking of deployment, data
 processing and termination of the instances.
 
@@ -49,20 +49,20 @@ EC2~\cite{hid-sp18-511-www-ec2} instances using master/worker model
 and perform all required configuration. One of the machine will work
 as a master node and other machines will work as worker node. User can
 do various data processing related tasks once Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster is setup. Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster can be terminated once
+Spark~\cite{hid-sp18-511-www-spark} Cluster is setup. Apache
+Spark~\cite{hid-sp18-511-www-spark} Cluster can be terminated once
 data processing related task complete.
 
 The module expose command line options for Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster deployment and termination
+Spark~\cite{hid-sp18-511-www-spark} Cluster deployment and termination
 of machines one the data processing related task complete. User can connect to Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster and perform various data
+Spark~\cite{hid-sp18-511-www-spark} Cluster and perform various data
 related tasks. Benchmarking is done for measuring the deployment, data
 processing and termination of the instances.
 
-Ansible~\cite{hid-sp18-511-www-ansible} automation tool is be used in
+Ansible~\cite{hid-sp18-511-www-ansible} automation tool is used in
 this project to provision EC2~\cite{hid-sp18-511-www-ec2} instances,
-deploy Apache Spark~\cite{hid-sp18-511-www-spark} cluster on
+deploy Apache Spark~\cite{hid-sp18-511-www-spark} Cluster on
 EC2~\cite{hid-sp18-511-www-ec2} instance and terminate AWS~\cite{hid-sp18-511-www-aws} EC2~\cite{hid-sp18-511-www-ec2}
 instances once the data processing related task complete.
 
@@ -98,7 +98,7 @@ The following AWS configuration is used in this project:
 
 \subsection{EC2}
 
-EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and re sizable compute
+EC2~\cite{hid-sp18-511-www-ec2} is AWS secure and resizable compute
 service. EC2~\cite{hid-sp18-511-www-ec2} instances can be created on
 demand with different configuration of memory, CPU power and hard
 disk. EC2~\cite{hid-sp18-511-www-ec2} instances can be added and
@@ -185,11 +185,11 @@ Ansible~\cite{hid-sp18-511-www-ansible} uses OpenSSH\@.
 
 For this project Ansible~\cite{hid-sp18-511-www-ansible} is used to
 create and setup EC2~\cite{hid-sp18-511-www-ec2} instances, deploy
-Apache Spark~\cite{hid-sp18-511-www-spark} cluster on
+Apache Spark~\cite{hid-sp18-511-www-spark} Cluster on
 EC2~\cite{hid-sp18-511-www-ec2} instance and perform various data
 processing related tasks on Apache Spark~\cite{hid-sp18-511-www-spark}
 Cluster and terminate Apache Spark~\cite{hid-sp18-511-www-spark}
-cluster.
+Cluster.
 
 \section{Deployment}
 
@@ -415,7 +415,7 @@ Once you connect to the Spark worker, execute the command:
 sudo start-slave.sh spark://<Spark master IP address>:7077
 \end{verbatim}
 
-Validate Spark Apache cluster up and running by typing the below url
+Validate Spark Apache Cluster up and running by typing the below url
 in browser
 
 \begin{verbatim}
@@ -423,7 +423,7 @@ http://<Spark master IP address>:8080
 \end{verbatim}
 
 Figure~\ref{f:spark-cluster-url} shows Apache
-Spark~\cite{hid-sp18-511-www-spark} cluster URL\@.
+Spark~\cite{hid-sp18-511-www-spark} Cluster URL\@.
 
 \begin{figure}[!ht]
 \centering\includegraphics[width=\columnwidth]{images/sparkclusterurl.png}
@@ -432,20 +432,20 @@ Spark~\cite{hid-sp18-511-www-spark} cluster URL\@.
 
 \subsection{Data processing on Apache Spark Cluster}
 
-Apache Spark~\cite{hid-sp18-511-www-spark} cluster can be used for various data related tasks.
+Apache Spark~\cite{hid-sp18-511-www-spark} Cluster can be used for various data related tasks.
 Apache Spark~\cite{hid-sp18-511-www-spark} can be used for the Batch processing, Streaming, Machine learning etc. These data processing related tasks can be written Java, R, Python or Scala. 
 
 Apache Spark~\cite{hid-sp18-511-www-spark} distribution come along with multiple example code. These example code can be used as a starting point for the hands-on. These example code are available in Java, R, Python and Scala language. 
 
-In this section we will see how data processing related tasks written in Python language can be submit to Apache Spark~\cite{hid-sp18-511-www-spark} cluster. We will use Python streaming example code in Apache Spark~\cite{hid-sp18-511-www-spark} distribution to demonstrate the submission of application to Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
+In this section we will see how data processing related tasks written in Python language can be submit to Apache Spark~\cite{hid-sp18-511-www-spark} Cluster. We will use Python streaming example code in Apache Spark~\cite{hid-sp18-511-www-spark} distribution to demonstrate the submission of application to Apache Spark~\cite{hid-sp18-511-www-spark} Cluster.
 
-We will use network word count example for the demonstration. This example code can be found at the following path in both master and worker node
+We will use network word count example for the demonstration. This example code can be found at the following path in both master and worker node.
 
 \begin{verbatim}
 /opt/spark/spark-2.3.0-bin-hadoop2.7/examples/src/main/python/streaming/network_wordcount.py
 \end{verbatim}
 
-This program can be executed using the following command
+This program can be executed using the following command.
 
 \begin{verbatim}
 cd /opt/spark/spark-2.3.0-bin-hadoop2.7
@@ -454,7 +454,7 @@ sudo bin/spark-submit --master spark://172.31.27.119:7077 examples/src/main/pyth
 
 This streaming program require hostname and port number as argument. This streaming program will connect to the TCP server specified using the hostname and port number argument to receive the data.
 
-Execute the program to listen to the TCP server on local host at port 1000 using the following command
+Execute the program to listen to the TCP server on local host at port 1000 using the following command.
 
 \begin{verbatim}
 cd /opt/spark/spark-2.3.0-bin-hadoop2.7
@@ -463,7 +463,7 @@ sudo bin/spark-submit --master spark://172.31.27.119:7077 examples/src/main/pyth
 
 Once the program is executed, it will wait for the data on TCP server on localhost at port 1000.
 
-We could create a virtual TCP server using the following command
+We could create a virtual TCP server using the following command.
 
 \begin{verbatim}
 sudo nc -lk 9999
@@ -473,25 +473,25 @@ The above command will create the TCP server on local host at port 9999. Any dat
 
 The streaming application will count the number of different words in each batch and print the initial 10 words on the console.
 
-Figure~\ref{f:python-spark-stream-run-command} shows the command to run Python stream program and submit to Apache Spark~\cite{hid-sp18-511-www-spark} cluster.
+Figure~\ref{f:python-spark-stream-run-command} shows the command to run Python stream program and submit to Apache Spark~\cite{hid-sp18-511-www-spark} Cluster.
 
 \begin{figure}[!ht]
 	\centering\includegraphics[width=\columnwidth]{images/pythonstreamprogruncoammand.png}
-	\caption{Security group}\label{f:python-spark-stream-run-command}
+	\caption{Python Spark stream run command}\label{f:python-spark-stream-run-command}
 \end{figure}
 
 Figure~\ref{f:python-stream-tcp-server.png} shows the command to run TCP server on a particular host and port number. We are running the TCP server on localhost at port 9999 in this demonstration. We have ingested few words into the server.
 
 \begin{figure}[!ht]
 	\centering\includegraphics[width=\columnwidth]{images/pythonstreamtcpserver.png}
-	\caption{Security group}\label{f:python-stream-tcp-server.png}
+	\caption{Python stream TCP server}\label{f:python-stream-tcp-server.png}
 \end{figure}
 
 Figure~\ref{f:python_stream_prog_run_output.png} shows the output of stream once few of the words are ingested into the TCP server.
 
 \begin{figure}[!ht]
 	\centering\includegraphics[width=\columnwidth]{images/pythonstreamprogrunoutput.png}
-	\caption{Security group}\label{f:python_stream_prog_run_output.png}
+	\caption{Python stream output}\label{f:python_stream_prog_run_output.png}
 \end{figure}
 
 \subsection{Terminate Apache Spark Cluster}
@@ -527,8 +527,8 @@ Table~\ref{t:results-table} provides the benchmark results.
 	\caption{Results}\label{t:results-table}
 	\begin{tabular}{ll} 
 		\textbf{Setup} & \textbf{Duration (in minutes)} \\ 
-		Apache Spark cluster deployment  & 21 mins \\
-		Apache Spark cluster termination & 1 min \\
+		Apache Spark Cluster deployment  & 21 mins \\
+		Apache Spark Cluster termination & 1 min \\
 	\end{tabular}
 \end{table}
 
@@ -536,7 +536,7 @@ Table~\ref{t:results-table} provides the benchmark results.
 
 \section{Conclusion}
 
-We are successfully able to deploy Apache Spark~\cite{hid-sp18-511-www-spark} cluster on AWS~\cite{hid-sp18-511-www-aws} EC2~\cite{hid-sp18-511-www-ec2} instances using Ansible~\cite{hid-sp18-511-www-ansible} deployment and configuration tool on a single click. The amount of duration for end to end deployment was only few minutes instead of hours/days which was the case in earlier days when Cloud was not there. We were able to do  streaming using deployed Apache Spark~\cite{hid-sp18-511-www-spark} cluster. This could be used for any kind of data processing need. We were also able to terminate the instances on a single click only in 1 minute.
+We are successfully able to deploy Apache Spark~\cite{hid-sp18-511-www-spark} Cluster on AWS~\cite{hid-sp18-511-www-aws} EC2~\cite{hid-sp18-511-www-ec2} instances using Ansible~\cite{hid-sp18-511-www-ansible} deployment and configuration tool on a single click. The amount of duration for end to end deployment was only few minutes instead of hours/days which was the case in earlier days when Cloud was not there. We were able to do  streaming using deployed Apache Spark~\cite{hid-sp18-511-www-spark} Cluster. This could be used for any kind of data processing need. We were also able to terminate the instances on a single click only in 1 minute.
 
 This project could be further enhanced to add other AWS~\cite{hid-sp18-511-www-aws} EC2~\cite{hid-sp18-511-www-ec2} services. We could create service for virtual network, storage etc as per requirement.
 
