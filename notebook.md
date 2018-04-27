@@ -1,12 +1,13 @@
 #	Logistics
-*	Attended Class introduction online lecture given by professor - 01/14/2018
-*	Created accounts for Github, FutureSystems & Chameleon - 01/24/2018
+* Attended Class introduction online lecture given by professor - 01/14/2018
+* Created accounts for Github, FutureSystems & Chameleon - 01/24/2018
 * Swagger Homework Discussions - 02/11/2018
 * Attended class for the project ideas - 03/27/2018
 * Attended project meeting with professor - 03/30/2018
+* Attended project meeting with professor - 04/26/2018
 
 #	Assignments completed
-*	Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
+* Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
 * Assignment 7.14(Bio Post): Bio Post in Google doc - 01/18/2018
 * Assignment 7.15(IU Google Services): IU Google Services - N/A
 * Assignment 7.16(Big Data Collaboration): Big data and collaboration - 01/18/2018
@@ -33,7 +34,9 @@
 * Assignment: 7.29(AI Cloud Service) - started working on this
 * Assignment: 7.36(Project)
   * Worked on the proposal document, started coding (created Ansibles tasks for setting up the secuity group, setup public and private key, provisioning of EC2 instances - 04/03/2018
-  * Implemented review comments in the proposal document
+  * Project code completed - 04/26/2018
+  * Project README completed - 04/25/2018
+  * Project paper in progress - 04/26/2018  
 
 #	Handbook
 ##	Communication Track

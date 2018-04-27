@@ -1,5 +1,0 @@
-pip
-ansible
-awscli
-boto
-boto3

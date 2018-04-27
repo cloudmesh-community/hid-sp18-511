@@ -1,6 +1,0 @@
-# Project name
-project_name: ec2_spark_deploy
-ami_image: ami-d874e0a0
-instance_type: t2.micro
-region: us-west-2
-hostpath: hosts
