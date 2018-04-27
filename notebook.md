@@ -29,14 +29,11 @@
 * Assignment 7.33(Swagger): Cloud and Big Data Rest Service with Swagger - Part C- 03/10/2018
 * Assignment: 7.34(Technology Paper) - 03/20
 * Assignment: 7.35(Tutorial) - 03/26
+* Assignment: 7.36(Project) - 04/27
 
 #	Assignments in progress
 * Assignment: 7.29(AI Cloud Service) - started working on this
-* Assignment: 7.36(Project)
-  * Worked on the proposal document, started coding (created Ansibles tasks for setting up the secuity group, setup public and private key, provisioning of EC2 instances - 04/03/2018
-  * Project code completed - 04/26/2018
-  * Project README completed - 04/25/2018
-  * Project paper in progress - 04/26/2018  
+ 
 
 #	Handbook
 ##	Communication Track
