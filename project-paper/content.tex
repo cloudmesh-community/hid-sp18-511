@@ -55,7 +55,7 @@ data processing related task complete.
 
 The module expose command line options for Apache
 Spark~\cite{hid-sp18-511-www-spark} Cluster deployment and termination
-of machines one the data processing related task complete. User can connect to Apache
+of machines once the data processing related task complete. User can connect to Apache
 Spark~\cite{hid-sp18-511-www-spark} Cluster and perform various data
 related tasks. Benchmarking is done for measuring the deployment, data
 processing and termination of the instances.
@@ -203,7 +203,7 @@ Ansible~\cite{hid-sp18-511-www-ansible} can be downloaded from
 \url{https://www.ansible.com/resources/get-started}
 
 Download and install Ansible from the above URL and validate the
-installation by typing:
+installation by typing the following command on Unix console:
 
 \begin{verbatim}
 $ ansible-playbook --version
@@ -223,10 +223,7 @@ Create AWS account if not exist already and download the
 AWS~\cite{hid-sp18-511-www-aws} ID and secret key. These keys will be
 used in authentication with AWS~\cite{hid-sp18-511-www-aws}.
 
-Provide the values for
-\verb|AWS_ACCESS_KEY_ID| and \verb|AWS_SECRET_ACCESS_KEY|.
-
-Enter the information on command line:
+Enter the following command with key values on Unix console:
 
 \begin{verbatim}
 export AWS_ACCESS_KEY_ID='<AWS_ACCESS_KEY_ID value>' 
@@ -234,7 +231,7 @@ export
 AWS_SECRET_ACCESS_KEY='<AWS_SECRET_ACCESS_KEY value>'
 \end{verbatim}
 
-Validate the variable by typing the following command:
+Validate the variable by typing the following command on Unix console:
 \begin{verbatim}
 echo AWS_ACCESS_KEY_ID
 echo AWS_SECRET_ACCESS_KEY
@@ -263,7 +260,7 @@ Validate code has been cloned into the directory.
 There are various configuration option that can be updated based on
 the requirement.
 
-AWS related configuration options:
+\textbf{AWS related configuration options:}
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
@@ -279,7 +276,7 @@ region: <specify AWS region>
 env: <deployment environment>
 \end{verbatim}
 
-EC2 related configuration options:
+\textbf{EC2 related configuration options:}
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
@@ -294,7 +291,7 @@ ami_image: <EC2 AMI image type>
 instance_type: <Instance type>
 \end{verbatim}
 
-Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:
+\textbf{Apache Spark~\cite{hid-sp18-511-www-spark} related configuration options:}
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
@@ -344,7 +341,7 @@ Spark Cluster~\cite{hid-sp18-511-www-spark}.
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
-ansible-playbook site.yml --tags ''provision''
+ansible-playbook site.yml --tags ""provision""
 \end{verbatim}
 
 This command will perform following tasks:
@@ -352,20 +349,19 @@ This command will perform following tasks:
 \begin{itemize}
 	\item Create Security Group in AWS
 	\item Create Key Pair in AWS
-	\item Provision EC2 instance for Spark master
-	\item Provision EC2 instance for Spark worker
-	\item Create Spark user and group on Spark master
-	\item Setup Spark specific directories on Spark master
-	\item Download and unarchive Spark on Spark master
+	\item Provision AWS EC2 instance for master
+	\item Provision AWS EC2 instance for worker
+	\item Create Spark user and group on master
+	\item Setup Spark specific directories on master
+	\item Download and unarchive Apache Spark on master
 	\item Download and install Java on Spark master
-	\item Setup Spark configuration files on Spark master
-	\item Start Spark master service on Spark master
-	\item Create Spark user and group on Spark worker
-	\item Setup Spark specific directories on Spark worker
-	\item Download and unarchive Spark  on Spark worker
-	\item Download and install Java  on Spark worker
-	\item Setup Spark configuration files on Spark worker
-	\item Spark worker service and add to Spark master	
+	\item Setup Apache Spark configuration files on master
+	\item Start Apache Spark master service on master
+	\item Create Apache Spark user and group on worker
+	\item Setup Apache Spark specific directories on worker
+	\item Download and unarchive Apache Spark on worker
+	\item Download and install Java  on worker
+	\item Setup Apache Spark configuration files on worker
 \end{itemize}
 
 \textbf{Security Group:}
@@ -397,7 +393,8 @@ Figure~\ref{f:ec2-instance} shows EC2~\cite{hid-sp18-511-www-ec2} instances crea
 
 
 \begin{verbatim}
-cd ~/github/cloudmesh-community/$HID.git/project-code/inventory
+cd ~/github/cloudmesh-community/$HID.git/project-code
+/inventory
 \end{verbatim}
 
 Open hosts file and find out the IP address in [sparkmaster] and
@@ -406,7 +403,8 @@ Open hosts file and find out the IP address in [sparkmaster] and
 Connect to the Spark worker node using ssh:
 
 \begin{verbatim}
-ssh -i ec2_spark_stg_key-private.pem ubuntu@<Spark worker IP adddress>
+ssh -i ec2_spark_stg_key-private.pem 
+ubuntu@<Spark worker IP adddress>
 \end{verbatim}
 
 Once you connect to the Spark worker, execute the command:
@@ -442,14 +440,16 @@ In this section we will see how data processing related tasks written in Python 
 We will use network word count example for the demonstration. This example code can be found at the following path in both master and worker node.
 
 \begin{verbatim}
-/opt/spark/spark-2.3.0-bin-hadoop2.7/examples/src/main/python/streaming/network_wordcount.py
+/opt/spark/spark-2.3.0-bin-hadoop2.7/examples/src/main \
+/python/streaming/network_wordcount.py
 \end{verbatim}
 
 This program can be executed using the following command.
 
 \begin{verbatim}
 cd /opt/spark/spark-2.3.0-bin-hadoop2.7
-sudo bin/spark-submit --master spark://172.31.27.119:7077 examples/src/main/python/streaming/network_wordcount.py localhost 9999
+sudo bin/spark-submit --master spark://172.31.27.119:7077 \
+examples/src/main/python/streaming/network_wordcount.py localhost 9999
 \end{verbatim}
 
 This streaming program require hostname and port number as argument. This streaming program will connect to the TCP server specified using the hostname and port number argument to receive the data.
@@ -458,10 +458,11 @@ Execute the program to listen to the TCP server on local host at port 1000 using
 
 \begin{verbatim}
 cd /opt/spark/spark-2.3.0-bin-hadoop2.7
-sudo bin/spark-submit --master spark://172.31.27.119:7077 examples/src/main/python/streaming/network_wordcount.py localhost 9999
+sudo bin/spark-submit --master spark://172.31.27.119:7077 \
+examples/src/main/python/streaming/network_wordcount.py localhost 9999 
 \end{verbatim}
 
-Once the program is executed, it will wait for the data on TCP server on localhost at port 1000.
+Once the program is executed, it will wait for the data on TCP server on localhost at port 9999.
 
 We could create a virtual TCP server using the following command.
 
@@ -501,14 +502,14 @@ Spark Cluster~\cite{hid-sp18-511-www-spark}.
 
 \begin{verbatim}
 cd ~/github/cloudmesh-community/$HID.git/project-code/
-ansible-playbook site.yml --tags ``terminate``
+ansible-playbook site.yml --tags ""terminate""
 \end{verbatim}
 
 This command will perform following tasks:
 
 \begin{itemize}
-	\item Terminate Spark master node
-	\item Terminate Spark worker node
+	\item Terminate Apache Spark master node
+	\item Terminate Apache Spark worker node
 \end{itemize}
 
 Validate Apache Spark~\cite{hid-sp18-511-www-spark} master and Apache Spark~\cite{hid-sp18-511-www-spark}
@@ -532,7 +533,12 @@ Table~\ref{t:results-table} provides the benchmark results.
 	\end{tabular}
 \end{table}
 
+\section{Project video}
 
+I have prepared a video to demonstrate the Apache Spark~\cite{hid-sp18-511-www-spark} automated deployment. This video walk through all the prerequisites required for the project, demo of Apache Spark~\cite{hid-sp18-511-www-spark} deployment and termination.
+
+\href{https://d1b10bmlvqabco.cloudfront.net/attach/jbkvbp3ed3m2ez/j6r57sr2IDo/jgenhk1lk5ly/hidsp18511\_AWS\_EC2\_Deployment\_1.mp4}{Apache Spark deployment demo part 1}
+\href{https://d1b10bmlvqabco.cloudfront.net/attach/jbkvbp3ed3m2ez/j6r57sr2IDo/jgeniacbvn7m/hidsp18511\_AWS\_EC2\_Deployment\_2.mp4}{Apache Spark deployment demo part 2}
 
 \section{Conclusion}
 
