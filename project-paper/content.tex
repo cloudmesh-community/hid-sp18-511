@@ -465,7 +465,8 @@ This program can be executed using the following command.
 \begin{verbatim}
 cd /opt/spark/spark-2.3.0-bin-hadoop2.7
 sudo bin/spark-submit --master spark://172.31.27.119:7077 \
-examples/src/main/python/streaming/network_wordcount.py localhost 9999
+examples/src/main/python/streaming/network_wordcount.py \
+localhost 9999
 \end{verbatim}
 
 This streaming program require hostname and port number as argument. This streaming program will connect to the TCP server specified using the hostname and port number argument to receive the data.
@@ -475,7 +476,8 @@ Execute the program to listen to the TCP server on local host at port 1000 using
 \begin{verbatim}
 cd /opt/spark/spark-2.3.0-bin-hadoop2.7
 sudo bin/spark-submit --master spark://172.31.27.119:7077 \
-examples/src/main/python/streaming/network_wordcount.py localhost 9999 
+examples/src/main/python/streaming/network_wordcount.py \
+localhost 9999 
 \end{verbatim}
 
 Once the program is executed, it will wait for the data on TCP server on localhost at port 9999.
@@ -531,9 +533,12 @@ This command will perform following tasks:
 Validate Apache Spark~\cite{hid-sp18-511-www-spark} master and Apache Spark~\cite{hid-sp18-511-www-spark}
 worker nodes have been terminated by login to AWS~\cite{hid-sp18-511-www-aws} console.
 
-\begin{verbatim}
-\TODO{Add picture of terminated instances}
-\end{verbatim}
+Figure~\ref{f:ec2-instance-terminate} shows EC2~\cite{hid-sp18-511-www-ec2} instances terminated.
+
+\begin{figure}[!ht]
+	\centering\includegraphics[width=\columnwidth]{images/ec2instancesterminate.png}
+	\caption{EC2 instance termination}\label{f:ec2-instance-terminate}
+\end{figure}
 
 \section{Results}
 
