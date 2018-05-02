@@ -5,6 +5,7 @@
 * Attended class for the project ideas - 03/27/2018
 * Attended project meeting with professor - 03/30/2018
 * Attended project meeting with professor - 04/26/2018
+* Attended project meeting with professor - 05/01/2018
 
 #	Assignments completed
 * Assignment 7.13(Bio Post): Bio Post on Piazza - 01/18/2018
@@ -30,6 +31,7 @@
 * Assignment: 7.34(Technology Paper) - 03/20
 * Assignment: 7.35(Tutorial) - 03/26
 * Assignment: 7.36(Project) - 04/27
+* Assignment: 7.36(Project paper review comments) - 05/01
 
 #	Assignments in progress
 * Assignment: 7.29(AI Cloud Service) - started working on this
