@@ -25,10 +25,10 @@ This project is about developing a module for automated deployment of
 Apache Spark Cluster on AWS (Amazon Web Services) EC2 (Elastic Compute
 Cloud) instances on a single click and performs various data
 processing related tasks on Apache Spark Cluster. This project
-provides option to deploy Apache Spark Cluster and terminate the Apache
-Spark Cluster once data
-processing task is completed. This project also does the benchmarking
-of deployment, data processing and termination of the instances.
+provides option to deploy Apache Spark Cluster and terminate the
+Apache Spark Cluster once data processing task is completed. This
+project also does the benchmarking of deployment, data processing and
+termination of the instances.
 
 \end{abstract}
 
@@ -71,10 +71,9 @@ instances once the data processing related task complete.
 \section{Technologies Used}
 
 This section describes the technology used in the project including
-AWS~\cite{hid-sp18-511-www-aws} (see Section~\ref{S:aws}), 
-Apache Spark~\cite{hid-sp18-511-www-spark}(see Section~\ref{S:spark}),
-and
-Ansible~\cite{hid-sp18-511-www-ansible}(see Section~\ref{S:ansible}).
+AWS~\cite{hid-sp18-511-www-aws} (see Section~\ref{S:aws}), Apache
+Spark~\cite{hid-sp18-511-www-spark} (see Section~\ref{S:spark}), and
+Ansible~\cite{hid-sp18-511-www-ansible} (see Section~\ref{S:ansible}).
 
 \subsection{AWS}\label{S:aws}
 
@@ -125,15 +124,15 @@ EC2~\cite{hid-sp18-511-www-ec2} configuration details.
 
 \subsubsection{Security Group}
 
-A ~\emph{Security Group} restricts the inbound and outbound traffic for
-EC2~\cite{hid-sp18-511-www-ec2} instance.  We can define the allowed
-incoming and outgoing traffic using Security Group and assign it to
-the instance. Security Group works as firewall and allow only
+A~\emph{Security Group} restricts the inbound and outbound traffic
+for EC2~\cite{hid-sp18-511-www-ec2} instance.  We can define the
+allowed incoming and outgoing traffic using Security Group and assign
+it to the instance. Security Group works as firewall and allow only
 permitted traffic on EC2~\cite{hid-sp18-511-www-ec2} instance.
 
-We create the security group \verb|ec2_spark_stg_security_group| with the
-following inbound and outbound ports open in this project and assign
-it to the EC2~\cite{hid-sp18-511-www-ec2} instances created.
+We create the security group \verb|ec2_spark_stg_security_group| with
+the following inbound and outbound ports open in this project and
+assign it to the EC2~\cite{hid-sp18-511-www-ec2} instances created.
 
 \begin{itemize}
 	\item \verb|Inbound: 80, 8080, 22, 7178, 8181, 7077, 443|
@@ -143,9 +142,9 @@ it to the EC2~\cite{hid-sp18-511-www-ec2} instances created.
 
 \subsubsection{Key Pair}
 
-A \emph{Key Pair} is used to connect EC2~\cite{hid-sp18-511-www-ec2} instance
-securely. We need to create Key Pair and provide the private key to
-connect the EC2~\cite{hid-sp18-511-www-ec2} instance.
+A \emph{Key Pair} is used to connect EC2~\cite{hid-sp18-511-www-ec2}
+instance securely. We need to create Key Pair and provide the private
+key to connect the EC2~\cite{hid-sp18-511-www-ec2} instance.
 
 \verb|ec2_spark_stg_key| Key pair is created in this project.
 The private key with the name \verb|ec2_spark_stg_key-private.pem| is
@@ -158,6 +157,12 @@ Apache Spark~\cite{hid-sp18-511-www-spark} is analytics engine for
 large scale data processing. Apache
 Spark~\cite{hid-sp18-511-www-spark} has high performance engine, very
 easy to use and provide option to plug-in third party components.
+Apache Spark~\cite{hid-sp18-511-www-spark} is a fast, in-memory data
+processing engine. It efficiently execute streaming, machine learning
+or SQL workloads that require fast access to data. Developers can
+create applications using dataset in
+Hadoop~\cite{hid-sp18-511-www-hadoop} to use Apache
+Spark~\cite{hid-sp18-511-www-spark}.
 
 The following configuration is used in this project for Apache Spark
 
@@ -194,15 +199,25 @@ Cluster.
 
 \section{Deployment}
 
-This section describes the setup(see Section~\ref{s:setup}) required for the project, steps for the deployment(see Section~\ref{s:cluster-deployment}) of Apache Spark~\cite{hid-sp18-511-www-spark} Cluster on EC2~\cite{hid-sp18-511-www-ec2} instances, explanation of data processing(see Section~\ref{s:steps-data-process}) tasks that can be done on Apache Spark~\cite{hid-sp18-511-www-spark} Cluster and termination steps(see Section~\ref{s:cluster-terminate}) of EC2~\cite{hid-sp18-511-www-ec2} instances once the data processing tasks complete.
+This section describes the setup (see Section~\ref{s:setup}) required
+for the project, steps for the deployment (see
+Section~\ref{s:cluster-deployment}) of Apache
+Spark~\cite{hid-sp18-511-www-spark} Cluster on
+EC2~\cite{hid-sp18-511-www-ec2} instances, explanation of data
+processing (see Section~\ref{s:steps-data}) tasks that can be
+done on Apache Spark~\cite{hid-sp18-511-www-spark} Cluster and
+termination steps (see Section~\ref{s:cluster-terminate}) of
+EC2~\cite{hid-sp18-511-www-ec2} instances once the data processing
+tasks complete.
 
 \subsection{Setup}\label{s:setup}
 
-This section describes the setup steps for Ansible(see Section~\ref{s:ansible-setup}), AWS Key(see Section~\ref{s:aws-key-setup}), Git Repository(see Section~\ref{s:git-repo-setup}) and various configuration options(see Section~\ref{s:config-opt-setup}) that
-can be updated as per the project requirements.
+This section describes the setup steps for Ansible, AWS Key, Git
+Repository and various configuration options that can be updated as
+per the project requirements.
 
 
-\paragraph{Ansible}\label{s:ansible-setup}
+\paragraph{Ansible}
 Download and install Ansible~\cite{hid-sp18-511-www-ansible} on the
 machine where deployment script will be executed.
 
@@ -224,7 +239,7 @@ ansible-playbook 2.5.0 version = 2.7.13
 (default, Jan 24 2018, 21:48:31) [GCC 5.4.0 20160609]
 \end{verbatim}
 
-\paragraph{AWS key}\label{s:aws-key-setup}
+\paragraph{AWS key}
 
 Create AWS account if not exist already and download the
 AWS~\cite{hid-sp18-511-www-aws} ID and secret key. These keys will be
@@ -247,7 +262,7 @@ echo AWS_SECRET_ACCESS_KEY
 You should see the values as output which were previously set by
 export command.
 
-\paragraph{Git repository}\label{s:git-repo-setup}
+\paragraph{Git repository}
 
 Setup the git repository:
 
@@ -262,7 +277,7 @@ https://github.com/cloudmesh-community/$HID.git /project-code
 
 Validate code has been cloned into the directory.
 
-\paragraph{Configuration options}\label{s:config-opt-setup}
+\paragraph{Configuration options}
 
 There are various configuration option that can be updated based on
 the requirement.
@@ -454,7 +469,7 @@ Spark~\cite{hid-sp18-511-www-spark} shell command prompt.
 	\caption{Spark Shell}\label{f:spark-shell}
 \end{figure}
 
-\subsection{Data processing on Apache Spark Cluster}\label{s:steps-data-process}
+\subsection{Data processing on Apache Spark Cluster}\label{s:steps-data}
 
 Apache Spark~\cite{hid-sp18-511-www-spark} Cluster can be used for
 various data related tasks.  Apache
@@ -589,21 +604,29 @@ EC2~\cite{hid-sp18-511-www-ec2} instances terminated.
 
 Two videos to demonstrate the Apache
 Spark~\cite{hid-sp18-511-www-spark} automated deployment has been
-created and is made available at \verb|Video_Part_1|~\cite{hid-sp18-511-www-video-part-1} 
-and \verb|Video_Part_2|~\cite{hid-sp18-511-www-video-part-2}. 
+created and is made available
+at \verb|Video_Part_1|~\cite{hid-sp18-511-www-video-part-1}
+and \verb|Video_Part_2|~\cite{hid-sp18-511-www-video-part-2}.
 
-The first and second videos are sequential and has to be watched in the order.
+The first and second videos are sequential and has to be watched in
+the order.
 
-This video
-walk through all the prerequisites required for the project, demo of
-Apache Spark~\cite{hid-sp18-511-www-spark} cluster deployment on EC2~\cite{hid-sp18-511-www-ec2} instances and termination.
+This video walk through all the prerequisites required for the
+project, demo of Apache Spark~\cite{hid-sp18-511-www-spark} cluster
+deployment on EC2~\cite{hid-sp18-511-www-ec2} instances and
+termination.
 
 \section{Results}
 
 Table~\ref{t:results-table} provides the benchmark results.
 
-This table provide the duration for deployment and termination of 
-Spark~\cite{hid-sp18-511-www-spark} Cluster deployment on EC2 instances.
+This table~\ref{t:results-table} provide the duration for deployment
+of Spark~\cite{hid-sp18-511-www-spark} Cluster on two
+EC2~\cite{hid-sp18-511-www-ec2} instances. Apache
+Spark~\cite{hid-sp18-511-www-spark} master will be deployed on one
+EC2~\cite{hid-sp18-511-www-ec2} instance and Apche
+Spark~\cite{hid-sp18-511-www-spark} worker will be deployed on another
+EC2~\cite{hid-sp18-511-www-ec2} instance.
 
 \begin{table}[htb]
 	\centering
@@ -638,7 +661,8 @@ per requirement.
 \begin{acks}
 
   The authors would like to thank Dr.~Gregor~von~Laszewski for his
-  support and suggestions to write this paper ans providing the technical assistance.
+  support and suggestions to write this paper ans providing the
+  technical assistance.
 
 \end{acks}
 
