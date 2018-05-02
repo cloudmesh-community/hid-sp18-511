@@ -618,19 +618,17 @@ termination.
 
 \section{Results}
 
-Table~\ref{t:results-table} provides the benchmark results.
-
-This table~\ref{t:results-table} provide the duration for deployment
+Table~\ref{t:dep-results-table} provide the duration for deployment
 of Spark~\cite{hid-sp18-511-www-spark} Cluster on two
 EC2~\cite{hid-sp18-511-www-ec2} instances. Apache
-Spark~\cite{hid-sp18-511-www-spark} master will be deployed on one
-EC2~\cite{hid-sp18-511-www-ec2} instance and Apche
-Spark~\cite{hid-sp18-511-www-spark} worker will be deployed on another
+Spark~\cite{hid-sp18-511-www-spark} master is deployed on one
+EC2~\cite{hid-sp18-511-www-ec2} instance and Apache
+Spark~\cite{hid-sp18-511-www-spark} worker is deployed on another
 EC2~\cite{hid-sp18-511-www-ec2} instance.
 
 \begin{table}[htb]
 	\centering
-	\caption{Results}\label{t:results-table}
+	\caption{Deployment and Termination Results}\label{t:dep-results-table}
 	\begin{tabular}{ll} 
 		\textbf{Setup} & \textbf{Duration (in minutes)} \\ 
 		Apache Spark Cluster deployment  & 21 mins \\
@@ -638,6 +636,17 @@ EC2~\cite{hid-sp18-511-www-ec2} instance.
 	\end{tabular}
 \end{table}
 
+Table~\ref{t:data-process-results-table} provide the duration for processing
+of stream data of 10 words once it has been typed on the TCP server.
+
+\begin{table}[htb]
+	\centering
+	\caption{Data Processing Results}\label{t:data-process-results-table}
+	\begin{tabular}{ll} 
+		\textbf{Data Processing} & \textbf{Duration (in second)} \\ 
+		Data processing with 2 nodes  & 1/10 seconds \\
+	\end{tabular}
+\end{table}
 
 \section{Conclusion}
 
@@ -656,7 +665,8 @@ minute.
 This project could be further enhanced to add other
 AWS~\cite{hid-sp18-511-www-aws} EC2~\cite{hid-sp18-511-www-ec2}
 services. We could create service for virtual network, storage etc as
-per requirement.
+per requirement. This project could be updated to provide options for
+specifying the number of nodes to be setup in the cluster
 
 \begin{acks}
 
