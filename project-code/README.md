@@ -83,3 +83,5 @@ the project.
 * <https://aws.amazon.com/>
 * <https://aws.amazon.com/ec2/>
 * <https://www.ansible.com/>
+* <https://blog.insightdatascience.com/spinning-up-a-spark-cluster-on-spot-instances-step-by-step-e8ed14ebb3b>
+* <https://community.hortonworks.com/articles/86924/using-ansible-to-deploy-instances-on-aws.html>
